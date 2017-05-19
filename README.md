@@ -28,14 +28,21 @@ Portanto,	o	sistema	deve	possuir	as	seguintes	funcionalidades:
 
 Para	 a	 implementação	 do	 sistema,	 utilizar	 as	 seguintes	 regras (implementar	 a	
 funcionalidade	sem	suas	respectivas	regras	implica	na	perda	de	50%	da	sua	pontuação):
+
 • Utilizar	Interfaces	e	Herança	para	os	produtos
+
 • Utilizar	 coleções nos cadastros	 de	 produto,	 produtos	 no	 carrinho	 e	 compras	
 realizadas;
+
 • Utilizar	exceções	nos	seguintes	casos:
+
 o Ao	cadastrar	um	produto	com	o	código	já	existente;
+
 o Ao	 finalizar	 a	 compra	 e	 houver	 um	 produto	 acima	 do	 limite	 máximo	
 permitido	(10);
+
 o Efetuar	a	compra	de	um	produto	que	não	tem	em	estoque	(opcional)
+
 --------------------------------------------------------------------------------------------------------------------------------
 
 Então...
