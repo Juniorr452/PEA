@@ -1,38 +1,37 @@
 package application;
 
-import application.controladores.ControladorCenas;
+import java.util.ArrayList;
+import java.util.List;
+
+import application.controladores.GerenciadorCenas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.Pane;
 
 public class Main extends Application 
 {
 	@Override
 	public void start(Stage janela) 
 	{
-		Parent telaPrincipal;
-		Scene  scene;
+		List<ScrollPane> fxml;
+		Pane root;
 
 		try 
 		{
-			// Vamos carregar a tela principal e 
-			// mandá-la para a classe ControladorCenas.
-			telaPrincipal = FXMLLoader.load(getClass().getResource("cenas/Principal.fxml"));
-			ControladorCenas.inicializar(janela);
+			// Carregar a toolbar.
+			root = FXMLLoader.load(getClass().getResource("cenas/Toolbar.fxml"));
 			
-			// Vamos criar uma cena com o arquivo que
-			// carregamos e colocar um estilo css nele.
-			scene = new Scene(telaPrincipal);
-			scene.getStylesheets().add(getClass().getResource("cenas/application.css").toExternalForm());
+			// Carregar e fazer uma lista com todas as outras telas.
+			fxml = new ArrayList();
+			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Principal.fxml")));
+			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Funcionario.fxml")));
 			
-			// Colocaremos algumas configurações
-			// na nossa janela e mostramos ela.
-			janela.setScene(scene);
-			janela.setTitle("PEA");
-			janela.setResizable(false);
-			janela.show();
+			// Mandar pra classe gerenciadora fazer o resto.
+			GerenciadorCenas.inicializar(janela, root, fxml);
 		} 
 		catch(Exception e) 
 		{

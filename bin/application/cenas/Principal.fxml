@@ -1,600 +1,580 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.text.*?>
-<?import javafx.scene.control.*?>
 <?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane cacheHint="SPEED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorTelaPrincipal">
-   <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="400.0" layoutY="85.0" prefHeight="663.0" prefWidth="1280.0" vmax="1.2" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="59.0">
-         <content>
-            <VBox fillWidth="false" prefHeight="1526.0" prefWidth="1280.0" spacing="50.0">
+<ScrollPane hbarPolicy="NEVER" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" vmax="1.2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorTelaPrincipal">
+   <content>
+      <VBox fillWidth="false" prefHeight="1526.0" prefWidth="1280.0" spacing="50.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="277.0" prefWidth="1220.0" spacing="20.0">
                <children>
-                  <VBox alignment="CENTER" prefHeight="277.0" prefWidth="1220.0" spacing="20.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-Vindo, cliente." textAlignment="CENTER" wrappingWidth="1220.0">
+                     <font>
+                        <Font name="Myriad Apple Medium" size="48.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Experimente nosso novo sistema de compras agora mesmo." textAlignment="CENTER" wrappingWidth="476.0">
+                     <font>
+                        <Font name="Myriad Apple Medium" size="24.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+            <Pane prefHeight="1064.0" prefWidth="1220.0">
+               <children>
+                  <VBox prefHeight="1094.0" prefWidth="817.0" spacing="50.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-Vindo, cliente." textAlignment="CENTER" wrappingWidth="1220.0">
-                           <font>
-                              <Font name="Myriad Apple Medium" size="48.0" />
-                           </font>
-                        </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Experimente nosso novo sistema de compras agora mesmo." textAlignment="CENTER" wrappingWidth="476.0">
-                           <font>
-                              <Font name="Myriad Apple Medium" size="24.0" />
-                           </font>
-                        </Text>
+                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
+                           <children>
+                              <HBox prefHeight="58.0" prefWidth="1060.0">
+                                 <children>
+                                    <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Livros">
+                                       <font>
+                                          <Font name="Myriad Apple Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Pane prefHeight="30.0" prefWidth="563.0" />
+                                    <Hyperlink text="Ver todos &gt;" wrapText="true">
+                                       <font>
+                                          <Font name="Myriad Apple Text" size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                              </HBox>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hmax="2.0" prefHeight="301.0" prefWidth="759.0" vbarPolicy="NEVER">
+                                 <content>
+                                    <HBox prefHeight="250.0" prefWidth="851.0" spacing="20.0">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
+                           <children>
+                              <HBox prefHeight="58.0" prefWidth="1060.0">
+                                 <children>
+                                    <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DVDs">
+                                       <font>
+                                          <Font name="Myriad Apple Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Pane prefHeight="30.0" prefWidth="567.0" />
+                                    <Hyperlink text="Ver todos &gt;" wrapText="true">
+                                       <font>
+                                          <Font name="Myriad Apple Text" size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                              </HBox>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hmax="2.0" prefHeight="301.0" prefWidth="759.0" vbarPolicy="NEVER">
+                                 <content>
+                                    <HBox prefHeight="250.0" prefWidth="851.0" spacing="20.0">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
+                           <children>
+                              <HBox prefHeight="58.0" prefWidth="1060.0">
+                                 <children>
+                                    <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CDs">
+                                       <font>
+                                          <Font name="Myriad Apple Bold" size="24.0" />
+                                       </font>
+                                    </Text>
+                                    <Pane prefHeight="30.0" prefWidth="584.0" />
+                                    <Hyperlink text="Ver todos &gt;" wrapText="true">
+                                       <font>
+                                          <Font name="Myriad Apple Text" size="17.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets left="50.0" />
+                                       </HBox.margin>
+                                    </Hyperlink>
+                                 </children>
+                              </HBox>
+                              <ScrollPane fitToHeight="true" fitToWidth="true" hmax="2.0" prefHeight="301.0" prefWidth="759.0" vbarPolicy="NEVER">
+                                 <content>
+                                    <HBox prefHeight="250.0" prefWidth="851.0" spacing="20.0">
+                                       <children>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="200.0" prefWidth="100.0">
+                                             <children>
+                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                   <font>
+                                                      <Font name="System Bold" size="20.0" />
+                                                   </font>
+                                                   <VBox.margin>
+                                                      <Insets top="10.0" />
+                                                   </VBox.margin>
+                                                </Text>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </Text>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
                      </children>
                   </VBox>
-                  <Pane prefHeight="1064.0" prefWidth="1220.0">
+                  <VBox layoutX="817.0" layoutY="-4.0" prefHeight="1200.0" prefWidth="408.0">
                      <children>
-                        <VBox prefHeight="1094.0" prefWidth="817.0" spacing="50.0">
-                           <children>
-                              <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
-                                 <children>
-                                    <HBox prefHeight="58.0" prefWidth="1060.0">
-                                       <children>
-                                          <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Livros">
-                                             <font>
-                                                <Font name="Myriad Apple Bold" size="24.0" />
-                                             </font>
-                                          </Text>
-                                          <Pane prefHeight="30.0" prefWidth="563.0" />
-                                          <Hyperlink text="Ver todos &gt;" wrapText="true">
-                                             <HBox.margin>
-                                                <Insets left="50.0" />
-                                             </HBox.margin>
-                                             <font>
-                                                <Font name="Myriad Apple Text" size="17.0" />
-                                             </font>
-                                          </Hyperlink>
-                                       </children>
-                                    </HBox>
-                                    <ScrollPane fitToHeight="true" fitToWidth="true" hmax="2.0" prefHeight="301.0" prefWidth="759.0" vbarPolicy="NEVER">
-                                       <content>
-                                          <HBox prefHeight="250.0" prefWidth="851.0" spacing="20.0">
-                                             <children>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                              <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
-                                 <children>
-                                    <HBox prefHeight="58.0" prefWidth="1060.0">
-                                       <children>
-                                          <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="DVDs">
-                                             <font>
-                                                <Font name="Myriad Apple Bold" size="24.0" />
-                                             </font>
-                                          </Text>
-                                          <Pane prefHeight="30.0" prefWidth="567.0" />
-                                          <Hyperlink text="Ver todos &gt;" wrapText="true">
-                                             <font>
-                                                <Font name="Myriad Apple Text" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="50.0" />
-                                             </HBox.margin>
-                                          </Hyperlink>
-                                       </children>
-                                    </HBox>
-                                    <ScrollPane fitToHeight="true" fitToWidth="true" hmax="2.0" prefHeight="301.0" prefWidth="759.0" vbarPolicy="NEVER">
-                                       <content>
-                                          <HBox prefHeight="250.0" prefWidth="851.0" spacing="20.0">
-                                             <children>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                              <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
-                                 <children>
-                                    <HBox prefHeight="58.0" prefWidth="1060.0">
-                                       <children>
-                                          <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="CDs">
-                                             <font>
-                                                <Font name="Myriad Apple Bold" size="24.0" />
-                                             </font>
-                                          </Text>
-                                          <Pane prefHeight="30.0" prefWidth="584.0" />
-                                          <Hyperlink text="Ver todos &gt;" wrapText="true">
-                                             <font>
-                                                <Font name="Myriad Apple Text" size="17.0" />
-                                             </font>
-                                             <HBox.margin>
-                                                <Insets left="50.0" />
-                                             </HBox.margin>
-                                          </Hyperlink>
-                                       </children>
-                                    </HBox>
-                                    <ScrollPane fitToHeight="true" fitToWidth="true" hmax="2.0" prefHeight="301.0" prefWidth="759.0" vbarPolicy="NEVER">
-                                       <content>
-                                          <HBox prefHeight="250.0" prefWidth="851.0" spacing="20.0">
-                                             <children>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                                <VBox prefHeight="200.0" prefWidth="100.0">
-                                                   <children>
-                                                      <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
-                                                         <font>
-                                                            <Font name="System Bold" size="20.0" />
-                                                         </font>
-                                                         <VBox.margin>
-                                                            <Insets top="10.0" />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
-                                                         <VBox.margin>
-                                                            <Insets />
-                                                         </VBox.margin>
-                                                      </Text>
-                                                   </children>
-                                                </VBox>
-                                             </children>
-                                          </HBox>
-                                       </content>
-                                    </ScrollPane>
-                                 </children>
-                              </VBox>
-                           </children>
-                        </VBox>
-                        <VBox layoutX="817.0" layoutY="-4.0" prefHeight="1200.0" prefWidth="408.0">
-                           <children>
-                              <ComboBox prefHeight="61.0" prefWidth="278.0" promptText="Livros" style="-fx-font-size: 30;" />
-                              <ComboBox prefHeight="34.0" prefWidth="188.0" promptText="Categoria">
-                                 <padding>
-                                    <Insets left="9.0" />
-                                 </padding>
-                              </ComboBox>
-                           </children>
-                        </VBox>
+                        <ComboBox prefHeight="61.0" prefWidth="278.0" promptText="Livros" style="-fx-font-size: 30;" />
+                        <ComboBox prefHeight="34.0" prefWidth="188.0" promptText="Categoria">
+                           <padding>
+                              <Insets left="9.0" />
+                           </padding>
+                        </ComboBox>
                      </children>
-                  </Pane>
-                  <Pane prefHeight="100.0" prefWidth="1220.0">
-                     <children>
-                        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3c3c3c" height="100.0" stroke="#3c3c3c" strokeType="INSIDE" width="1220.0" />
-                        <PasswordField fx:id="campoSenhaFuncionario" onKeyPressed="#validarSenhaFuncionario" opacity="0.52" prefHeight="100.0" prefWidth="1220.0" />
-                     </children>
-                  </Pane>
+                  </VBox>
                </children>
-               <padding>
-                  <Insets left="20.0" right="20.0" />
-               </padding>
-            </VBox>
-         </content>
-      </ScrollPane>
-      <ToolBar layoutX="200.0" layoutY="84.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-        <items>
-          <Button disable="true" mnemonicParsing="false" text="&lt;" />
-            <Button disable="true" mnemonicParsing="false" prefHeight="34.0" prefWidth="9.0" text="&gt;" />
-            <Pane prefHeight="44.0" prefWidth="504.0" />
-            <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../imagens/logo.png" />
-               </image>
-            </ImageView>
-            <Pane prefHeight="0.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 20;" />
-        </items>
-      </ToolBar>
-   </children>
-</AnchorPane>
+            </Pane>
+            <Pane prefHeight="100.0" prefWidth="1220.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3c3c3c" height="100.0" stroke="#3c3c3c" strokeType="INSIDE" width="1220.0" />
+                  <PasswordField fx:id="campoSenhaFuncionario" onKeyPressed="#validarSenhaFuncionario" opacity="0.52" prefHeight="100.0" prefWidth="1220.0" />
+               </children>
+            </Pane>
+         </children>
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+      </VBox>
+   </content>
+</ScrollPane>

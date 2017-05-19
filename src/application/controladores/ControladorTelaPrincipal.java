@@ -12,7 +12,7 @@ import javafx.scene.input.KeyEvent;
  * 
  * @author Ênio José
  */
-public class ControladorTelaPrincipal extends ControladorCenas
+public class ControladorTelaPrincipal extends Controlador
 {
 	@FXML private PasswordField campoSenhaFuncionario;
 	
@@ -27,7 +27,7 @@ public class ControladorTelaPrincipal extends ControladorCenas
     	String senha = campoSenhaFuncionario.getText();
     	if (event.getCode() == KeyCode.ENTER && senha.equals("123"))
     	{
-    		irPara("Funcionario");
+    		GerenciadorCenas.irPara(funcionario);
     	}	
     }
 }
