@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -39,7 +40,7 @@
                                        </font>
                                     </Text>
                                     <Pane prefHeight="30.0" prefWidth="563.0" />
-                                    <Hyperlink text="Ver todos &gt;" wrapText="true">
+                                    <Hyperlink text="Ver todos &gt;" translateX="-31.0" wrapText="true">
                                        <font>
                                           <Font name="Myriad Apple Text" size="17.0" />
                                        </font>
@@ -55,8 +56,12 @@
                                        <children>
                                           <VBox prefHeight="200.0" prefWidth="100.0">
                                              <children>
-                                                <Rectangle arcHeight="5.0" arcWidth="5.0" height="199.0" stroke="BLACK" strokeType="INSIDE" width="193.0" />
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Título">
+                                                <ImageView fitHeight="199.0" fitWidth="193.0" pickOnBounds="true">
+                                                   <image>
+                                                      <Image url="@../imagens/xuxa.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Só para baixinhos">
                                                    <font>
                                                       <Font name="System Bold" size="20.0" />
                                                    </font>
@@ -64,7 +69,7 @@
                                                       <Insets top="10.0" />
                                                    </VBox.margin>
                                                 </Text>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Autor">
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Xuxa Meneghel">
                                                    <VBox.margin>
                                                       <Insets />
                                                    </VBox.margin>
@@ -213,7 +218,7 @@
                                        </font>
                                     </Text>
                                     <Pane prefHeight="30.0" prefWidth="567.0" />
-                                    <Hyperlink text="Ver todos &gt;" wrapText="true">
+                                    <Hyperlink text="Ver todos &gt;" translateX="-31.0" wrapText="true">
                                        <font>
                                           <Font name="Myriad Apple Text" size="17.0" />
                                        </font>
@@ -387,7 +392,7 @@
                                        </font>
                                     </Text>
                                     <Pane prefHeight="30.0" prefWidth="584.0" />
-                                    <Hyperlink text="Ver todos &gt;" wrapText="true">
+                                    <Hyperlink text="Ver todos &gt;" translateX="-31.0" wrapText="true">
                                        <font>
                                           <Font name="Myriad Apple Text" size="17.0" />
                                        </font>
@@ -567,8 +572,8 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="1220.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3c3c3c" height="100.0" stroke="#3c3c3c" strokeType="INSIDE" width="1220.0" />
-                  <PasswordField fx:id="campoSenhaFuncionario" onKeyPressed="#validarSenhaFuncionario" opacity="0.52" prefHeight="100.0" prefWidth="1220.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3c3c3c" height="40.0" stroke="#3c3c3c" strokeType="INSIDE" width="1220.0" />
+                  <PasswordField fx:id="campoSenhaFuncionario" onKeyPressed="#validarSenhaFuncionario" opacity="0.52" prefHeight="40.0" prefWidth="1220.0" />
                </children>
             </Pane>
          </children>

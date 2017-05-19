@@ -12,7 +12,7 @@
    <children>
       <ToolBar layoutX="200.0" layoutY="84.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" text="&lt;" />
+            <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
             <Button fx:id="avançar" mnemonicParsing="false" onAction="#avançar" prefHeight="34.0" prefWidth="9.0" text="&gt;" />
             <Pane prefHeight="44.0" prefWidth="504.0" />
             <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
@@ -21,7 +21,7 @@
                </image>
             </ImageView>
             <Pane prefHeight="0.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 20;" />
+            <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" />
          </items>
       </ToolBar>
    </children>

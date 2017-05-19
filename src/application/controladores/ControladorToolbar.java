@@ -6,12 +6,12 @@ import javafx.scene.control.Button;
 /**
  * Classe controladora da barra de cima
  * 
- * @author Ênio José
+ * @author ï¿½nio Josï¿½
  */
 public class ControladorToolbar extends Controlador
 {
 	@FXML private Button voltar;
-	@FXML private Button avançar;
+	@FXML private Button avanÃ§ar;
 	
 	@FXML
 	void voltar()
@@ -20,8 +20,8 @@ public class ControladorToolbar extends Controlador
 	}
 	
 	@FXML
-	void avançar()
+	void avanÃ§ar()
 	{
-		System.out.println("Teste avançar");
+		System.out.println("Teste avanÃ§ar");
 	}
 }
