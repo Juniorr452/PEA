@@ -1,7 +1,7 @@
-package application.produtos.classes;
+package sistema_loja.classes.produtos;
 
-import application.interfaces.Produto;
 import javafx.scene.image.Image;
+import sistema_loja.interfaces.Produto;
 
 public class Livro implements Produto 
 {
@@ -21,30 +21,36 @@ public class Livro implements Produto
 	}
 	
 	@Override
-	public String getTitulo() {
+	public String getTitulo() 
+	{
 		return titulo;
 	}
 
 	@Override
-	public double getPreco() {
+	public double getPreco() 
+	{
 		return preco;
 	}
 	
 	@Override
-	public void setPreco(double valor) {
+	public void setPreco(double valor) 
+	{
 		preco = valor;
 	}
 
 	@Override
-	public Image getImage() {
+	public Image getImage() 
+	{
 		return imagem;
 	}
 	
-	public String getAutor() {
+	public String getAutor() 
+	{
 		return autor;
 	}
 	
-	public String getCategoria() {
+	public String getCategoria() 
+	{
 		return categoria;
 	}
 }

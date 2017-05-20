@@ -11,7 +11,7 @@ import javafx.scene.control.Button;
 public class ControladorToolbar extends Controlador
 {
 	@FXML private Button voltar;
-	@FXML private Button avançar;
+	@FXML private Button avancar;
 	
 	@FXML
 	void voltar()
@@ -20,7 +20,7 @@ public class ControladorToolbar extends Controlador
 	}
 	
 	@FXML
-	void avançar()
+	void avancar()
 	{
 		System.out.println("Teste avançar");
 	}
