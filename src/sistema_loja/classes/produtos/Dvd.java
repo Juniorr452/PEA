@@ -1,21 +1,21 @@
-package application.produtos.classes;
+package sistema_loja.classes.produtos;
 
-import application.interfaces.Produto;
 import javafx.scene.image.Image;
+import sistema_loja.interfaces.Produto;
 
-public class Cd implements Produto 
+public class Dvd implements Produto
 {
 	private String titulo;
-	private String cantor;
-	private String ano;
+	private String autor;
+	private String duracao;
 	private double preco;
 	private Image imagem;
-	
-	public Cd(String titulo, String cantor, String ano, double preco, Image imagem) 
+
+	public Dvd(String titulo, String autor, String duracao, double preco, Image imagem) 
 	{
 		this.titulo = titulo;
-		this.cantor = cantor;
-		this.ano = ano;
+		this.autor = autor;
+		this.duracao = duracao;
 		this.preco = preco;
 		this.imagem = imagem;
 	}
@@ -40,11 +40,14 @@ public class Cd implements Produto
 		return imagem;
 	}
 	
-	public String getCantor() {
-		return cantor;
+	public String getDuracao() {
+		return autor;
 	}
 	
-	public String getAno() {
-		return ano;
+	public String getAutor() {
+		return autor;
 	}
+
+	
+	
 }

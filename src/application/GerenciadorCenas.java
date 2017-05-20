@@ -1,14 +1,9 @@
-package application.controladores;
+package application;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
@@ -49,7 +44,7 @@ public abstract class GerenciadorCenas
 	 * Remove o elemento abaixo da toolbar
 	 * e adiciona outro (A tela que você quer ir).
 	 */
-	protected static void irPara(int indice) throws IOException
+	public static void irPara(int indice) throws IOException
 	{
 		root.getChildren().remove(fxml.get(indiceAtual));
 		root.getChildren().add(0, fxml.get(indice));

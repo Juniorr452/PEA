@@ -1,15 +1,19 @@
 package application;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import application.controladores.GerenciadorCenas;
+import application.controladores.Controlador;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import sistema_loja.classes.produtos.Cd;
+import sistema_loja.classes.produtos.Dvd;
+import sistema_loja.classes.produtos.Livro;
+import sistema_loja.interfaces.Produto;
 import javafx.scene.control.ScrollPane;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 
 public class Main extends Application 
@@ -19,7 +23,11 @@ public class Main extends Application
 	{
 		List<ScrollPane> fxml;
 		Pane root;
-
+		
+		// Vamos mandar a lista de produtos para a classe Controlador
+		// antes mesmo de carregar os arquivos .fxml.
+		Controlador.setListaProdutos(carregarProdutos());
+		
 		try 
 		{
 			// Carregar a toolbar.
@@ -42,5 +50,69 @@ public class Main extends Application
 	public static void main(String[] args) 
 	{
 		launch(args);
+	}
+	
+	/**
+	 * Método que irá carregar as imagens dos
+	 * produtos e as informações no nome do mesmo (Preço, autor...)
+	 * 
+	 * @return Uma lista com os produtos carregados
+	 */
+	public List<Produto> carregarProdutos()
+	{
+		List<Produto> produtos;
+		
+		String diretorioLocal;
+		File pastaLivros;
+		File pastaDVDs;
+		File pastaCDs;
+
+		String[] informacoes;
+		Image capa;
+		
+		// Irá pegar o diretório local da classe
+		diretorioLocal = getClass().getResource("imagens").getPath();	
+		
+		// Instanciar a lista, criar objetos contendo
+		// o diretório das pastas de cada tipo de produto.
+		produtos    = new ArrayList();
+		pastaLivros = new File(diretorioLocal + "/livros/");
+		pastaDVDs   = new File(diretorioLocal + "/dvds/");
+		pastaCDs    = new File(diretorioLocal + "/cds/");
+		
+		// A partir daqui, teremos 3 foreachs para
+		// pegar cada arquivo de cada tipo, criar uma instância
+		// dele e adicionar na lista de produtos.
+		for(File arquivo : pastaLivros.listFiles())
+		{
+			// Vai separar o nome do arquivo pelos
+			// tracinhos e colocar todos eles em um vetor.
+			informacoes = arquivo.getName().split("-");
+			capa = new Image(arquivo.toPath().toUri().toString());
+
+			// Adicionar o objeto à nossa lista.
+			produtos.add(new Livro(informacoes[0], informacoes[1], informacoes[2], 
+					               Double.parseDouble(informacoes[3]), capa));
+		}
+		
+		for(File arquivo : pastaDVDs.listFiles())
+		{
+			informacoes = arquivo.getName().split("-");
+			capa = new Image(arquivo.toPath().toUri().toString());
+
+			produtos.add(new Dvd(informacoes[0], informacoes[1], informacoes[2], 
+					               Double.parseDouble(informacoes[3]), capa));
+		}
+		
+		for(File arquivo : pastaCDs.listFiles())
+		{
+			informacoes = arquivo.getName().split("-");
+			capa = new Image(arquivo.toPath().toUri().toString());
+
+			produtos.add(new Cd(informacoes[0], informacoes[1], informacoes[2], 
+					               Double.parseDouble(informacoes[3]), capa));
+		}
+		
+		return produtos;
 	}
 }
