@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane hbarPolicy="NEVER" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" vmax="1.2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorProduto">
+   <content>
+      <VBox fillWidth="false" prefHeight="1409.0" prefWidth="1279.0" spacing="50.0">
+         <padding>
+            <Insets left="20.0" right="20.0" />
+         </padding>
+         <children>
+            <VBox prefHeight="599.0" prefWidth="849.0" translateX="335.0" translateY="20.0">
+               <children>
+                  <Label fx:id="tituloItem" text="Título">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="autorItem" text="autor" textFill="#727272" />
+                  <Label text="Descrição">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Text fx:id="descricaoItem" strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean tellus nisl, efficitur eu urna eleifend, laoreet consectetur neque. Nunc bibendum dictum varius. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras volutpat quis erat egestas sagittis. Phasellus elementum volutpat tellus, sed vestibulum justo pharetra vitae. Cras a nisl non est interdum ornare vitae nec sapien. Suspendisse in porta purus, eu aliquet sem. Suspendisse sit amet aliquet eros. Etiam tristique, nunc a vehicula dignissim, dolor odio scelerisque lectus, ac tempor tortor velit sed mi. Maecenas vel nunc tortor. Duis venenatis a leo vitae porta. Duis scelerisque pulvinar finibus. Maecenas tincidunt vel lacus at vestibulum. Maecenas sodales tortor quis ex bibendum venenatis." textAlignment="JUSTIFY" wrappingWidth="845.21875">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </Text>
+               </children>
+            </VBox>
+            <VBox prefHeight="620.0" prefWidth="300.0" translateY="-630.0">
+               <children>
+                  <ImageView fx:id="capaItem" fitHeight="300.0" fitWidth="300.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/cds/18%20Months-Calvin%20Harris-2012-12.99-.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin></ImageView>
+                  <HBox prefHeight="27.0" prefWidth="300.0">
+                     <children>
+                        <Label alignment="CENTER" text="Preço: R$" textAlignment="CENTER" textFill="#727272" HBox.hgrow="ALWAYS">
+                           <HBox.margin>
+                              <Insets bottom="20.0" right="5.0" top="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="precoItem" text="25,00" textFill="#727272">
+                           <HBox.margin>
+                              <Insets bottom="20.0" right="20.0" top="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Button fx:id="adicionarCarrinho" mnemonicParsing="false" onAction="#adicionarCarrinho" prefHeight="35.0" prefWidth="300.0" text="Adicionar ao carrinho" />
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </content>
+</ScrollPane>

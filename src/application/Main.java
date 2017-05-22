@@ -37,6 +37,7 @@ public class Main extends Application
 			fxml = new ArrayList();
 			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Principal.fxml")));
 			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Funcionario.fxml")));
+			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Produto.fxml")));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
 			GerenciadorCenas.inicializar(janela, root, fxml);
@@ -53,8 +54,8 @@ public class Main extends Application
 	}
 	
 	/**
-	 * Método que irá carregar as imagens dos
-	 * produtos e as informações no nome do mesmo (Preço, autor...)
+	 * Mï¿½todo que irï¿½ carregar as imagens dos
+	 * produtos e as informaï¿½ï¿½es no nome do mesmo (Preï¿½o, autor...)
 	 * 
 	 * @return Uma lista com os produtos carregados
 	 */
@@ -70,18 +71,18 @@ public class Main extends Application
 		String[] informacoes;
 		Image capa;
 		
-		// Irá pegar o diretório local da classe
+		// Irï¿½ pegar o diretï¿½rio local da classe
 		diretorioLocal = getClass().getResource("imagens").getPath();	
 		
 		// Instanciar a lista, criar objetos contendo
-		// o diretório das pastas de cada tipo de produto.
+		// o diretï¿½rio das pastas de cada tipo de produto.
 		produtos    = new ArrayList();
 		pastaLivros = new File(diretorioLocal + "/livros/");
 		pastaDVDs   = new File(diretorioLocal + "/dvds/");
 		pastaCDs    = new File(diretorioLocal + "/cds/");
 		
 		// A partir daqui, teremos 3 foreachs para
-		// pegar cada arquivo de cada tipo, criar uma instância
+		// pegar cada arquivo de cada tipo, criar uma instï¿½ncia
 		// dele e adicionar na lista de produtos.
 		for(File arquivo : pastaLivros.listFiles())
 		{
@@ -90,7 +91,8 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 
-			// Adicionar o objeto à nossa lista.
+			// Adicionar o objeto ï¿½ nossa lista.
+			// 0 - Titulo / 1 - Autor / 2 - Categoria / 3 - Preco / Capa - Imagem
 			produtos.add(new Livro(informacoes[0], informacoes[1], informacoes[2], 
 					               Double.parseDouble(informacoes[3]), capa));
 		}

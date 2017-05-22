@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import java.lang.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
@@ -14,14 +15,14 @@
          <items>
             <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
             <Button fx:id="avancar" mnemonicParsing="false" onAction="#avancar" prefHeight="34.0" prefWidth="9.0" text="&gt;" />
-            <Pane prefHeight="44.0" prefWidth="504.0" />
+            <Pane prefHeight="44.0" prefWidth="534.0" />
             <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
                <image>
                   <Image url="@../imagens/logo.png" />
                </image>
             </ImageView>
-            <Pane prefHeight="0.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-            <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" />
+            <Button fx:id="carrinho" alignment="CENTER" mnemonicParsing="false" onAction="#carrinho" style="-fx-graphic: url(&quot;imagens/carrinho.png&quot;);" text="Carrinho" translateX="320.0" />
+            <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" translateX="330.0" />
          </items>
       </ToolBar>
    </children>

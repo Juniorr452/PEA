@@ -1,4 +1,4 @@
-package sistema_loja.classes;
+package sistema_loja.classes.vendas;
 
 
 import java.util.List;

@@ -19,7 +19,7 @@ import sistema_loja.interfaces.Produto;
 /**
  * Controlador da tela principal.
  * 
- * @author Ênio José
+ * @author ï¿½nio Josï¿½
  */
 public class ControladorTelaPrincipal extends Controlador implements Initializable
 {
@@ -30,12 +30,12 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 	@FXML private PasswordField campoSenhaFuncionario;
 	
 	/**
-	 * Esse método é chamado após os elementos relacionados
+	 * Esse mï¿½todo ï¿½ chamado apï¿½s os elementos relacionados
 	 * ao nosso .fxml estarem inicializados. Assim, podemos
-	 * manipulá-los sem o risco de ocorrer um NUllPointerException.
+	 * manipulï¿½-los sem o risco de ocorrer um NUllPointerException.
 	 * 
 	 * Nele, vamos identificar cada produto da nossa lista
-	 * de produtos e inserí-los em sua seção.
+	 * de produtos e inserï¿½-los em sua seï¿½ï¿½o.
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -43,13 +43,13 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 		Item item;
 		
 		// Vai adicionar cada produto da nossa lista
-		// em sua respectiva seção.
+		// em sua respectiva seï¿½ï¿½o.
 		for (Produto p : produtos)
 		{
-			item = new Item(p.getImage(), p.getTitulo(), p.getAutor());
+			item = new Item(p.getImage(), p.getTitulo(), p.getAutor(), p.getPreco());
 			
-			// Descobrir a instância da variável para
-			// saber a seção em que botar.
+			// Descobrir a instï¿½ncia da variï¿½vel para
+			// saber a seï¿½ï¿½o em que botar.
 			if (p instanceof Livro)
 				secaoLivros.getChildren().add(item);
 			else if (p instanceof Dvd)
@@ -62,7 +62,7 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 	/**
 	 * Chamado pressionar uma tecla no passwordField.
 	 * <p>
-	 * Verifica se o usuário deu enter e valida o login.
+	 * Verifica se o usuï¿½rio deu enter e valida o login.
 	 */
     @FXML
     private void validarSenhaFuncionario(KeyEvent event) throws IOException

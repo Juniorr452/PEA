@@ -2,6 +2,7 @@ package application.controladores;
 
 import java.io.IOException;
 
+import application.GerenciadorCenas;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -13,22 +14,23 @@ import javafx.scene.layout.VBox;
  * Classe de uma VBox customizada.
  * <p>
  * Dentro dela, temos um ImageView e
- * duas Labels. Ao criar uma instância
+ * duas Labels. Ao criar uma instï¿½ncia
  * dessa classe em qualquer outro lugar,
- * é possível colocá-la dentro de um outro .fxml.
+ * ï¿½ possï¿½vel colocï¿½-la dentro de um outro .fxml.
  * 
- * Mais informações sobre criar elementos customizados em:
+ * Mais informaï¿½ï¿½es sobre criar elementos customizados em:
  * http://docs.oracle.com/javafx/2/fxml_get_started/custom_control.htm
  * 
- * @author Ênio José
+ * @author ï¿½nio Josï¿½
  */
 public class Item extends VBox
 {
 	@FXML private ImageView capa;
 	@FXML private Label titulo;
 	@FXML private Label autor;
+	private double preco;
 	
-	public Item(Image imagem, String titulo, String autor)
+	public Item(Image imagem, String titulo, String autor, double preco)
 	{
 		// Preparar o FxmlLoader para carregar
 		// o arquivo posteriormente.
@@ -36,7 +38,7 @@ public class Item extends VBox
 	                getClass().getResource("../cenas/Item.fxml"));
 
 		// Setar a raiz e controlador do .fxml a ser carregado
-		// como essa instância.
+		// como essa instï¿½ncia.
 	    fxmlLoader.setRoot(this);
 	    fxmlLoader.setController(this);
 
@@ -53,12 +55,14 @@ public class Item extends VBox
 		this.titulo.setText(titulo);
 		this.autor.setText(autor);
 		capa.setImage(imagem);
+		this.preco = preco;
 	}
 	
 	@FXML private void click() throws IOException
 	{
-		// Coloquei isso só para testar mesmo, pode deletar dps.
-		System.out.println("Item selecionado: " + titulo.getText());
-		//GerenciadorCenas.irPara(2);
+		
+		ControladorProduto.receberDados(capa.getImage(), titulo.getText(), 
+															autor.getText(), preco);
+		GerenciadorCenas.irPara(2);
 	}
 }
