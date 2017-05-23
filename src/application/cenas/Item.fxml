@@ -23,9 +23,9 @@
             <Insets top="10.0" />
          </VBox.margin>
       </Label>
-      <Label fx:id="autor" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="204.0" text="Autor">
+      <Label fx:id="autor" alignment="CENTER" contentDisplay="CENTER" prefHeight="14.0" prefWidth="204.0" text="Autor" textFill="#727272">
          <font>
-            <Font name="Myriad Apple Medium" size="15.0" />
+            <Font size="12.0" />
          </font>
          <VBox.margin>
             <Insets top="-5.0" />

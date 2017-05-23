@@ -8,22 +8,20 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane hbarPolicy="NEVER" layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" vmax="1.2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorTelaPrincipal">
+<ScrollPane hbarPolicy="NEVER" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" vmax="1.2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorTelaPrincipal">
    <content>
       <VBox fillWidth="false" prefHeight="1526.0" prefWidth="1280.0" spacing="50.0">
          <children>
             <VBox alignment="CENTER" prefHeight="277.0" prefWidth="1220.0" spacing="20.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Bem-Vindo, cliente." textAlignment="CENTER" wrappingWidth="1220.0">
-                     <font>
-                        <Font name="Myriad Apple Medium" size="48.0" />
-                     </font>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Experimente nosso novo sistema de compras agora mesmo." textAlignment="CENTER" wrappingWidth="476.0">
-                     <font>
-                        <Font name="Myriad Apple Medium" size="24.0" />
-                     </font>
-                  </Text>
+                  <ImageView fitHeight="277.0" fitWidth="1220.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../imagens/capa2.jpg" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </ImageView>
                </children>
             </VBox>
             <Pane prefHeight="1064.0" prefWidth="1220.0">

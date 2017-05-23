@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutY="60.0" prefHeight="661.0" prefWidth="1280.0" stylesheets="@application.css" vbarPolicy="NEVER" vmax="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorFuncionario">
+<ScrollPane hbarPolicy="NEVER" hmax="0.0" layoutY="55.0" prefHeight="661.0" prefWidth="1280.0" stylesheets="@application.css" vbarPolicy="NEVER" vmax="0.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorFuncionario">
    <content>
       <VBox fillWidth="false" prefHeight="650.0" prefWidth="1167.0" spacing="20.0">
          <children>

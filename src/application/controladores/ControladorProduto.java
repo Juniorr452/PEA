@@ -16,6 +16,7 @@ public class ControladorProduto extends Controlador implements Initializable
 	@FXML private ImageView capaItem;
 	@FXML private Label autorItem;
 	@FXML private Label precoItem;
+	@FXML private Label msgCarrinho;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -30,6 +31,12 @@ public class ControladorProduto extends Controlador implements Initializable
 	void adicionarCarrinho() 
 	{
 		System.out.println("Adicionando no carrinho");
+		
+		//Verificamos se possui quantidade disponivel do produto para compra.
+		//Se sim, seta o label com uma msg de sucesso
+		//Se nao, seta com a mensagem "Produto indisponivel
+		
+		msgCarrinho.setText("Produto adicionado ao carrinho");
 	}
 	
 	@FXML
