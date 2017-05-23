@@ -31,4 +31,11 @@ public class ControladorProduto extends Controlador implements Initializable
 	{
 		System.out.println("Adicionando no carrinho");
 	}
+	
+	@FXML
+	void comprar()
+	{
+		System.out.println("Comprando " + produtoSelecionado.getTitulo() +
+				             " por R$ " + produtoSelecionado.getPreco());
+	}
 }

@@ -11,18 +11,27 @@
 
 <AnchorPane cacheHint="SPEED" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorToolbar">
    <children>
-      <ToolBar layoutX="200.0" layoutY="84.0" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ToolBar layoutX="200.0" layoutY="84.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="40.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
-            <Button fx:id="avancar" mnemonicParsing="false" onAction="#avancar" prefHeight="34.0" prefWidth="9.0" text="&gt;" />
-            <Pane prefHeight="44.0" prefWidth="534.0" />
-            <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
-               <image>
-                  <Image url="@../imagens/logo.png" />
-               </image>
-            </ImageView>
-            <Button fx:id="carrinho" alignment="CENTER" mnemonicParsing="false" onAction="#carrinho" style="-fx-graphic: url(&quot;imagens/carrinho.png&quot;);" text="Carrinho" translateX="320.0" />
-            <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" translateX="330.0" />
+            <HBox alignment="CENTER" prefHeight="44.0" prefWidth="1250.0">
+               <children>
+                  <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
+                  <Button fx:id="avancar" mnemonicParsing="false" onAction="#avancar" prefHeight="34.0" prefWidth="9.0" text="&gt;" />
+                  <Pane prefHeight="44.0" prefWidth="521.0" />
+                  <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../imagens/logo.png" />
+                     </image>
+                  </ImageView>
+                  <Pane prefHeight="44.0" prefWidth="290.0" />
+                  <Button fx:id="carrinho" alignment="CENTER" mnemonicParsing="false" onAction="#carrinho" style="-fx-graphic: url(&quot;imagens/carrinho.png&quot;);" text="Carrinho">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </Button>
+                  <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" />
+               </children>
+            </HBox>
          </items>
       </ToolBar>
    </children>
