@@ -71,7 +71,7 @@
                      <children>
                         <Button fx:id="adicionarCarrinho" defaultButton="true" mnemonicParsing="false" onAction="#adicionarCarrinho" prefHeight="34.0" prefWidth="225.0" text="Comprar" wrapText="true">
                            <font>
-                              <Font name="Myriad Apple Text" size="17.0" />
+                              <Font size="15.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="8.0" />
@@ -79,7 +79,7 @@
                         </Button>
                         <Button fx:id="adicionarCarrinho1" mnemonicParsing="false" onAction="#adicionarCarrinho" prefHeight="34.0" prefWidth="314.0" text="Adicionar ao carrinho" wrapText="true">
                            <font>
-                              <Font name="Myriad Apple Medium" size="17.0" />
+                              <Font size="15.0" />
                            </font>
                            <HBox.margin>
                               <Insets right="8.0" />
