@@ -22,7 +22,7 @@
                         <Font name="Myriad Apple Bold" size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="autorItem" text="autor" textFill="#727272" />
+                  <Label fx:id="autorItem" text="autor" textFill="#949494" />
                   <Label text="Descrição">
                      <VBox.margin>
                         <Insets top="20.0" />
