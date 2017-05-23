@@ -46,7 +46,7 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 		// em sua respectiva se��o.
 		for (Produto p : produtos)
 		{
-			item = new Item(p.getImage(), p.getTitulo(), p.getAutor(), p.getPreco());
+			item = new Item(p);
 			
 			// Descobrir a inst�ncia da vari�vel para
 			// saber a se��o em que botar.

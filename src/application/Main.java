@@ -34,10 +34,9 @@ public class Main extends Application
 			root = FXMLLoader.load(getClass().getResource("cenas/Toolbar.fxml"));
 			
 			// Carregar e fazer uma lista com todas as outras telas.
-			fxml = new ArrayList();
+			fxml = new ArrayList<ScrollPane>();
 			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Principal.fxml")));
 			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Funcionario.fxml")));
-			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Produto.fxml")));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
 			GerenciadorCenas.inicializar(janela, root, fxml);
@@ -76,7 +75,7 @@ public class Main extends Application
 		
 		// Instanciar a lista, criar objetos contendo
 		// o diret�rio das pastas de cada tipo de produto.
-		produtos    = new ArrayList();
+		produtos    = new ArrayList<Produto>();
 		pastaLivros = new File(diretorioLocal + "/livros/");
 		pastaDVDs   = new File(diretorioLocal + "/dvds/");
 		pastaCDs    = new File(diretorioLocal + "/cds/");

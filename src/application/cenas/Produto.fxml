@@ -19,7 +19,7 @@
                <children>
                   <Label fx:id="tituloItem" text="Título">
                      <font>
-                        <Font name="System Bold" size="24.0" />
+                        <Font name="Myriad Apple Bold" size="24.0" />
                      </font>
                   </Label>
                   <Label fx:id="autorItem" text="autor" textFill="#727272" />
@@ -38,7 +38,7 @@
                   </Text>
                </children>
             </VBox>
-            <VBox prefHeight="620.0" prefWidth="300.0" translateY="-630.0">
+            <VBox alignment="TOP_CENTER" prefHeight="620.0" prefWidth="300.0" translateY="-630.0">
                <children>
                   <ImageView fx:id="capaItem" fitHeight="300.0" fitWidth="300.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -47,14 +47,14 @@
                      <VBox.margin>
                         <Insets />
                      </VBox.margin></ImageView>
-                  <HBox prefHeight="27.0" prefWidth="300.0">
+                  <HBox alignment="CENTER" prefHeight="36.0" prefWidth="300.0">
                      <children>
                         <Label alignment="CENTER" text="Preço: R$" textAlignment="CENTER" textFill="#727272" HBox.hgrow="ALWAYS">
                            <HBox.margin>
                               <Insets bottom="20.0" right="5.0" top="20.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="18.0" />
+                              <Font name="Myriad Apple Medium" size="18.0" />
                            </font>
                         </Label>
                         <Label fx:id="precoItem" text="25,00" textFill="#727272">
@@ -62,12 +62,34 @@
                               <Insets bottom="20.0" right="20.0" top="20.0" />
                            </HBox.margin>
                            <font>
-                              <Font size="18.0" />
+                              <Font name="Myriad Apple Medium" size="18.0" />
                            </font>
                         </Label>
                      </children>
                   </HBox>
-                  <Button fx:id="adicionarCarrinho" mnemonicParsing="false" onAction="#adicionarCarrinho" prefHeight="35.0" prefWidth="300.0" text="Adicionar ao carrinho" />
+                  <HBox prefHeight="23.0" prefWidth="300.0" spacing="10.0">
+                     <children>
+                        <Button fx:id="adicionarCarrinho" defaultButton="true" mnemonicParsing="false" onAction="#adicionarCarrinho" prefHeight="34.0" prefWidth="225.0" text="Comprar" wrapText="true">
+                           <font>
+                              <Font name="Myriad Apple Text" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="adicionarCarrinho1" mnemonicParsing="false" onAction="#adicionarCarrinho" prefHeight="34.0" prefWidth="314.0" text="Adicionar ao carrinho" wrapText="true">
+                           <font>
+                              <Font name="Myriad Apple Medium" size="17.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="8.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
                </children>
             </VBox>
          </children>

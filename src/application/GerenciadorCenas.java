@@ -1,6 +1,5 @@
 package application;
 
-import java.io.IOException;
 import java.util.List;
 
 import javafx.scene.Scene;
@@ -19,17 +18,15 @@ public abstract class GerenciadorCenas
 	private static Pane  root;
 	private static Stage janela;
 	private static List<ScrollPane> fxml;
-	private static int indiceAtual;
 
 	public static void inicializar(Stage j, Pane r, List<ScrollPane> cena)
 	{
-		indiceAtual = 0;
 		janela = j;
 		fxml   = cena;
 		root   = r;
 		
 		// Vamos adicionar a tela principal em baixo do toolbar.
-		root.getChildren().add(0, fxml.get(0));
+		root.getChildren().add(fxml.get(0));
 		
 		// Vamos colocar isso como a nossa cena, fazer
 		// algumas configurações e mostrar a janela.
@@ -44,10 +41,15 @@ public abstract class GerenciadorCenas
 	 * Remove o elemento abaixo da toolbar
 	 * e adiciona outro (A tela que você quer ir).
 	 */
-	public static void irPara(int indice) throws IOException
+	public static void irPara(int indice)
 	{
-		root.getChildren().remove(fxml.get(indiceAtual));
-		root.getChildren().add(0, fxml.get(indice));
-		indiceAtual = indice;
+		root.getChildren().remove(1);
+		root.getChildren().add(fxml.get(indice));
+	}
+	
+	public static void irPara(ScrollPane p)
+	{
+		root.getChildren().remove(1);
+		root.getChildren().add(p);
 	}
 }

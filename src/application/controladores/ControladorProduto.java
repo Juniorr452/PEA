@@ -1,31 +1,34 @@
 package application.controladores;
 
-import java.awt.Label;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
-import javafx.scene.text.Text;
 
-public class ControladorProduto extends Controlador {
-	
+public class ControladorProduto extends Controlador implements Initializable
+{
 	@FXML private Button adicionarCarrinho;
-	@FXML private static Label tituloItem;
-	@FXML private static ImageView capaItem;
-	@FXML private static Label autorItem;
-	@FXML private static Label precoItem;
+	@FXML private Label tituloItem;
+	@FXML private ImageView capaItem;
+	@FXML private Label autorItem;
+	@FXML private Label precoItem;
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources)
+	{
+		tituloItem.setText(produtoSelecionado.getTitulo());
+		capaItem.setImage(produtoSelecionado.getImage());
+		autorItem.setText(produtoSelecionado.getAutor());
+		precoItem.setText(Double.toString(produtoSelecionado.getPreco()));
+	}
 	
 	@FXML
 	void adicionarCarrinho() 
 	{
 		System.out.println("Adicionando no carrinho");
-	}
-	
-	public static void receberDados(Image img, String tit, String aut, double prec) {
-		tituloItem.setText(tit);
-		capaItem.setImage(img);
-		autorItem.setText(aut);
-		precoItem.setText(Double.toString(prec));
 	}
 }

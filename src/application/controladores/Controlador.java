@@ -12,6 +12,7 @@ public abstract class Controlador
 	protected final int CARRINHO    = 3;
 	
 	protected static List<Produto> produtos; 
+	protected static Produto produtoSelecionado;
 	
 	public static void setListaProdutos(List<Produto> p)
 	{

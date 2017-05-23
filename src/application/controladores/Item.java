@@ -6,9 +6,10 @@ import application.GerenciadorCenas;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
+import sistema_loja.interfaces.Produto;
 
 /**
  * Classe de uma VBox customizada.
@@ -28,9 +29,10 @@ public class Item extends VBox
 	@FXML private ImageView capa;
 	@FXML private Label titulo;
 	@FXML private Label autor;
+	private Produto produto;
 	private double preco;
 	
-	public Item(Image imagem, String titulo, String autor, double preco)
+	public Item(Produto p)
 	{
 		// Preparar o FxmlLoader para carregar
 		// o arquivo posteriormente.
@@ -52,17 +54,16 @@ public class Item extends VBox
 	    	throw new RuntimeException(exception);
 	    }
 		
-		this.titulo.setText(titulo);
-		this.autor.setText(autor);
-		capa.setImage(imagem);
-		this.preco = preco;
+	    this.produto = p;
+		this.titulo.setText(p.getTitulo());
+		this.autor.setText(p.getAutor());
+		capa.setImage(p.getImage());
+		this.preco = p.getPreco();
 	}
 	
 	@FXML private void click() throws IOException
 	{
-		
-		ControladorProduto.receberDados(capa.getImage(), titulo.getText(), 
-															autor.getText(), preco);
-		GerenciadorCenas.irPara(2);
+		Controlador.produtoSelecionado = this.produto;
+		GerenciadorCenas.irPara((ScrollPane) FXMLLoader.load(getClass().getResource("../cenas/Produto.fxml")));
 	}
 }
