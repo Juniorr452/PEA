@@ -26,7 +26,7 @@
             </VBox>
             <HBox alignment="TOP_CENTER" prefHeight="347.0" prefWidth="1240.0" spacing="250.0">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="301.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="Button 1" textAlignment="CENTER" wrapText="true">
+                  <Button mnemonicParsing="false" onAction="#cadastrarDvd" prefHeight="301.0" prefWidth="200.0" style="-fx-background-color: TRANSPARENT;" text="Button 1" textAlignment="CENTER" wrapText="true">
                      <font>
                         <Font name="Myriad Apple Medium" size="32.0" />
                      </font>

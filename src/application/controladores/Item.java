@@ -64,6 +64,6 @@ public class Item extends VBox
 	@FXML private void click() throws IOException
 	{
 		Controlador.produtoSelecionado = this.produto;
-		GerenciadorCenas.irPara((ScrollPane) FXMLLoader.load(getClass().getResource("../cenas/Produto.fxml")));
+		GerenciadorCenas.irPara(2);
 	}
 }

@@ -21,8 +21,10 @@ public class Main extends Application
 	@Override
 	public void start(Stage janela) 
 	{
-		List<ScrollPane> fxml;
-		Pane root;
+		Pane       toolbar;
+		FXMLLoader telaPrincipalLoader;
+		FXMLLoader telaFuncionarioLoader;
+		FXMLLoader telaProdutoLoader;
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
@@ -30,16 +32,18 @@ public class Main extends Application
 		
 		try 
 		{
-			// Carregar a toolbar.
-			root = FXMLLoader.load(getClass().getResource("cenas/Toolbar.fxml"));
+			// Vamos carregar a toolbar e criar as instâncias dos loaders.
 			
-			// Carregar e fazer uma lista com todas as outras telas.
-			fxml = new ArrayList<ScrollPane>();
-			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Principal.fxml")));
-			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Funcionario.fxml")));
+			// Esses loaders vão servir para carregar as cenas dentro
+			// da GerenciadorCenas mais tarde.
+			toolbar = FXMLLoader.load(getClass().getResource("cenas/Toolbar.fxml"));
+			telaPrincipalLoader = new FXMLLoader(getClass().getResource("cenas/Principal.fxml"));
+			telaFuncionarioLoader = new FXMLLoader(getClass().getResource("cenas/Funcionario.fxml"));
+			telaProdutoLoader = new FXMLLoader(getClass().getResource("cenas/Produto.fxml"));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
-			GerenciadorCenas.inicializar(janela, root, fxml);
+			GerenciadorCenas.inicializar(janela, toolbar, telaPrincipalLoader,
+					                     telaFuncionarioLoader, telaProdutoLoader);
 		} 
 		catch(Exception e) 
 		{

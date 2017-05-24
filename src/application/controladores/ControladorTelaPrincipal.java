@@ -39,7 +39,7 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
-	{
+	{		
 		Item item;
 		
 		// Vai adicionar cada produto da nossa lista
