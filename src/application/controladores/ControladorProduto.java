@@ -34,7 +34,7 @@ public class ControladorProduto extends Controlador implements Initializable
 		
 		//Verificamos se possui quantidade disponivel do produto para compra.
 		//Se sim, seta o label com uma msg de sucesso
-		//Se nao, seta com a mensagem "Produto indisponivel
+		//Se nao, seta com a mensagem "Produto indisponivel"
 		
 		msgCarrinho.setText("Produto adicionado ao carrinho");
 	}

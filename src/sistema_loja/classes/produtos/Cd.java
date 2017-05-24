@@ -10,14 +10,16 @@ public class Cd implements Produto
 	private String ano;
 	private double preco;
 	private Image imagem;
+	private int quantidade;
 	
-	public Cd(String titulo, String autor, String ano, double preco, Image imagem) 
+	public Cd(String titulo, String autor, String ano, double preco, Image imagem, int quantidade) 
 	{
 		this.titulo = titulo;
 		this.autor = autor;
 		this.ano = ano;
 		this.preco = preco;
 		this.imagem = imagem;
+		this.quantidade = quantidade;
 	}
 
 	@Override
@@ -28,11 +30,6 @@ public class Cd implements Produto
 	@Override
 	public double getPreco() {
 		return preco;
-	}
-	
-	@Override
-	public void setPreco(double valor) {
-		preco = valor;
 	}
 
 	@Override
@@ -47,5 +44,19 @@ public class Cd implements Produto
 	public String getAno() {
 		return ano;
 	}
+
+	@Override
+	public int getQuantidade() {
+		return this.quantidade;
+	}
+
+	@Override
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}	
 	
+	@Override
+	public void setPreco(double valor) {
+		preco = valor;
+	}
 }

@@ -8,21 +8,19 @@ import application.controladores.Controlador;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
-import sistema_loja.classes.produtos.Cd;
-import sistema_loja.classes.produtos.Dvd;
-import sistema_loja.classes.produtos.Livro;
+import sistema_loja.classes.vendas.Cadastro;
 import sistema_loja.interfaces.Produto;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
-import javafx.scene.layout.Pane;
 
 public class Main extends Application 
 {
 	@Override
 	public void start(Stage janela) 
 	{
-		List<ScrollPane> fxml;
-		Pane root;
+		FXMLLoader toolbar;
+		FXMLLoader telaPrincipalLoader;
+		FXMLLoader telaFuncionarioLoader;
+		FXMLLoader telaProdutoLoader;
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
@@ -30,16 +28,18 @@ public class Main extends Application
 		
 		try 
 		{
-			// Carregar a toolbar.
-			root = FXMLLoader.load(getClass().getResource("cenas/Toolbar.fxml"));
+			// Vamos carregar a toolbar e criar as instâncias dos loaders.
 			
-			// Carregar e fazer uma lista com todas as outras telas.
-			fxml = new ArrayList<ScrollPane>();
-			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Principal.fxml")));
-			fxml.add(FXMLLoader.load(getClass().getResource("cenas/Funcionario.fxml")));
+			// Esses loaders vão servir para carregar as cenas dentro
+			// da GerenciadorCenas mais tarde.
+			toolbar = new FXMLLoader(getClass().getResource("cenas/Toolbar.fxml"));
+			telaPrincipalLoader = new FXMLLoader(getClass().getResource("cenas/Principal.fxml"));
+			telaFuncionarioLoader = new FXMLLoader(getClass().getResource("cenas/Funcionario.fxml"));
+			telaProdutoLoader = new FXMLLoader(getClass().getResource("cenas/Produto.fxml"));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
-			GerenciadorCenas.inicializar(janela, root, fxml);
+			GerenciadorCenas.inicializar(janela, toolbar, telaPrincipalLoader,
+					                     telaFuncionarioLoader, telaProdutoLoader);
 		} 
 		catch(Exception e) 
 		{
@@ -61,6 +61,7 @@ public class Main extends Application
 	public List<Produto> carregarProdutos()
 	{
 		List<Produto> produtos;
+		Cadastro cadastro;
 		
 		String diretorioLocal;
 		File pastaLivros;
@@ -80,29 +81,36 @@ public class Main extends Application
 		pastaDVDs   = new File(diretorioLocal + "/dvds/");
 		pastaCDs    = new File(diretorioLocal + "/cds/");
 		
+		// Criar uma instância da classe cadastro
+		// para cadastrar os produtos.
+		cadastro = new Cadastro(produtos);
+		
 		// A partir daqui, teremos 3 foreachs para
 		// pegar cada arquivo de cada tipo, criar uma instï¿½ncia
 		// dele e adicionar na lista de produtos.
 		for(File arquivo : pastaLivros.listFiles())
-		{
+		{		
 			// Vai separar o nome do arquivo pelos
 			// tracinhos e colocar todos eles em um vetor.
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
-
-			// Adicionar o objeto ï¿½ nossa lista.
-			// 0 - Titulo / 1 - Autor / 2 - Categoria / 3 - Preco / Capa - Imagem
-			produtos.add(new Livro(informacoes[0], informacoes[1], informacoes[2], 
-					               Double.parseDouble(informacoes[3]), capa));
+			
+			cadastro.cadastrarLivro(
+					informacoes[0],  // Título
+					informacoes[1],  // Autor
+					informacoes[2],  // Categoria
+					informacoes[3],  // Preco 
+					capa,            // Imagem da capa
+					informacoes[4]); // Quantidade
 		}
 		
 		for(File arquivo : pastaDVDs.listFiles())
 		{
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
-
-			produtos.add(new Dvd(informacoes[0], informacoes[1], informacoes[2], 
-					               Double.parseDouble(informacoes[3]), capa));
+			
+			cadastro.cadastrarDVD(informacoes[0], informacoes[1],
+					informacoes[2], informacoes[3], capa, informacoes[4]);
 		}
 		
 		for(File arquivo : pastaCDs.listFiles())
@@ -110,8 +118,8 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 
-			produtos.add(new Cd(informacoes[0], informacoes[1], informacoes[2], 
-					               Double.parseDouble(informacoes[3]), capa));
+			cadastro.cadastrarCD(informacoes[0], informacoes[1],
+					informacoes[2], informacoes[3], capa, informacoes[4]);
 		}
 		
 		return produtos;
