@@ -10,14 +10,16 @@ public class Livro implements Produto
 	private String categoria;
 	private double preco;
 	private Image imagem;
+	private int quantidade;
 	
-	public Livro(String titulo, String autor, String categoria, double preco, Image imagem) 
+	public Livro(String titulo, String autor, String categoria, double preco, Image imagem, int quantidade) 
 	{
 		this.titulo = titulo;
 		this.autor = autor;
 		this.categoria = categoria;
 		this.preco = preco;
 		this.imagem = imagem;
+		this.quantidade = quantidade;
 	}
 	
 	@Override
@@ -30,12 +32,6 @@ public class Livro implements Produto
 	public double getPreco() 
 	{
 		return preco;
-	}
-	
-	@Override
-	public void setPreco(double valor) 
-	{
-		preco = valor;
 	}
 
 	@Override
@@ -54,4 +50,18 @@ public class Livro implements Produto
 		return categoria;
 	}
 	
+	@Override
+	public int getQuantidade() {
+		return this.quantidade;
+	}
+
+	@Override
+	public void setQuantidade(int quantidade) {
+		this.quantidade = quantidade;
+	}	
+	
+	@Override
+	public void setPreco(double valor) {
+		preco = valor;
+	}
 }
