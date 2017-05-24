@@ -51,6 +51,7 @@ public class Cd implements Produto
 	}
 
 	@Override
+	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}	
 	
