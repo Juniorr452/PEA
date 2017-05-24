@@ -11,9 +11,10 @@ public class Carrinho
 	List<Produto> produtosCarrinho;
 	double valorTotal;
 	
-	Carrinho(){
+	public Carrinho()
+	{
 		valorTotal = 0;
-		produtosCarrinho = new ArrayList();
+		produtosCarrinho = new ArrayList<Produto>();
 	}
 
 	public void addCarrinho(Produto elementoCarrinho){
