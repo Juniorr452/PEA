@@ -13,22 +13,22 @@ public class Janelas
 {
 	 /**
      * Mostra uma mensagem simples na tela.
-     * @param título - Título da Janela.
+     * @param tï¿½tulo - Tï¿½tulo da Janela.
      * @param header - Texto da parte de cima da janela.
-     * @param conteúdo - Texto da parte de baixo da janela.
-     * @param alertType - Tipo de alerta (Aviso, Informação, Warning...).
+     * @param conteï¿½do - Texto da parte de baixo da janela.
+     * @param alertType - Tipo de alerta (Aviso, Informaï¿½ï¿½o, Warning...).
      */
-    public static void mensagem(String título, String conteúdo, AlertType alertType)
+    public static void mensagem(String titulo, String conteudo, AlertType alertType)
 	{	
 		Alert alert = new Alert(alertType);
-		alert.setTitle(título);
+		alert.setTitle(titulo);
 		alert.setHeaderText(null);
-		alert.setContentText(conteúdo);
+		alert.setContentText(conteudo);
 		alert.showAndWait();
 	}
     
     /**
-     * Vai abrir uma janela para o usuário escolher
+     * Vai abrir uma janela para o usuï¿½rio escolher
      * a imagem do produto a ser cadastrado.
      * 
      * @return A imagem escolhida pelo funcionario.
@@ -38,7 +38,7 @@ public class Janelas
     	Image i;
     	
     	// Essa classe FileChooser vai nos permitir
-    	// abrir uma janela para o usuário abrir um arquivo.
+    	// abrir uma janela para o usuï¿½rio abrir um arquivo.
     	FileChooser fc = new FileChooser();
     	
     	fc.setTitle("Escolha uma imagem");
@@ -51,12 +51,12 @@ public class Janelas
     		new ExtensionFilter("Imagem PNG", "*.png")
     	);
     	
-    	// Vamos criar uma nova instância de Stage
+    	// Vamos criar uma nova instï¿½ncia de Stage
     	// para mostrar a janela de escolher imagem.
     	Stage novaJanela = new Stage();
 
-    	// A função showOpenDialog vai receber a nossa janela
-    	// e retornar o arquivo selecionado pelo funcionário.
+    	// A funï¿½ï¿½o showOpenDialog vai receber a nossa janela
+    	// e retornar o arquivo selecionado pelo funcionï¿½rio.
     	File arquivoSelecionado = fc.showOpenDialog(novaJanela);
     	
     	// Vamos carregar a imagem com o caminho do arquivo.

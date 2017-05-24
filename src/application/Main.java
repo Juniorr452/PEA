@@ -21,6 +21,7 @@ public class Main extends Application
 		FXMLLoader telaPrincipalLoader;
 		FXMLLoader telaFuncionarioLoader;
 		FXMLLoader telaProdutoLoader;
+		FXMLLoader telaCarrinhoLoader;
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
@@ -28,18 +29,19 @@ public class Main extends Application
 		
 		try 
 		{
-			// Vamos carregar a toolbar e criar as instâncias dos loaders.
+			// Vamos carregar a toolbar e criar as instï¿½ncias dos loaders.
 			
-			// Esses loaders vão servir para carregar as cenas dentro
+			// Esses loaders vï¿½o servir para carregar as cenas dentro
 			// da GerenciadorCenas mais tarde.
 			toolbar = new FXMLLoader(getClass().getResource("cenas/Toolbar.fxml"));
 			telaPrincipalLoader = new FXMLLoader(getClass().getResource("cenas/Principal.fxml"));
 			telaFuncionarioLoader = new FXMLLoader(getClass().getResource("cenas/Funcionario.fxml"));
 			telaProdutoLoader = new FXMLLoader(getClass().getResource("cenas/Produto.fxml"));
+			telaCarrinhoLoader = new FXMLLoader(getClass().getResource("cenas/Carrinho.fxml"));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
 			GerenciadorCenas.inicializar(janela, toolbar, telaPrincipalLoader,
-					                     telaFuncionarioLoader, telaProdutoLoader);
+					                     telaFuncionarioLoader, telaProdutoLoader, telaCarrinhoLoader);
 		} 
 		catch(Exception e) 
 		{
@@ -81,7 +83,7 @@ public class Main extends Application
 		pastaDVDs   = new File(diretorioLocal + "/dvds/");
 		pastaCDs    = new File(diretorioLocal + "/cds/");
 		
-		// Criar uma instância da classe cadastro
+		// Criar uma instï¿½ncia da classe cadastro
 		// para cadastrar os produtos.
 		cadastro = new Cadastro(produtos);
 		
@@ -96,7 +98,7 @@ public class Main extends Application
 			capa = new Image(arquivo.toPath().toUri().toString());
 			
 			cadastro.cadastrarLivro(
-					informacoes[0],  // Título
+					informacoes[0],  // Tï¿½tulo
 					informacoes[1],  // Autor
 					informacoes[2],  // Categoria
 					informacoes[3],  // Preco 

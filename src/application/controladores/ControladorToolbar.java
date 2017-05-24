@@ -30,9 +30,9 @@ public class ControladorToolbar extends Controlador
 	}
 	
 	@FXML
-	void carrinho()
+	void carrinho() throws IOException
 	{
-		System.out.println("Teste carrinho");
+		GerenciadorCenas.irPara(4);
 	}
 	
 	@FXML
@@ -56,9 +56,9 @@ public class ControladorToolbar extends Controlador
 	
 	/**
 	 * Quando formos para alguma outra cena usando
-	 * um dos métodos irPara do GerenciadorCenas,
-	 * vamos usar essa função para adicionar a cena
-	 * carregada na pilha e pegar seu código.
+	 * um dos mï¿½todos irPara do GerenciadorCenas,
+	 * vamos usar essa funï¿½ï¿½o para adicionar a cena
+	 * carregada na pilha e pegar seu cï¿½digo.
 	 * @param p
 	 * @param codigoCenaAtual - Veja a classe Controlador.
 	 */
