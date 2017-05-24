@@ -1,70 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.scene.shape.*?>
-<?import javafx.scene.text.*?>
 
-<ScrollPane hbarPolicy="NEVER" layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" vmax="1.2" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorTelaPrincipal">
-   <content>
-      <HBox prefHeight="683.0" prefWidth="1280.0">
+
+<Pane layoutY="55.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane prefHeight="663.0" prefWidth="978.0">
+         <content>
+            <VBox prefHeight="663.0" prefWidth="970.0">
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="30.0" top="20.0" />
+               </padding>
+            </VBox>
+         </content>
+      </ScrollPane>
+      <VBox layoutX="977.0" layoutY="-1.0" prefHeight="664.0" prefWidth="303.0" style="-fx-background-color: #87CEEB;">
          <children>
-            <VBox prefHeight="683.0" prefWidth="991.0" />
-            <VBox prefHeight="484.0" prefWidth="325.0" style="-fx-background-color: #87CEEB;">
+            <VBox prefHeight="524.0" prefWidth="303.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
+               </padding>
+            </VBox>
+            <HBox prefHeight="66.0" prefWidth="303.0">
                <children>
-                  <VBox prefHeight="483.0" prefWidth="307.0" />
-                  <VBox prefHeight="56.0" prefWidth="307.0">
+                  <VBox alignment="CENTER_LEFT" prefHeight="34.0" prefWidth="185.0">
                      <children>
-                        <HBox prefHeight="100.0" prefWidth="200.0">
-                           <children>
-                              <VBox alignment="CENTER_LEFT" prefHeight="56.0" prefWidth="120.0">
-                                 <children>
-                                    <Label alignment="CENTER" text="Total:">
-                                       <VBox.margin>
-                                          <Insets left="20.0" />
-                                       </VBox.margin>
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </VBox>
-                              <VBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="219.0">
-                                 <children>
-                                    <Label text="39.90">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets right="38.0" />
-                                 </HBox.margin>
-                              </VBox>
-                           </children>
-                        </HBox>
-                     </children></VBox>
-                  <VBox alignment="CENTER" prefHeight="147.0" prefWidth="307.0">
-                     <children>
-                        <Button fx:id="continuarComprando" mnemonicParsing="false" prefHeight="27.0" prefWidth="248.0" style="-fx-background-color: #B22222;" text="Continuar Comprando" textFill="WHITE">
+                        <Label text="TOTAL:">
                            <VBox.margin>
-                              <Insets right="15.0" />
-                           </VBox.margin></Button>
-                        <Button fx:id="finalizarCompra" defaultButton="true" mnemonicParsing="false" prefHeight="27.0" prefWidth="248.0" style="-fx-background-color: #2E8B57;" text="Finalizar Compra" textFill="WHITE">
-                           <VBox.margin>
-                              <Insets right="15.0" top="15.0" />
+                              <Insets />
                            </VBox.margin>
                            <font>
-                              <Font name="System Bold" size="13.0" />
-                           </font></Button>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
                      </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_RIGHT" prefHeight="34.0" prefWidth="123.0">
+                     <children>
+                        <Label text="39.90">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <padding>
+                        <Insets right="10.0" />
+                     </padding>
                   </VBox>
                </children>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="171.0" prefWidth="303.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="47.0" prefWidth="305.0" style="-fx-background-color: B22222;" text="Continuar Comprando" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="47.0" prefWidth="316.0" style="-fx-background-color: #2E8B57;" text="Finalizar Compra" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="15.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
             </VBox>
          </children>
-      </HBox>
-   </content>
-</ScrollPane>
+      </VBox>
+   </children>
+</Pane>
