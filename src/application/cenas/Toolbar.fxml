@@ -21,7 +21,7 @@
                         <Insets left="10.0" />
                      </HBox.margin></Button>
                   <Pane prefHeight="44.0" prefWidth="521.0" />
-                  <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
+                  <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true" translateX="-25.0">
                      <image>
                         <Image url="@../imagens/logo.png" />
                      </image>

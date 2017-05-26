@@ -11,4 +11,6 @@ public interface Produto
 	public int getQuantidade();
 	public void setPreco(double valor);
 	public void setQuantidade(int valor);
+	public int getQuantidadeDesejada();
+	public void setQuantidadeDesejada(int valor);
 }

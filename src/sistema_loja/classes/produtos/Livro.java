@@ -11,6 +11,7 @@ public class Livro implements Produto
 	private double preco;
 	private Image imagem;
 	private int quantidade;
+	private int qtd_desejada;
 	
 	public Livro(String titulo, String autor, String categoria, double preco, Image imagem, int quantidade) 
 	{
@@ -64,4 +65,15 @@ public class Livro implements Produto
 	public void setPreco(double valor) {
 		preco = valor;
 	}
+	
+	@Override
+	public int getQuantidadeDesejada() {
+		return qtd_desejada;
+	}
+	
+	@Override
+	public void setQuantidadeDesejada(int valor) {
+		qtd_desejada = valor;
+	}
+	
 }

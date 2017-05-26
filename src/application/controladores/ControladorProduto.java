@@ -36,31 +36,29 @@ public class ControladorProduto extends Controlador implements Initializable
 		if(produtoSelecionado.getQuantidade() != 0) 	
 			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade()));
 		else {
-			qtd.setText("Indisponível");
-			qtd_area.setDisable(true);
-			adicionarCarrinho.setDisable(true);
-			comprar.setDisable(true);
+			setIndisponivel();
 		}
 	}
 	
 	@FXML
-	void adicionarCarrinho() 
-	{
-		
+	void adicionarCarrinho()
+	{	
 		int qtd_label = Integer.parseInt(qtd.getText());
 		int qtd_desejada = Integer.parseInt(qtd_area.getText());
 		
-		//Verificamos se possui quantidade disponivel do produto para compra.
-		if(qtd_label > 0) {
-			if( qtd_desejada <= qtd_label) {
-				
-				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
-				//Controlador.produtosCarrinho.add(produtoSelecionado);
+		//Verificamos se a quantidade desejada esta disponivel para compra
+		if(qtd_desejada <= qtd_label) {
+			
+			//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
+				Controlador.produtosCarrinho.add(produtoSelecionado);
+				produtoSelecionado.setQuantidadeDesejada(qtd_desejada);
+				Janelas.mensagem("Êxito", "Produto adicionado ao carrinho com sucesso", 
+																			AlertType.INFORMATION);
+				decrementarQtdLabel(qtd_desejada);
 				produtoSelecionado.setQuantidade(qtd_label - qtd_desejada);
-			} else {
-				Janelas.mensagem("Erro", "A quantidade desejada não está disponível", AlertType.ERROR);
-			}
-		}		
+		} else {
+			Janelas.mensagem("Erro", "A quantidade desejada não está disponível para compra.", AlertType.ERROR);
+		}	
 	}
 	
 	@FXML
@@ -69,17 +67,31 @@ public class ControladorProduto extends Controlador implements Initializable
 		int qtd_label = Integer.parseInt(qtd.getText());
 		int qtd_desejada = Integer.parseInt(qtd_area.getText());
 		
-		//Verificamos se possui quantidade disponivel do produto para compra.
-		if(qtd_label > 0) {
-			if( qtd_desejada <= qtd_label) {
-				
-				//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade
-				//Controlador.produtosCarrinho.add(produtoSelecionado);
-				produtoSelecionado.setQuantidade(qtd_label - qtd_desejada);
-				GerenciadorCenas.irPara(4);
-			} else {
-				Janelas.mensagem("Erro", "A quantidade desejada não está disponível", AlertType.ERROR);
-			}
+		//Verificamos se a quantidade desejada esta disponivel para compra
+		if(qtd_desejada <= qtd_label) {	
+			
+			//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade.
+			Controlador.produtosCarrinho.add(produtoSelecionado);
+			produtoSelecionado.setQuantidadeDesejada(qtd_desejada);
+			produtoSelecionado.setQuantidade(qtd_label - qtd_desejada);
+			GerenciadorCenas.irPara(4);
+		} else {
+			Janelas.mensagem("Erro", "A quantidade desejada não está disponível", AlertType.ERROR);
 		}		
+	}
+	
+	private void decrementarQtdLabel(int qtd_desejada) {
+		if((produtoSelecionado.getQuantidade() - qtd_desejada) > 0) {
+			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade() - qtd_desejada));
+		} else {
+			setIndisponivel();
+		}
+	}
+	
+	private void setIndisponivel() {
+		qtd.setText("Indisponível");
+		qtd_area.setDisable(true);
+		adicionarCarrinho.setDisable(true);
+		comprar.setDisable(true);
 	}
 }

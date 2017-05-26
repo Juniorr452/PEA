@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.Stack;
 
 import application.GerenciadorCenas;
+import application.Janelas;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 
 /**
@@ -31,8 +33,13 @@ public class ControladorToolbar extends Controlador
 	
 	@FXML
 	void carrinho() throws IOException
-	{
-		GerenciadorCenas.irPara(4);
+	{	
+		//Se o carrinho estiver vazio, ele nao deixa entrar no carrinho.
+		if(Controlador.produtosCarrinho.isEmpty()) {
+			Janelas.mensagem("Atenção", "O carrinho está vazio.", AlertType.INFORMATION);
+		} else {
+			GerenciadorCenas.irPara(4);
+		}
 	}
 	
 	@FXML

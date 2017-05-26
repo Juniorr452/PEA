@@ -11,6 +11,7 @@ public class Dvd implements Produto
 	private double preco;
 	private Image imagem;
 	private int quantidade;
+	private int qtd_desejada;
 
 	public Dvd(String titulo, String autor, String duracao, double preco, Image imagem, int quantidade) 
 	{
@@ -58,5 +59,15 @@ public class Dvd implements Produto
 	@Override
 	public void setPreco(double valor) {
 		preco = valor;
+	}
+	
+	@Override
+	public int getQuantidadeDesejada() {
+		return qtd_desejada;
+	}
+	
+	@Override
+	public void setQuantidadeDesejada(int valor) {
+		qtd_desejada = valor;
 	}
 }

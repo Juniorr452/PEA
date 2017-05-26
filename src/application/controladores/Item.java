@@ -60,7 +60,8 @@ public class Item extends VBox
 		this.preco = p.getPreco();
 	}
 	
-	@FXML private void click() throws IOException
+	@FXML 
+	private void click() throws IOException
 	{
 		Controlador.produtoSelecionado = this.produto;
 		GerenciadorCenas.irPara(3);

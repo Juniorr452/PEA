@@ -15,8 +15,15 @@ public abstract class Controlador
 	protected static List<Produto> produtosCarrinho;
 	protected static Produto produtoSelecionado;
 	
+	protected static double total = 0;
+		
 	public static void setListaProdutos(List<Produto> p)
 	{
 		produtos = p;
+	}
+	
+	public static void setListaCarrinho(List<Produto> p)
+	{
+		produtosCarrinho = p;
 	}
 }
