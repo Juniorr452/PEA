@@ -6,7 +6,6 @@ import application.GerenciadorCenas;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import sistema_loja.interfaces.Produto;
@@ -61,9 +60,10 @@ public class Item extends VBox
 		this.preco = p.getPreco();
 	}
 	
-	@FXML private void click() throws IOException
+	@FXML 
+	private void click() throws IOException
 	{
 		Controlador.produtoSelecionado = this.produto;
-		GerenciadorCenas.irPara((ScrollPane) FXMLLoader.load(getClass().getResource("../cenas/Produto.fxml")));
+		GerenciadorCenas.irPara(3);
 	}
 }

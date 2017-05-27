@@ -1,6 +1,13 @@
 package application.controladores;
 
+import java.io.IOException;
+import java.util.Stack;
+
+import application.GerenciadorCenas;
+import application.Janelas;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 
 /**
@@ -10,25 +17,66 @@ import javafx.scene.control.Button;
  */
 public class ControladorToolbar extends Controlador
 {
+	private Stack<Parent> cenas;
+	private Stack<Integer> codigoCena;
+	
 	@FXML private Button voltar;
-	@FXML private Button avancar;
+	@FXML private Button atualizar;
 	@FXML private Button carrinho;
+	
+	public ControladorToolbar()
+	{
+		// Vamos usar uma pilha para implementar
+		// o sistema de voltar.
+		cenas = new Stack<Parent>();
+		codigoCena = new Stack<Integer>();
+	}
+	
+	@FXML
+	void carrinho() throws IOException
+	{	
+		//Se o carrinho estiver vazio, ele nao deixa entrar no carrinho.
+		if(Controlador.produtosCarrinho.isEmpty()) {
+			Janelas.mensagem("Atenção", "O carrinho está vazio.", AlertType.INFORMATION);
+		} else {
+			GerenciadorCenas.irPara(4);
+		}
+	}
 	
 	@FXML
 	void voltar()
 	{
-		System.out.println("Teste voltar");
+		GerenciadorCenas.irPara(cenas.pop());
+		codigoCena.pop();
+		
+		if (cenas.size() < 2)
+			voltar.setDisable(true);
 	}
 	
+	/**
+	 * Vamos simplesmente recarregar a cena atual.
+	 * @throws IOException
+	 */
 	@FXML
-	void carrinho()
+	void atualizar() throws IOException
 	{
-		System.out.println("Teste carrinho");
+		GerenciadorCenas.irPara(codigoCena.peek());
 	}
 	
-	@FXML
-	void avancar()
+	/**
+	 * Quando formos para alguma outra cena usando
+	 * um dos m�todos irPara do GerenciadorCenas,
+	 * vamos usar essa fun��o para adicionar a cena
+	 * carregada na pilha e pegar seu c�digo.
+	 * @param p
+	 * @param codigoCenaAtual - Veja a classe Controlador.
+	 */
+	public void adicionarCena(Parent p, int codigoCenaAtual)
 	{
-		System.out.println("Teste avançar");
+		cenas.push(p);
+		codigoCena.add(codigoCenaAtual);
+		
+		if (cenas.size() > 1)
+			voltar.setDisable(false);
 	}
 }

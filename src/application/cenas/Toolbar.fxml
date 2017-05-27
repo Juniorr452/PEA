@@ -15,16 +15,19 @@
          <items>
             <HBox alignment="CENTER" prefHeight="44.0" prefWidth="1250.0">
                <children>
-                  <Button fx:id="voltar" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
-                  <Button fx:id="avancar" mnemonicParsing="false" onAction="#avancar" prefHeight="34.0" prefWidth="9.0" text="&gt;" />
+                  <Button fx:id="voltar" disable="true" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
+                  <Button fx:id="atualizar" graphicTextGap="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#atualizar" prefHeight="34.0" prefWidth="42.0" style="-fx-background-image: url('http://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Reload-icon.png'); -fx-background-size: 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin></Button>
                   <Pane prefHeight="44.0" prefWidth="521.0" />
-                  <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true">
+                  <ImageView fitHeight="44.0" fitWidth="41.0" pickOnBounds="true" translateX="-25.0">
                      <image>
                         <Image url="@../imagens/logo.png" />
                      </image>
                   </ImageView>
                   <Pane prefHeight="44.0" prefWidth="290.0" />
-                  <Button fx:id="carrinho" alignment="CENTER" mnemonicParsing="false" onAction="#carrinho" style="-fx-graphic: url(&quot;imagens/carrinho.png&quot;);" text="Carrinho">
+                  <Button fx:id="carrinho" alignment="CENTER" mnemonicParsing="false" onAction="#carrinho" prefHeight="34.0" prefWidth="42.0" style="-fx-background-image: url(&quot;https://d30y9cdsu7xlg0.cloudfront.net/png/28468-200.png&quot;); -fx-background-size: 30; -fx-background-repeat: no-repeat; -fx-background-position: center;" text="Carrinho">
                      <HBox.margin>
                         <Insets right="20.0" />
                      </HBox.margin>
