@@ -87,7 +87,7 @@
                   <HBox alignment="CENTER_LEFT" prefHeight="26.0" prefWidth="300.0">
                      <children>
                         <Label text="Quantidade desejada:" textFill="#727272" />
-                        <TextArea fx:id="qtd_area" prefHeight="20.0" prefWidth="51.0" text="1">
+                        <TextArea fx:id="qtdArea" prefHeight="20.0" prefWidth="51.0" text="1">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>

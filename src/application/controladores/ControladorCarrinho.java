@@ -5,16 +5,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.GerenciadorCenas;
-import application.Janelas;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import sistema_loja.classes.produtos.Cd;
-import sistema_loja.classes.produtos.Dvd;
-import sistema_loja.classes.produtos.Livro;
 import sistema_loja.interfaces.Produto;
 
 public class ControladorCarrinho extends Controlador implements Initializable{
