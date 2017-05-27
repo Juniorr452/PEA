@@ -60,7 +60,10 @@ public class Janelas
     	File arquivoSelecionado = fc.showOpenDialog(novaJanela);
     	
     	// Vamos carregar a imagem com o caminho do arquivo.
-    	i = new Image(arquivoSelecionado.toPath().toUri().toString());
+    	if (arquivoSelecionado.exists())
+    		i = new Image(arquivoSelecionado.toPath().toUri().toString());
+    	else 
+    		i = null;
     	
     	return i;
     }
