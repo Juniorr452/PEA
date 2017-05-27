@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.Stack;
 
 import application.GerenciadorCenas;
+import application.Janelas;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 
 /**
@@ -31,9 +33,14 @@ public class ControladorToolbar extends Controlador
 	}
 	
 	@FXML
-	void carrinho()
-	{
-		System.out.println("Teste carrinho");
+	void carrinho() throws IOException
+	{	
+		//Se o carrinho estiver vazio, ele nao deixa entrar no carrinho.
+		if(Controlador.produtosCarrinho.isEmpty()) {
+			Janelas.mensagem("AtenÃ§Ã£o", "O carrinho estÃ¡ vazio.", AlertType.INFORMATION);
+		} else {
+			GerenciadorCenas.irPara(4);
+		}
 	}
 	
 	@FXML
@@ -58,9 +65,9 @@ public class ControladorToolbar extends Controlador
 	
 	/**
 	 * Quando formos para alguma outra cena usando
-	 * um dos métodos irPara do GerenciadorCenas,
-	 * vamos usar essa função para adicionar a cena
-	 * carregada na pilha e pegar seu código.
+	 * um dos mï¿½todos irPara do GerenciadorCenas,
+	 * vamos usar essa funï¿½ï¿½o para adicionar a cena
+	 * carregada na pilha e pegar seu cï¿½digo.
 	 * @param p
 	 * @param codigoCenaAtual - Veja a classe Controlador.
 	 */
