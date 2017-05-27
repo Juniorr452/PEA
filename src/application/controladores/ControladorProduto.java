@@ -23,7 +23,7 @@ public class ControladorProduto extends Controlador implements Initializable
 	@FXML private Label precoItem;
 	@FXML private Label msgCarrinho;
 	@FXML private Label qtd;
-	@FXML private TextArea qtd_area;
+	@FXML private TextArea qtdArea;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -35,62 +35,101 @@ public class ControladorProduto extends Controlador implements Initializable
 		
 		if(produtoSelecionado.getQuantidade() != 0) 	
 			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade()));
-		else {
+		else 
 			setIndisponivel();
+	}
+	
+	@FXML
+	private void adicionarCarrinho()
+	{	
+		try
+		{	
+			int qtdLabel = Integer.parseInt(qtd.getText());
+			int qtdDesejada = verificarQuantidadeDesejada();
+			
+			//Verificamos se a quantidade desejada esta disponivel para compra
+			if(qtdDesejada <= qtdLabel) 
+			{
+				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
+					Controlador.produtosCarrinho.add(produtoSelecionado);
+					produtoSelecionado.setQuantidadeDesejada(qtdDesejada);
+					Janelas.mensagem("ÃŠxito", "Produto adicionado ao carrinho com sucesso", 
+																				AlertType.INFORMATION);
+					decrementarQtdLabel(qtdDesejada);
+					produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
+			}	
+			else
+				Janelas.mensagem("Erro", "A quantidade desejada nÃ£o estÃ¡ disponÃ­vel para compra.", AlertType.ERROR);
+		}
+		catch (NumberFormatException e)
+		{
+			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
 		}
 	}
 	
 	@FXML
-	void adicionarCarrinho()
-	{	
-		int qtd_label = Integer.parseInt(qtd.getText());
-		int qtd_desejada = Integer.parseInt(qtd_area.getText());
-		
-		//Verificamos se a quantidade desejada esta disponivel para compra
-		if(qtd_desejada <= qtd_label) {
+	private void comprar() throws IOException
+	{
+		try
+		{
+			int qtdLabel = Integer.parseInt(qtd.getText());
+			int qtdDesejada = verificarQuantidadeDesejada();
 			
-			//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
+			//Verificamos se a quantidade desejada esta disponivel para compra
+			if(qtdDesejada <= qtdLabel) 
+			{	
+				//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade.
 				Controlador.produtosCarrinho.add(produtoSelecionado);
-				produtoSelecionado.setQuantidadeDesejada(qtd_desejada);
-				Janelas.mensagem("ÃŠxito", "Produto adicionado ao carrinho com sucesso", 
-																			AlertType.INFORMATION);
-				decrementarQtdLabel(qtd_desejada);
-				produtoSelecionado.setQuantidade(qtd_label - qtd_desejada);
-		} else {
-			Janelas.mensagem("Erro", "A quantidade desejada nÃ£o estÃ¡ disponÃ­vel para compra.", AlertType.ERROR);
+				produtoSelecionado.setQuantidadeDesejada(qtdDesejada);
+				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
+				GerenciadorCenas.irPara(4);
+			} 
+			else 
+				Janelas.mensagem("Erro", "A quantidade desejada nÃ£o estÃ¡ disponÃ­vel", AlertType.ERROR);
+		}
+		catch(NumberFormatException e)
+		{
+			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
 		}	
 	}
 	
-	@FXML
-	void comprar() throws IOException
+	/**
+	 * Criei essa função para verificar o valor da quantidade
+	 * desejada nas funções comprar e cadastrar o carrinho.
+	 * <p>
+	 * Evita que um valor inválido seja pegado pelo sistema e
+	 * colocado no carrinho (Tais como 0, -1, ""...)
+	 * <p>
+	 * Coloque dentro de um try catch para impedir que a operação
+	 * seja realizada.
+	 * 
+	 * @return - O número digitado, caso seja válido.
+	 * 
+	 * @throws NumberFormatException - Caso o número lido seja inválido
+	 * ou menor que 0
+	 */
+	private int verificarQuantidadeDesejada() throws NumberFormatException
 	{
-		int qtd_label = Integer.parseInt(qtd.getText());
-		int qtd_desejada = Integer.parseInt(qtd_area.getText());
+		int qtdDesejada = Integer.parseInt(qtdArea.getText());
 		
-		//Verificamos se a quantidade desejada esta disponivel para compra
-		if(qtd_desejada <= qtd_label) {	
-			
-			//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade.
-			Controlador.produtosCarrinho.add(produtoSelecionado);
-			produtoSelecionado.setQuantidadeDesejada(qtd_desejada);
-			produtoSelecionado.setQuantidade(qtd_label - qtd_desejada);
-			GerenciadorCenas.irPara(4);
-		} else {
-			Janelas.mensagem("Erro", "A quantidade desejada nÃ£o estÃ¡ disponÃ­vel", AlertType.ERROR);
-		}		
+		if (qtdDesejada <= 0)
+			throw new NumberFormatException();
+		
+		return qtdDesejada;
 	}
 	
-	private void decrementarQtdLabel(int qtd_desejada) {
-		if((produtoSelecionado.getQuantidade() - qtd_desejada) > 0) {
+	private void decrementarQtdLabel(int qtd_desejada) 
+	{
+		if((produtoSelecionado.getQuantidade() - qtd_desejada) > 0) 
 			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade() - qtd_desejada));
-		} else {
+		else 
 			setIndisponivel();
-		}
 	}
 	
-	private void setIndisponivel() {
+	private void setIndisponivel() 
+	{
 		qtd.setText("IndisponÃ­vel");
-		qtd_area.setDisable(true);
+		qtdArea.setDisable(true);
 		adicionarCarrinho.setDisable(true);
 		comprar.setDisable(true);
 	}

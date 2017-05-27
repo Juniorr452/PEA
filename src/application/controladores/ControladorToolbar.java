@@ -18,7 +18,7 @@ import javafx.scene.control.Button;
 public class ControladorToolbar extends Controlador
 {
 	private Stack<Parent> cenas;
-	private int codigoCenaAtual;
+	private Stack<Integer> codigoCena;
 	
 	@FXML private Button voltar;
 	@FXML private Button atualizar;
@@ -29,6 +29,7 @@ public class ControladorToolbar extends Controlador
 		// Vamos usar uma pilha para implementar
 		// o sistema de voltar.
 		cenas = new Stack<Parent>();
+		codigoCena = new Stack<Integer>();
 	}
 	
 	@FXML
@@ -46,6 +47,7 @@ public class ControladorToolbar extends Controlador
 	void voltar()
 	{
 		GerenciadorCenas.irPara(cenas.pop());
+		codigoCena.pop();
 		
 		if (cenas.size() < 2)
 			voltar.setDisable(true);
@@ -58,7 +60,7 @@ public class ControladorToolbar extends Controlador
 	@FXML
 	void atualizar() throws IOException
 	{
-		GerenciadorCenas.irPara(codigoCenaAtual);
+		GerenciadorCenas.irPara(codigoCena.peek());
 	}
 	
 	/**
@@ -72,7 +74,7 @@ public class ControladorToolbar extends Controlador
 	public void adicionarCena(Parent p, int codigoCenaAtual)
 	{
 		cenas.push(p);
-		this.codigoCenaAtual = codigoCenaAtual;
+		codigoCena.add(codigoCenaAtual);
 		
 		if (cenas.size() > 1)
 			voltar.setDisable(false);
