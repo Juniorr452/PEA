@@ -20,14 +20,14 @@ máximo,	 10	 itens	 de	 cada	 produto. Este	 tratamento	 deve	 ser	 feito	 quan
 finalizar	a	compra.
 
 Portanto,	o	sistema	deve	possuir	as	seguintes	funcionalidades:
-1. (1,0)	Cadastrar produto	(acesso	restrito	com senha: 123)
-2. (1,0)	Listar produtos
-3. (2,0)	Adicionar	produto	ao	carrinho	com	sua	quantidade
-4. (0,5)	Visualizar o	carrinho
-5. (1,5)	Excluir	produto	do	carrinho
-6. (2,0)	Finalizar	a	compra
-7. (2,0) Listar	compras	realizadas (acesso	restrito	com senha: 123)
-8. (1,0)	Controlar	estoque (opcional) (acesso	restrito	com senha: 123)
+1. [x] (1,0)	Cadastrar produto	(acesso	restrito	com senha: 123)
+2. [ ] (1,0)	Listar produtos
+3. [ ] (2,0)	Adicionar	produto	ao	carrinho	com	sua	quantidade
+4. [x] (0,5)	Visualizar o	carrinho
+5. [ ] (1,5)	Excluir	produto	do	carrinho
+6. [ ] (2,0)	Finalizar	a	compra
+7. [ ] (2,0) Listar	compras	realizadas (acesso	restrito	com senha: 123)
+8. [ ] (1,0)	Controlar	estoque (opcional) (acesso	restrito	com senha: 123)
 
 Para	 a	 implementação	 do	 sistema,	 utilizar	 as	 seguintes	 regras (implementar	 a	
 funcionalidade	sem	suas	respectivas	regras	implica	na	perda	de	50%	da	sua	pontuação):
@@ -39,9 +39,9 @@ realizadas;
 
 • Utilizar	exceções	nos	seguintes	casos:
 
-o Ao	cadastrar	um	produto	com	o	código	já	existente;
+o [ ] Ao	cadastrar	um	produto	com	o	código	já	existente;
 
-o Ao	 finalizar	 a	 compra	 e	 houver	 um	 produto	 acima	 do	 limite	 máximo	
+o [ ] Ao	 finalizar	 a	 compra	 e	 houver	 um	 produto	 acima	 do	 limite	 máximo	
 permitido	(10);
 
 o Efetuar	a	compra	de	um	produto	que	não	tem	em	estoque	(opcional)
@@ -50,17 +50,17 @@ o Efetuar	a	compra	de	um	produto	que	não	tem	em	estoque	(opcional)
 
     Sugestão de modelagem:
 
-    • Interface Produto
+    • [x] Interface Produto
 
-    • Classe DVD (titulo, cantor,	tempo, preço, ...)
+    • [x] Classe DVD (titulo, cantor,	tempo, preço, ...)
 
-    • Classe Livro (titulo,	autor, categoria,	...)
+    • [x] Classe Livro (titulo,	autor, categoria,	...)
 
-    • Classe CD (titulo, cantor,	usado, ...)
+    • [x] Classe CD (titulo, cantor,	usado, ...)
   
-    • Classe Carrinho (produtos, valorTotal, ...)
+    • [ ] Classe Carrinho (produtos, valorTotal, ...)
 
-    • Classe Venda (cpf, nomeCliente, valorTotal,	...)
+    • [ ] Classe Venda (cpf, nomeCliente, valorTotal,	...)
 
 --------------------------------------------------------------------------------------------------------------------------------
 
