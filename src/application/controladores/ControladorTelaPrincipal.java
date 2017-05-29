@@ -11,6 +11,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import sistema_loja.classes.produtos.Cd;
 import sistema_loja.classes.produtos.Dvd;
 import sistema_loja.classes.produtos.Livro;
@@ -26,6 +27,7 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 	@FXML private HBox secaoLivros;
 	@FXML private HBox secaoDVDs;
 	@FXML private HBox secaoCDs;
+	@FXML private VBox secaoNovidades;
 	
 	@FXML private PasswordField campoSenhaFuncionario;
 	
@@ -56,6 +58,13 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 				secaoDVDs.getChildren().add(item);
 			else if (p instanceof Cd)
 				secaoCDs.getChildren().add(item);
+		}
+		
+		// Adicionar os últimos produtos da lista na 
+		// secao de novidades
+		for (int i = produtos.size() - 1; i > produtos.size() - 9; i--)
+		{
+			secaoNovidades.getChildren().add(new Item(produtos.get(i)));
 		}
 	}
 	

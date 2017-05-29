@@ -39,7 +39,7 @@ public class ControladorToolbar extends Controlador
 		if(Controlador.produtosCarrinho.isEmpty()) {
 			Janelas.mensagem("Atenção", "O carrinho está vazio.", AlertType.INFORMATION);
 		} else {
-			GerenciadorCenas.irPara(4);
+			GerenciadorCenas.irPara(CARRINHO);
 		}
 	}
 	
@@ -60,7 +60,7 @@ public class ControladorToolbar extends Controlador
 	@FXML
 	void atualizar() throws IOException
 	{
-		GerenciadorCenas.irPara(codigoCena.peek());
+		GerenciadorCenas.atualizar(codigoCena.peek());
 	}
 	
 	/**
@@ -74,7 +74,7 @@ public class ControladorToolbar extends Controlador
 	public void adicionarCena(Parent p, int codigoCenaAtual)
 	{
 		cenas.push(p);
-		codigoCena.add(codigoCenaAtual);
+		codigoCena.push(codigoCenaAtual);
 		
 		if (cenas.size() > 1)
 			voltar.setDisable(false);
