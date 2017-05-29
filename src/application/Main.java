@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import application.controladores.Controlador;
+import application.controladores.ItemCarrinho;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -23,7 +24,7 @@ public class Main extends Application
 		FXMLLoader telaProdutoLoader;
 		FXMLLoader telaCarrinhoLoader;
 		
-		List<Produto> carrinho = new ArrayList<Produto>();
+		List<ItemCarrinho> carrinho = new ArrayList<ItemCarrinho>();
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.

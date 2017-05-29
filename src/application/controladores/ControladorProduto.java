@@ -51,8 +51,8 @@ public class ControladorProduto extends Controlador implements Initializable
 			if(qtdDesejada <= qtdLabel) 
 			{
 				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
-					Controlador.produtosCarrinho.add(produtoSelecionado);
-					produtoSelecionado.setQuantidadeDesejada(qtdDesejada);
+					ItemCarrinho item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
+					Controlador.produtosCarrinho.add(item);
 					Janelas.mensagem("ÃŠxito", "Produto adicionado ao carrinho com sucesso", 
 																				AlertType.INFORMATION);
 					decrementarQtdLabel(qtdDesejada);
@@ -63,7 +63,11 @@ public class ControladorProduto extends Controlador implements Initializable
 		}
 		catch (NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Digite um valor vï¿½lido.", AlertType.ERROR);
+		}
+		catch (Exception f)
+		{
+			System.out.println("ALGUM ERRO DIFERENTE");
 		}
 	}
 	
@@ -79,8 +83,9 @@ public class ControladorProduto extends Controlador implements Initializable
 			if(qtdDesejada <= qtdLabel) 
 			{	
 				//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade.
-				Controlador.produtosCarrinho.add(produtoSelecionado);
-				produtoSelecionado.setQuantidadeDesejada(qtdDesejada);
+				ItemCarrinho item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
+				Controlador.produtosCarrinho.add(item);
+				
 				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
 				GerenciadorCenas.irPara(4);
 			} 
@@ -89,23 +94,23 @@ public class ControladorProduto extends Controlador implements Initializable
 		}
 		catch(NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Digite um valor vï¿½lido.", AlertType.ERROR);
 		}	
 	}
 	
 	/**
-	 * Criei essa função para verificar o valor da quantidade
-	 * desejada nas funções comprar e cadastrar o carrinho.
+	 * Criei essa funï¿½ï¿½o para verificar o valor da quantidade
+	 * desejada nas funï¿½ï¿½es comprar e cadastrar o carrinho.
 	 * <p>
-	 * Evita que um valor inválido seja pegado pelo sistema e
+	 * Evita que um valor invï¿½lido seja pegado pelo sistema e
 	 * colocado no carrinho (Tais como 0, -1, ""...)
 	 * <p>
-	 * Coloque dentro de um try catch para impedir que a operação
+	 * Coloque dentro de um try catch para impedir que a operaï¿½ï¿½o
 	 * seja realizada.
 	 * 
-	 * @return - O número digitado, caso seja válido.
+	 * @return - O nï¿½mero digitado, caso seja vï¿½lido.
 	 * 
-	 * @throws NumberFormatException - Caso o número lido seja inválido
+	 * @throws NumberFormatException - Caso o nï¿½mero lido seja invï¿½lido
 	 * ou menor que 0
 	 */
 	private int verificarQuantidadeDesejada() throws NumberFormatException

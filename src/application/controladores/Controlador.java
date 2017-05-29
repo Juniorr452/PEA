@@ -12,7 +12,7 @@ public abstract class Controlador
 	protected final int CARRINHO    = 4;
 	
 	protected static List<Produto> produtos;
-	protected static List<Produto> produtosCarrinho;
+	protected static List<ItemCarrinho> produtosCarrinho;
 	protected static Produto produtoSelecionado;
 	
 	protected static double total = 0;
@@ -22,7 +22,7 @@ public abstract class Controlador
 		produtos = p;
 	}
 	
-	public static void setListaCarrinho(List<Produto> p)
+	public static void setListaCarrinho(List<ItemCarrinho> p)
 	{
 		produtosCarrinho = p;
 	}
