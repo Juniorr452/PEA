@@ -10,10 +10,15 @@ public abstract class Controlador
 	protected final int FUNCIONARIO = 2;
 	protected final int PRODUTO     = 3;
 	protected final int CARRINHO    = 4;
+	protected final int BUSCA       = 5;
 	
 	protected static List<Produto> produtos;
 	protected static List<Produto> produtosCarrinho;
 	protected static Produto produtoSelecionado;
+	
+	// Vamos armazenar o texto digitado na barra
+	// de busca nesse atributo.
+	protected static String textoBusca;
 	
 	protected static double total = 0;
 		

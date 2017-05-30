@@ -9,6 +9,7 @@ import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
 
 /**
  * Classe controladora da barra de cima
@@ -23,6 +24,7 @@ public class ControladorToolbar extends Controlador
 	@FXML private Button voltar;
 	@FXML private Button atualizar;
 	@FXML private Button carrinho;
+	@FXML private TextField campoBuscar;
 	
 	public ControladorToolbar()
 	{
@@ -78,5 +80,14 @@ public class ControladorToolbar extends Controlador
 		
 		if (cenas.size() > 1)
 			voltar.setDisable(false);
+	}
+	
+	@FXML
+	private void buscar() throws IOException
+	{
+		textoBusca = campoBuscar.getText();
+		
+		if (!textoBusca.equals(""))
+			GerenciadorCenas.irPara(BUSCA);
 	}
 }

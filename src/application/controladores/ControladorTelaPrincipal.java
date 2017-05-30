@@ -60,7 +60,7 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 				secaoCDs.getChildren().add(item);
 		}
 		
-		// Adicionar os últimos produtos da lista na 
+		// Adicionar os ï¿½ltimos produtos da lista na 
 		// secao de novidades
 		for (int i = produtos.size() - 1; i > produtos.size() - 9; i--)
 		{
@@ -81,5 +81,33 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
     	{
     		GerenciadorCenas.irPara(FUNCIONARIO);
     	}	
+    }
+    
+    @FXML
+    private void verTodosLivros() throws IOException
+    {
+    	textoBusca = "Livros";
+    	GerenciadorCenas.irPara(BUSCA);
+    }
+    
+    @FXML
+    private void verTodosDVD() throws IOException
+    {
+    	textoBusca = "DVD";
+    	GerenciadorCenas.irPara(BUSCA);
+    }
+    
+    @FXML
+    private void verTodosCD() throws IOException
+    {
+    	textoBusca = "CD";
+    	GerenciadorCenas.irPara(BUSCA);
+    }
+    
+    @FXML
+    private void verTodosNovidades() throws IOException
+    {
+    	textoBusca = "Todos";
+    	GerenciadorCenas.irPara(BUSCA);
     }
 }
