@@ -32,7 +32,7 @@
                         <Insets right="20.0" />
                      </HBox.margin>
                   </Button>
-                  <TextField prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" />
+                  <TextField fx:id="campoBuscar" onAction="#buscar" prefHeight="37.0" prefWidth="199.0" promptText=" Buscar" style="-fx-background-radius: 14;" />
                </children>
             </HBox>
          </items>

@@ -31,7 +31,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML private TextField codigo;
 	@FXML private TextField nome;
 	@FXML private TextField autor;
-	// Campo Ano/Categoria/Duracao
+	// Campo Ano/Categoria/Duração
 	@FXML private TextField campoACD;
 	@FXML private TextField preco;
 	@FXML private TextField quantidade;
@@ -48,7 +48,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no bot�o cadastrar,
+	 * Chamado ao clicar no botão cadastrar,
 	 * no primeiro menu da tela.
 	 */
 	@FXML
@@ -58,9 +58,9 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Fun��o utilizada internamente para
-	 * tornar um elemento invis�vel e outro vis�vel,
-	 * dando a impress�o de trocar de tela.
+	 * Utilizada internamente para
+	 * tornar um elemento invisível e outro visível,
+	 * dando a impressão de trocar de tela.
 	 * @param telaAtual - VBox na qual voc� est�.
 	 * @param telaDestino - VBox na qual voc� deseja ir.
 	 */
@@ -83,7 +83,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no bot�o
+	 * Chamado ao clicar no botão
 	 * escolher imagem.
 	 */
 	@FXML
@@ -93,7 +93,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado quando o funcion�rio
+	 * Chamado quando o funcionário
 	 * selecionar outro valor na caixa
 	 * de tipo.
 	 */
@@ -117,13 +117,13 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no bot�o de cadastrar.
+	 * Chamado ao clicar no botão de cadastrar.
 	 * Vai verificar os campos para ver se s�o
-	 * nulos, pegar as informa��es, ver o tipo
+	 * nulos, pegar as informações, ver o tipo
 	 * de produto e cadastrar de acordo com ele.
 	 * 
 	 * Reseta os campos aos valores originais no
-	 * fim da opera��o.
+	 * fim da operação.
 	 */
 	@FXML
 	private void cadastrar()
@@ -139,8 +139,10 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		Image  imagem;
 		String descricao;
 
-		if (verificarCampos())
+		try
 		{
+			verificarCampos();
+      
 			codigo = Integer.parseInt(this.codigo.getText());
 			nome = this.nome.getText();
 			autor = this.autor.getText();
@@ -177,9 +179,13 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			mudarTela(menuCadastrar, menuFuncionario);
 			resetarCampos();
 		}
-		else
+		catch (NoSuchFieldException e)
 		{
-			Janelas.mensagem("Erro", "Preencha todos os campos antes de continuar", AlertType.ERROR);
+			Janelas.mensagem("Erro", e.getMessage(), AlertType.ERROR);
+		}
+		catch (NumberFormatException e)
+		{
+			Janelas.mensagem("Erro", "Número digitado inválido. Verifique os campos e tente novamente.", AlertType.ERROR);
 		}
 	}
 
@@ -205,13 +211,10 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Verifica se os valores dos campos obrigat�rios
-	 * n�o foram digitados.
-	 * @return true, se todos foram preenchidos.
-	 * <P>
-	 * false, se existe algum sem informa��o.
+	 * Verifica se os valores dos campos obrigatórios
+	 * não foram digitados.
 	 */
-	private boolean verificarCampos()
+	private void verificarCampos() throws NoSuchFieldException
 	{
 		if (codigo.getText().equals("")     ||
 			nome.getText().equals("")       ||
@@ -220,11 +223,9 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			preco.getText().equals("")      ||
 			quantidade.getText().equals("") ||
 			imagem.getImage()      == null  ||
-		    tipoProduto.getValue() == null)
+		  tipoProduto.getValue() == null)
 		{
-			return false;
-		}		
-		else
-			return true;	
+			throw new NoSuchFieldException("Preencha todos os campos antes de continuar");
+		}	
 	}
 }

@@ -23,6 +23,7 @@ public class Main extends Application
 		FXMLLoader telaFuncionarioLoader;
 		FXMLLoader telaProdutoLoader;
 		FXMLLoader telaCarrinhoLoader;
+		FXMLLoader telaBuscaLoader;
 		
 		List<ItemCarrinho> carrinho = new ArrayList<ItemCarrinho>();
 		
@@ -39,15 +40,17 @@ public class Main extends Application
 			
 			// Esses loaders v�o servir para carregar as cenas dentro
 			// da GerenciadorCenas mais tarde.
-			toolbar = new FXMLLoader(getClass().getResource("cenas/Toolbar.fxml"));
-			telaPrincipalLoader = new FXMLLoader(getClass().getResource("cenas/Principal.fxml"));
+			toolbar               = new FXMLLoader(getClass().getResource("cenas/Toolbar.fxml"));
+			telaPrincipalLoader   = new FXMLLoader(getClass().getResource("cenas/Principal.fxml"));
 			telaFuncionarioLoader = new FXMLLoader(getClass().getResource("cenas/Funcionario.fxml"));
-			telaProdutoLoader = new FXMLLoader(getClass().getResource("cenas/Produto.fxml"));
-			telaCarrinhoLoader = new FXMLLoader(getClass().getResource("cenas/Carrinho.fxml"));
+			telaProdutoLoader     = new FXMLLoader(getClass().getResource("cenas/Produto.fxml"));
+			telaCarrinhoLoader    = new FXMLLoader(getClass().getResource("cenas/Carrinho.fxml"));
+			telaBuscaLoader       = new FXMLLoader(getClass().getResource("cenas/Busca.fxml"));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
-			GerenciadorCenas.inicializar(janela, toolbar, telaPrincipalLoader,
-					                     telaFuncionarioLoader, telaProdutoLoader, telaCarrinhoLoader);
+			GerenciadorCenas.inicializar(janela, 
+					toolbar, telaPrincipalLoader, telaFuncionarioLoader, 
+					telaProdutoLoader, telaCarrinhoLoader, telaBuscaLoader);
 		} 
 		catch(Exception e) 
 		{
