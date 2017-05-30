@@ -13,7 +13,7 @@ public abstract class Controlador
 	protected final int BUSCA       = 5;
 	
 	protected static List<Produto> produtos;
-	protected static List<Produto> produtosCarrinho;
+	protected static List<ItemCarrinho> produtosCarrinho;
 	protected static Produto produtoSelecionado;
 	
 	// Vamos armazenar o texto digitado na barra
@@ -27,7 +27,7 @@ public abstract class Controlador
 		produtos = p;
 	}
 	
-	public static void setListaCarrinho(List<Produto> p)
+	public static void setListaCarrinho(List<ItemCarrinho> p)
 	{
 		produtosCarrinho = p;
 	}

@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import sistema_loja.interfaces.Produto;
 
 public class ControladorCarrinho extends Controlador implements Initializable{
 	
@@ -28,11 +27,11 @@ public class ControladorCarrinho extends Controlador implements Initializable{
 		
 		// Vai adicionar cada produto da nossa lista
 		// em sua respectiva se��o.
-		for (Produto p : produtosCarrinho)
+		for (ItemCarrinho p : produtosCarrinho)
 		{
-			item = new ItemCarrinho(p);
+			//item = new ItemCarrinho();
 		
-			secao.getChildren().add(item);
+			secao.getChildren().add(p);
 		}
 	}
 	
@@ -44,15 +43,20 @@ public class ControladorCarrinho extends Controlador implements Initializable{
 	
 	private double calcularTotal() {
 		
-		double total = 0;
+		Double total = new Double(0);
+		
+		
+		//double total = 0;
 		
 		//percorre a lista do carrinho, pegando item por item
 		//e calculando o total do valor do carrinho
-		for (Produto produto : produtosCarrinho) {
-			total += produto.getPreco() * produto.getQuantidadeDesejada();
+		for (ItemCarrinho p : produtosCarrinho) {
+			total += p.getPreco() * p.getQtd();
 		}
 		
-		return total;
+		//somando alguns precos, a parte decimal estava ficando gigante
+		//portando usamos esse retorno para truncarmos em 2 casas decimais.
+		return Math.floor(total * 100) / 100;
 	}
 	
 	

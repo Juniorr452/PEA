@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import application.controladores.Controlador;
+import application.controladores.ItemCarrinho;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
@@ -24,7 +25,7 @@ public class Main extends Application
 		FXMLLoader telaCarrinhoLoader;
 		FXMLLoader telaBuscaLoader;
 		
-		List<Produto> carrinho = new ArrayList<Produto>();
+		List<ItemCarrinho> carrinho = new ArrayList<ItemCarrinho>();
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
@@ -32,7 +33,6 @@ public class Main extends Application
 		
 		//Para inicializar a lista do carrinho, mesmo ela estando vazia.
 		Controlador.setListaCarrinho(carrinho);
-		
 		
 		try 
 		{
@@ -65,15 +65,14 @@ public class Main extends Application
 	
 	/**
 	 * M�todo que ir� carregar as imagens dos
-	 * produtos e as informa��es no nome do mesmo (Pre�o, autor...)
+	 * produtos e as informações no nome do mesmo (Preço, autor...)
 	 * 
-	 * @return Uma lista com os produtos carregados
+	 * @return Um mapa com os produtos carregados
 	 */
 	public List<Produto> carregarProdutos()
 	{
 		List<Produto> produtos;
 		Cadastro cadastro;
-		
 		String diretorioLocal;
 		File pastaLivros;
 		File pastaDVDs;
@@ -107,12 +106,13 @@ public class Main extends Application
 			capa = new Image(arquivo.toPath().toUri().toString());
 			
 			cadastro.cadastrarLivro(
-					informacoes[0],  // T�tulo
-					informacoes[1],  // Autor
-					informacoes[2],  // Categoria
-					informacoes[3],  // Preco 
+					informacoes[0],  // Código
+					informacoes[1],  // Título
+					informacoes[2],  // Autor
+					informacoes[3],  // Categoria
+					informacoes[4],  // Preço
 					capa,            // Imagem da capa
-					informacoes[4]); // Quantidade
+					informacoes[5]); // Quantidade
 		}
 		
 		for(File arquivo : pastaDVDs.listFiles())
@@ -120,8 +120,14 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 			
-			cadastro.cadastrarDVD(informacoes[0], informacoes[1],
-					informacoes[2], informacoes[3], capa, informacoes[4]);
+			cadastro.cadastrarDVD(
+					informacoes[0],  // Código
+					informacoes[1],  // Título
+					informacoes[2],  // Autor
+					informacoes[3],  // Duração
+					informacoes[4],  // Preço
+					capa,            // Imagem da capa
+					informacoes[5]); // Quantidade
 		}
 		
 		for(File arquivo : pastaCDs.listFiles())
@@ -129,8 +135,14 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 
-			cadastro.cadastrarCD(informacoes[0], informacoes[1],
-					informacoes[2], informacoes[3], capa, informacoes[4]);
+			cadastro.cadastrarCD(
+					informacoes[0],  // Código
+					informacoes[1],  // Título
+					informacoes[2],  // Autor
+					informacoes[3],  // Ano
+					informacoes[4],  // Preço
+					capa,            // Imagem da capa
+					informacoes[5]); // Quantidade
 		}
 		
 		return produtos;
