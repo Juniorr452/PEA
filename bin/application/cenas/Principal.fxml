@@ -26,9 +26,9 @@
             </VBox>
             <Pane cache="true" prefHeight="1064.0" prefWidth="1220.0">
                <children>
-                  <VBox cache="true" prefHeight="1094.0" prefWidth="817.0" spacing="50.0">
+                  <VBox cache="true" prefHeight="1094.0" prefWidth="759.0" spacing="50.0">
                      <children>
-                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
+                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0" styleClass="secao" stylesheets="@application.css">
                            <children>
                               <HBox prefHeight="58.0" prefWidth="1060.0">
                                  <children>
@@ -37,7 +37,6 @@
                                           <Font name="Myriad Apple Bold" size="24.0" />
                                        </font>
                                     </Text>
-                                    <Pane prefHeight="44.0" prefWidth="593.0" />
                                     <Hyperlink text="Ver todos &gt;" translateX="-31.0" wrapText="true">
                                        <font>
                                           <Font name="Myriad Apple Text" size="17.0" />
@@ -54,8 +53,11 @@
                                  </content>
                               </ScrollPane>
                            </children>
+                           <padding>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </padding>
                         </VBox>
-                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0">
+                        <VBox fillWidth="false" prefHeight="360.0" prefWidth="759.0" styleClass="secao" stylesheets="@application.css">
                            <children>
                               <HBox prefHeight="58.0" prefWidth="1060.0">
                                  <children>
@@ -64,7 +66,6 @@
                                           <Font name="Myriad Apple Bold" size="24.0" />
                                        </font>
                                     </Text>
-                                    <Pane prefHeight="30.0" prefWidth="597.0" />
                                     <Hyperlink text="Ver todos &gt;" translateX="-31.0" wrapText="true">
                                        <font>
                                           <Font name="Myriad Apple Text" size="17.0" />
@@ -82,7 +83,7 @@
                               </ScrollPane>
                            </children>
                         </VBox>
-                        <VBox cache="true" cacheHint="SPEED" fillWidth="false" prefHeight="360.0" prefWidth="759.0">
+                        <VBox cache="true" cacheHint="SPEED" fillWidth="false" prefHeight="360.0" prefWidth="759.0" styleClass="secao" stylesheets="@application.css">
                            <children>
                               <HBox cache="true" cacheHint="SPEED" prefHeight="58.0" prefWidth="1060.0">
                                  <children>
@@ -91,7 +92,6 @@
                                           <Font name="Myriad Apple Bold" size="24.0" />
                                        </font>
                                     </Text>
-                                    <Pane prefHeight="45.0" prefWidth="615.0" />
                                     <Hyperlink text="Ver todos &gt;" translateX="-31.0" wrapText="true">
                                        <font>
                                           <Font name="Myriad Apple Text" size="17.0" />
@@ -111,11 +111,11 @@
                         </VBox>
                      </children>
                   </VBox>
-                  <VBox layoutX="817.0" layoutY="-4.0" prefHeight="1200.0" prefWidth="458.0">
+                  <VBox layoutX="840.0" prefHeight="1200.0" prefWidth="378.0">
                      <children>
-                        <VBox cache="true" cacheHint="SPEED" fillWidth="false" prefHeight="1102.0" prefWidth="470.0">
+                        <VBox cache="true" cacheHint="SPEED" fillWidth="false" prefHeight="1102.0" prefWidth="450.0" styleClass="secao" stylesheets="@application.css">
                            <children>
-                              <HBox cache="true" cacheHint="SPEED" prefHeight="48.0" prefWidth="474.0">
+                              <HBox cache="true" cacheHint="SPEED" prefHeight="30.0" prefWidth="400.0">
                                  <children>
                                     <Text stroke="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Novidades">
                                        <font>
@@ -127,7 +127,7 @@
                                           <Font name="Myriad Apple Text" size="17.0" />
                                        </font>
                                        <HBox.margin>
-                                          <Insets left="236.0" />
+                                          <Insets left="60.0" />
                                        </HBox.margin>
                                     </Hyperlink>
                                  </children>
@@ -145,11 +145,11 @@
             </Pane>
             <Pane prefHeight="100.0" prefWidth="1220.0">
                <children>
-                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3c3c3c" height="87.0" stroke="#3c3c3c" strokeType="INSIDE" width="1220.0" />
-                  <PasswordField fx:id="campoSenhaFuncionario" onKeyPressed="#validarSenhaFuncionario" opacity="0.52" prefHeight="87.0" prefWidth="1220.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#797979" height="87.0" stroke="#797979" strokeType="INSIDE" width="1220.0" />
+                  <PasswordField fx:id="campoSenhaFuncionario" onKeyPressed="#validarSenhaFuncionario" opacity="0.0" prefHeight="87.0" prefWidth="1220.0" />
                </children>
                <VBox.margin>
-                  <Insets top="30.0" />
+                  <Insets top="100.0" />
                </VBox.margin>
             </Pane>
          </children>
