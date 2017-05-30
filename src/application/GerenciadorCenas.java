@@ -34,7 +34,6 @@ public abstract class GerenciadorCenas
 		// posição zero.
 		ScrollPane telaPrincipal = loaders[1].load();
 		
-		
 		// Vamos adicionar a tela principal em baixo do toolbar.
 		root.getChildren().add(telaPrincipal);
 		controladorToolbar.adicionarCena(telaPrincipal, 1);
@@ -73,6 +72,15 @@ public abstract class GerenciadorCenas
 		controladorToolbar.adicionarCena(cenaAtual, indice);
 		root.getChildren().remove(1);
 		root.getChildren().add(cenaNova);
+	}
+	
+	public static void atualizar(int indice) throws IOException
+	{
+		loaders[indice].setRoot(null);
+		loaders[indice].setController(null);
+		
+		root.getChildren().remove(1);
+		root.getChildren().add(loaders[indice].load());
 	}
 	
 	/**

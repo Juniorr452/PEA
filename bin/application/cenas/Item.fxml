@@ -15,7 +15,7 @@
             <ImageView fx:id="capa" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
-      <Label fx:id="titulo" alignment="CENTER" contentDisplay="CENTER" prefHeight="30.0" prefWidth="204.0" text="Título">
+      <Label fx:id="titulo" alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="200.0" text="Título">
          <font>
             <Font name="Myriad Apple Bold" size="18.0" />
          </font>

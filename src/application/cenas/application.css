@@ -91,9 +91,6 @@
      */
     -fx-color: -fx-base;
 
-    /* The opacity level to use for the "disabled" pseudoclass.
-     */
-    -fx-disabled-opacity: 0.4;
 
     /***************************************************************************
      *                                                                         *
@@ -117,13 +114,6 @@
      * TODO: should this be renamed to -fx-armed-base?
      */
     -fx-pressed-base: derive(-fx-base,-20%);
-
-    /* Used to specify the body color for focused objects.  By default, it's
-     * the same as -fx-base (i.e., the body color doesn't change when a control
-     * gets focus).
-     */
-    -fx-focused-base: -fx-base;
-
     /* The color to use for -fx-text-fill when text is to be painted on top of
      * a background filled with the -fx-background color.
      */
@@ -306,12 +296,6 @@
         -fx-light-text-color 50%,
         -fx-mid-text-color   51%
     );
-
-    /* The default border color for a tab.
-     *
-     * TODO: should this be -fx-box-border or derived from some other color?
-     */
-    -fx-tab-border-color: -fx-box-border;
 
     /* These are needed for Popup */
     -fx-background-color: inherit;
@@ -859,7 +843,6 @@
 
 .menu-bar {
     -fx-padding: 0.0em 0.666667em 0.0em 0.666667em; /* 0 8 0 8 */
-    -fx-spacing: 0.166667em; /* 2 */
     -fx-base: derive(#d0d0d0,-70%);
     -fx-background-color: linear-gradient(to bottom, derive(-fx-color,50%), derive(-fx-color,-30%)), -fx-body-color;
     -fx-background-insets: 0, 1 0 1 0;
@@ -1000,8 +983,6 @@
     -fx-background-insets: 0 0 -1 0, 0, 1, 2;
     -fx-background-radius: 5, 5, 4, 3;
     -fx-padding: 0;
-    -fx-alignment: CENTER;
-    -fx-content-display: LEFT;
 }
 
 .choice-box:focused {
@@ -1119,7 +1100,6 @@
 }
 
 .slider > .axis {
-    -fx-tick-mark-stroke: ladder(-fx-background, derive(-fx-background,30%) 40%, derive(-fx-background,-30%) 41%);
     -fx-tick-label-font-size: 0.833333em; 
     -fx-tick-label-fill: -fx-text-background-color;
 }
@@ -1434,8 +1414,6 @@
     -fx-background-insets: 0;
     -fx-background-radius: 0;
     -fx-padding: 0.0em 0.5em 0.0em 0.0em; /* 0 6 0 0 */
-    -fx-alignment: CENTER_LEFT;
-    -fx-content-display: LEFT;
 }
 
 .cell > .choice-box > .label {
@@ -1993,12 +1971,6 @@
  * ProgressIndicator                                                           *
  *                                                                             *
  ******************************************************************************/
-
-.progress-indicator {
-    -fx-indeterminate-segment-count: 8;
-    -fx-spin-enabled: true;
-}
-
 .progress-indicator > .determinate-indicator > .indicator {
     -fx-background-color:
         -fx-box-border,
@@ -2080,13 +2052,6 @@
     /* There is some oddness if padding is in em values rather than pixels,
        in particular, the left border of the control doesn't show. */
     -fx-padding: 1; /* 0.083333em; */
-
-    /* Constants used throughout the tableview.
-     * TODO: Should these be derived from the palette in .scene?
-     */
-    -fx-table-header-border-color: #959595;
-/*    -fx-table-header-background-color: linear (0%,0%) to (0%,100%) stops (80%, #bbbbbb) (10%, #f6f6f6);*/
-    -fx-table-cell-border-color: #bbbbbb;
 }
 
 /** Draws focus border around tableview */
@@ -3011,28 +2976,10 @@
     -fx-background-radius: 6px; /* makes sure this remains circular */
     -fx-background-insets: 0, 3;
 }
-/* ====== BUBBLE CHART =========================================================== */
-.bubble-legend-symbol {
-    -fx-background-radius: 8px;
-    -fx-padding: 8px;
-}
-.chart-bubble {
-    -fx-bubble-fill: #f9d900;
-    -fx-background-color: radial-gradient(center 50% 50%, radius 80%, derive(-fx-bubble-fill,20%), derive(-fx-bubble-fill,-30%));
-}
-.default-color0.chart-bubble { -fx-bubble-fill: #f9d900aa; }
-.default-color1.chart-bubble { -fx-bubble-fill: #a9e200aa; }
-.default-color2.chart-bubble { -fx-bubble-fill: #22bad9aa; }
-.default-color3.chart-bubble { -fx-bubble-fill: #0181e2aa; }
-.default-color4.chart-bubble { -fx-bubble-fill: #2f357faa; }
-.default-color5.chart-bubble { -fx-bubble-fill: #860061aa; }
-.default-color6.chart-bubble { -fx-bubble-fill: #c62b00aa; }
-.default-color7.chart-bubble { -fx-bubble-fill: #ff5700aa; }
 
 /* ====== BAR CHART =========================================================== */
 /* TODO flip gradient vertical for negative bars */
 .chart-bar {
-    -fx-bar-fill: #22bad9;
     -fx-background-color: linear-gradient(derive(-fx-bar-fill,-30%), derive(-fx-bar-fill,-40%)),
                           linear-gradient(derive(-fx-bar-fill,80%), derive(-fx-bar-fill, 0%)),
                           linear-gradient(derive(-fx-bar-fill,30%), derive(-fx-bar-fill,-10%));
@@ -3058,50 +3005,9 @@
                           linear-gradient(to right, derive(-fx-bar-fill,30%), derive(-fx-bar-fill,-10%));
     -fx-background-radius: 5 0 0 5, 4 0 0 4, 3 0 0 3;
 }
-.default-color0.chart-bar { -fx-bar-fill: #f9d900; }
-.default-color1.chart-bar { -fx-bar-fill: #a9e200; }
-.default-color2.chart-bar { -fx-bar-fill: #22bad9; }
-.default-color3.chart-bar { -fx-bar-fill: #0181e2; }
-.default-color4.chart-bar { -fx-bar-fill: #2f357f; }
-.default-color5.chart-bar { -fx-bar-fill: #860061; }
-.default-color6.chart-bar { -fx-bar-fill: #c62b00; }
-.default-color7.chart-bar { -fx-bar-fill: #ff5700; }
 .bar-legend-symbol {
     -fx-padding: 8px;
 }
-/* ====== PIE CHART ============================================================== */
-.chart-pie {
-    -fx-pie-color: #2f357f;
-    -fx-background-color: radial-gradient(radius 100%, derive(-fx-pie-color,55%), derive(-fx-pie-color,-20%));
-    -fx-background-insets: 0;
-    -fx-border-color: derive(-fx-pie-color,-30%);
-}
-.chart-pie-label {
-    -fx-padding: 3px;
-    -fx-fill: -fx-text-base-color;
-}
-.chart-pie-label-line {
-    -fx-stroke: #aaaaaa;
-    -fx-fill: #aaaaaa;
-}
-.default-color0.chart-pie { -fx-pie-color: #f9d900; }
-.default-color1.chart-pie { -fx-pie-color: #a9e200; }
-.default-color2.chart-pie { -fx-pie-color: #22bad9; }
-.default-color3.chart-pie { -fx-pie-color: #0181e2; }
-.default-color4.chart-pie { -fx-pie-color: #2f357f; }
-.default-color5.chart-pie { -fx-pie-color: #860061; }
-.default-color6.chart-pie { -fx-pie-color: #c62b00; }
-.default-color7.chart-pie { -fx-pie-color: #ff5700; }
-.negative.chart-pie {
-    -fx-pie-color: transparent;
-    -fx-background-color: white;
-}
-.pie-legend-symbol.chart-pie {
-    -fx-background-radius: 8px;
-    -fx-padding: 8px;
-    -fx-border-color: null;
-}
-
 /* -------------- CODE  FOR THE NON-EDITABLE COMBO-BOX -------------- */
 
 /* ------- MAIN BUTTON ------- */
@@ -3238,10 +3144,6 @@ Only the properties with values that are different from the TextBox are specifie
 
 /* -------------------------- STYLES FOR THE COLOR-PICKER CONTROL ----- */
 
-.color-picker {
-    -fx-color-rect-width: 0.916667em; /* 11px */
-    -fx-color-rect-height: 0.916667em; /* 11px */
-}
 .color-picker > .arrow-button {
     -fx-background-color: null;
     -fx-background-insets: 0, 1, 2;
@@ -3322,7 +3224,6 @@ Only the properties with values that are different from the TextBox are specifie
     -fx-background-color: transparent;
     -fx-background-insets: -1, 0;   
     -fx-padding: 0.5;
-    -fx-border: black;
 }
 
 /* the color over which the user is hovering */
@@ -3827,13 +3728,6 @@ Only the properties with values that are different from the TextBox are specifie
     /* There is some oddness if padding is in em values rather than pixels,
        in particular, the left border of the control doesn't show. */
     -fx-padding: 1; /* 0.083333em; */
-
-    /* Constants used throughout the tableview.
-     * TODO: Should these be derived from the palette in .scene?
-     */
-    -fx-table-header-border-color: #959595;
-/*    -fx-table-header-background-color: linear (0%,0%) to (0%,100%) stops (80%, #bbbbbb) (10%, #f6f6f6);*/
-    -fx-table-cell-border-color: #bbbbbb;
 }
 
 .tree-table-row-cell {
@@ -3955,10 +3849,6 @@ Only the properties with values that are different from the TextBox are specifie
 
 .html-editor-foreground, .html-editor-background {
     -fx-color-label-visible: false;
-    -fx-color-rect-x: 0;
-    -fx-color-rect-y: 10;
-    -fx-color-rect-width: 16;
-    -fx-color-rect-height: 5;
     -fx-padding: 0;
 }
 .html-editor-foreground > .color-picker-label,
@@ -3969,7 +3859,7 @@ Only the properties with values that are different from the TextBox are specifie
 whose borders are styled.  Only the right border is specified
 with a color; the other three borders are transparent.*/
 
-/* Note: This first section of CSS (below) specifies the Separator’s color.
+/* Note: This first section of CSS (below) specifies the Separatorï¿½s color.
 Specifying the color here ensures the same color for both .top-toolbar
 and .bottom-toolbar Separators, as they will inherit the color. */
 
@@ -3979,7 +3869,7 @@ and .bottom-toolbar Separators, as they will inherit the color. */
     -fx-border-color: transparent derive(-fx-base,-35%) transparent transparent; /* #878787 */
 }
 
-/* Note: This next section of CSS (below) specifies the Separator’s length.
+/* Note: This next section of CSS (below) specifies the Separatorï¿½s length.
 The length of the Separator is determined by adding its -fx-padding values
 to the top and bottom -fx-padding values of the parent toolbar. */
 
@@ -4001,7 +3891,6 @@ to the top and bottom -fx-padding values of the parent toolbar. */
     -fx-background-radius: 0.25em; /* 3 */
     -fx-padding: 0.25em;  /* 3 */
     -fx-alignment: CENTER;
-    -fx-graphic-vpos: CENTER;
 }
 
 .html-editor > * > .top-toolbar > .button:hover {
@@ -4018,7 +3907,6 @@ to the top and bottom -fx-padding values of the parent toolbar. */
     -fx-background-radius: 3;
     -fx-padding: 0.25em;  /* 3 */
     -fx-alignment: CENTER;
-    -fx-graphic-vpos: CENTER;
 }
 
 .html-editor > * > .top-toolbar > .toggle-button:hover {
@@ -4269,4 +4157,13 @@ to the top and bottom -fx-padding values of the parent toolbar. */
 
 .alert.warning.dialog-pane {
     -fx-graphic: url("dialog-warning.png");
+}
+
+.secao
+{
+	-fx-background-color: #ffffff;
+	-fx-background-radius: 5px;
+	-fx-border-color: #cccccc;
+	-fx-border-radius: 5px;
+	-fx-padding: 20px;
 }

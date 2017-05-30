@@ -31,7 +31,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML private TextField codigo;
 	@FXML private TextField nome;
 	@FXML private TextField autor;
-	// Campo Ano/Categoria/Duracao
+	// Campo Ano/Categoria/DuraÃ§Ã£o
 	@FXML private TextField campoACD;
 	@FXML private TextField preco;
 	@FXML private TextField quantidade;
@@ -47,7 +47,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no botão cadastrar,
+	 * Chamado ao clicar no botÃ£o cadastrar,
 	 * no primeiro menu da tela.
 	 */
 	@FXML
@@ -57,11 +57,11 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Função utilizada internamente para
-	 * tornar um elemento invisível e outro visível,
-	 * dando a impressão de trocar de tela.
-	 * @param telaAtual - VBox na qual você está.
-	 * @param telaDestino - VBox na qual você deseja ir.
+	 * Utilizada internamente para
+	 * tornar um elemento invisÃ­vel e outro visÃ­vel,
+	 * dando a impressÃ£o de trocar de tela.
+	 * @param telaAtual - VBox na qual vocï¿½ estï¿½.
+	 * @param telaDestino - VBox na qual vocï¿½ deseja ir.
 	 */
 	private void mudarTela(VBox telaAtual, VBox telaDestino)
 	{
@@ -82,7 +82,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no botão
+	 * Chamado ao clicar no botÃ£o
 	 * escolher imagem.
 	 */
 	@FXML
@@ -92,7 +92,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado quando o funcionário
+	 * Chamado quando o funcionÃ¡rio
 	 * selecionar outro valor na caixa
 	 * de tipo.
 	 */
@@ -106,7 +106,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			break;
 			
 		case "DVD":
-			campoACD.setPromptText("Duração");
+			campoACD.setPromptText("Duraï¿½ï¿½o");
 			break;
 			
 		case "CD":
@@ -116,13 +116,13 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no botão de cadastrar.
-	 * Vai verificar os campos para ver se são
-	 * nulos, pegar as informações, ver o tipo
+	 * Chamado ao clicar no botÃ£o de cadastrar.
+	 * Vai verificar os campos para ver se sï¿½o
+	 * nulos, pegar as informaÃ§Ãµes, ver o tipo
 	 * de produto e cadastrar de acordo com ele.
 	 * 
 	 * Reseta os campos aos valores originais no
-	 * fim da operação.
+	 * fim da operaÃ§Ã£o.
 	 */
 	@FXML
 	private void cadastrar()
@@ -137,8 +137,10 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		int    quantidade;
 		Image  imagem;
 
-		if (verificarCampos())
+		try
 		{
+			verificarCampos();
+			
 			codigo = this.codigo.getText();
 			nome = this.nome.getText();
 			autor = this.autor.getText();
@@ -171,9 +173,13 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			mudarTela(menuCadastrar, menuFuncionario);
 			resetarCampos();
 		}
-		else
+		catch (NoSuchFieldException e)
 		{
-			Janelas.mensagem("Erro", "Preencha todos os campos antes de continuar", AlertType.ERROR);
+			Janelas.mensagem("Erro", e.getMessage(), AlertType.ERROR);
+		}
+		catch (NumberFormatException e)
+		{
+			Janelas.mensagem("Erro", "NÃºmero digitado invÃ¡lido. Verifique os campos e tente novamente.", AlertType.ERROR);
 		}
 	}
 
@@ -198,13 +204,10 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Verifica se os valores dos campos obrigatórios
-	 * não foram digitados.
-	 * @return true, se todos foram preenchidos.
-	 * <P>
-	 * false, se existe algum sem informação.
+	 * Verifica se os valores dos campos obrigatÃ³rios
+	 * nÃ£o foram digitados.
 	 */
-	private boolean verificarCampos()
+	private void verificarCampos() throws NoSuchFieldException
 	{
 		if (codigo.getText().equals("")     ||
 			nome.getText().equals("")       ||
@@ -215,9 +218,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			imagem.getImage()      == null  ||
 		    tipoProduto.getValue() == null)
 		{
-			return false;
-		}		
-		else
-			return true;	
+			throw new NoSuchFieldException("Preencha todos os campos antes de continuar");
+		}	
 	}
 }
