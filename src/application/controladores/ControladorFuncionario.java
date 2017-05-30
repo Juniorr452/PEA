@@ -35,6 +35,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML private TextField campoACD;
 	@FXML private TextField preco;
 	@FXML private TextField quantidade;
+	@FXML private TextField descricao;
 	
 	@FXML private Button cadastrar;
 	
@@ -47,7 +48,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no botão cadastrar,
+	 * Chamado ao clicar no botï¿½o cadastrar,
 	 * no primeiro menu da tela.
 	 */
 	@FXML
@@ -57,11 +58,11 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Função utilizada internamente para
-	 * tornar um elemento invisível e outro visível,
-	 * dando a impressão de trocar de tela.
-	 * @param telaAtual - VBox na qual você está.
-	 * @param telaDestino - VBox na qual você deseja ir.
+	 * Funï¿½ï¿½o utilizada internamente para
+	 * tornar um elemento invisï¿½vel e outro visï¿½vel,
+	 * dando a impressï¿½o de trocar de tela.
+	 * @param telaAtual - VBox na qual vocï¿½ estï¿½.
+	 * @param telaDestino - VBox na qual vocï¿½ deseja ir.
 	 */
 	private void mudarTela(VBox telaAtual, VBox telaDestino)
 	{
@@ -82,7 +83,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no botão
+	 * Chamado ao clicar no botï¿½o
 	 * escolher imagem.
 	 */
 	@FXML
@@ -92,7 +93,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado quando o funcionário
+	 * Chamado quando o funcionï¿½rio
 	 * selecionar outro valor na caixa
 	 * de tipo.
 	 */
@@ -106,7 +107,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			break;
 			
 		case "DVD":
-			campoACD.setPromptText("Duração");
+			campoACD.setPromptText("Duraï¿½ï¿½o");
 			break;
 			
 		case "CD":
@@ -116,49 +117,54 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Chamado ao clicar no botão de cadastrar.
-	 * Vai verificar os campos para ver se são
-	 * nulos, pegar as informações, ver o tipo
+	 * Chamado ao clicar no botï¿½o de cadastrar.
+	 * Vai verificar os campos para ver se sï¿½o
+	 * nulos, pegar as informaï¿½ï¿½es, ver o tipo
 	 * de produto e cadastrar de acordo com ele.
 	 * 
 	 * Reseta os campos aos valores originais no
-	 * fim da operação.
+	 * fim da operaï¿½ï¿½o.
 	 */
 	@FXML
 	private void cadastrar()
 	{
 		Produto p;
 		
-		String codigo;
+		int    codigo;
 		String nome;
 		String autor;
 		String campoACD;
 		double preco;
 		int    quantidade;
 		Image  imagem;
+		String descricao;
 
 		if (verificarCampos())
 		{
-			codigo = this.codigo.getText();
+			codigo = Integer.parseInt(this.codigo.getText());
 			nome = this.nome.getText();
 			autor = this.autor.getText();
 			campoACD = this.campoACD.getText();
 			preco = Double.parseDouble(this.preco.getText());
 			quantidade = Integer.parseInt(this.quantidade.getText());
 			imagem = this.imagem.getImage();
+			descricao = this.descricao.getText();
+			
+			if (descricao.equals(""))
+				descricao = null;
 			
 			switch(tipoProduto.getValue())
 			{
 			case "Livro":
-				p = new Livro(nome, autor, campoACD, preco, imagem, quantidade);
+				p = new Livro(codigo, nome, autor, campoACD, preco, imagem, quantidade, descricao);
 				break;
 				
 			case "DVD":
-				p = new Dvd(nome, autor, campoACD, preco, imagem, quantidade);
+				p = new Dvd(codigo, nome, autor, campoACD, preco, imagem, quantidade, descricao);
 				break;
 				
 			case "CD":
-				p = new Cd(nome, autor, campoACD, preco, imagem, quantidade);
+				p = new Cd(codigo, nome, autor, campoACD, preco, imagem, quantidade, descricao);
 				break;
 				
 			default:
@@ -195,14 +201,15 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		campoACD.clear();
 		preco.clear();
 		quantidade.clear();
+		descricao.clear();
 	}
 	
 	/**
-	 * Verifica se os valores dos campos obrigatórios
-	 * não foram digitados.
+	 * Verifica se os valores dos campos obrigatï¿½rios
+	 * nï¿½o foram digitados.
 	 * @return true, se todos foram preenchidos.
 	 * <P>
-	 * false, se existe algum sem informação.
+	 * false, se existe algum sem informaï¿½ï¿½o.
 	 */
 	private boolean verificarCampos()
 	{

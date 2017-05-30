@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 public class ControladorProduto extends Controlador implements Initializable
 {
@@ -24,6 +25,7 @@ public class ControladorProduto extends Controlador implements Initializable
 	@FXML private Label msgCarrinho;
 	@FXML private Label qtd;
 	@FXML private TextArea qtdArea;
+	@FXML private Text descricaoItem;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -32,6 +34,7 @@ public class ControladorProduto extends Controlador implements Initializable
 		capaItem.setImage(produtoSelecionado.getImage());
 		autorItem.setText(produtoSelecionado.getAutor());
 		precoItem.setText(Double.toString(produtoSelecionado.getPreco()));
+		descricaoItem.setText(produtoSelecionado.getDescricao());
 		
 		if(produtoSelecionado.getQuantidade() != 0) 	
 			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade()));

@@ -1,68 +1,18 @@
 package sistema_loja.classes.produtos;
 
 import javafx.scene.image.Image;
-import sistema_loja.interfaces.Produto;
 
-public class Livro implements Produto 
+public class Livro extends ProdutoGenerico
 {
-	private String titulo;
-	private String autor;
 	private String categoria;
-	private double preco;
-	private Image imagem;
-	private int quantidade;
 	
-	public Livro(String titulo, String autor, String categoria, double preco, Image imagem, int quantidade) 
+	public Livro(int codigo, String titulo, String autor, String categoria, double preco, Image imagem, int quantidade, String descricao) 
 	{
-		this.titulo = titulo;
-		this.autor = autor;
+		super(codigo, titulo, autor, preco, imagem, quantidade, descricao);
 		this.categoria = categoria;
-		this.preco = preco;
-		this.imagem = imagem;
-		this.quantidade = quantidade;
-	}
-	
-	@Override
-	public String getTitulo() 
-	{
-		return titulo;
 	}
 
-	@Override
-	public double getPreco() 
-	{
-		return preco;
+	public String getCategoria() {
+		return this.categoria;
 	}
-
-	@Override
-	public Image getImage() 
-	{
-		return imagem;
-	}
-	
-	public String getAutor() 
-	{
-		return autor;
-	}
-	
-	public String getCategoria() 
-	{
-		return categoria;
-	}
-	
-	@Override
-	public int getQuantidade() {
-		return this.quantidade;
-	}
-
-	@Override
-	public void setQuantidade(int quantidade) {
-		this.quantidade = quantidade;
-	}	
-	
-	@Override
-	public void setPreco(double valor) {
-		preco = valor;
-	}
-	
 }

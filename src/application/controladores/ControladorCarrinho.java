@@ -2,7 +2,6 @@ package application.controladores;
 
 import java.io.IOException;
 import java.net.URL;
-import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 import application.GerenciadorCenas;
@@ -11,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
-import sistema_loja.interfaces.Produto;
 
 public class ControladorCarrinho extends Controlador implements Initializable{
 	
