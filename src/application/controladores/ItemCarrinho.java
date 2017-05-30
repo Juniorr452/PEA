@@ -24,6 +24,7 @@ public class ItemCarrinho extends HBox {
 	
 	private int qtdDesejada;
 	private double preco;
+	private int codigo;
 	
 	public ItemCarrinho(Produto p, int qtdDesejada)
 	{
@@ -46,11 +47,13 @@ public class ItemCarrinho extends HBox {
 	    {
 	    	throw new RuntimeException(exception);
 	    }
-		
-	    this.qtdDesejada = qtdDesejada;
-	    preco = p.getPreco();
 	    
 	    produto = p;
+	    
+	    this.qtdDesejada = qtdDesejada; 
+	    preco = p.getPreco();
+	    codigo = produto.getCodigo();
+	    
 		tituloLabel.setText(p.getTitulo());
 		qtdText.setText(Integer.toString(this.qtdDesejada));
 		precoLabel.setText(Double.toString(p.getPreco()));
@@ -62,7 +65,13 @@ public class ItemCarrinho extends HBox {
 		//Ao clicarmos em remover, ele pegara este objeto, e ira retirar da lista do carrinho
 		Controlador.produtosCarrinho.remove(this);
 		
-		Janelas.mensagem("ÃŠxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
+		for (Produto p : Controlador.produtos) {
+			if(codigo == p.getCodigo()) {
+				p.setQuantidade(p.getQuantidade() + qtdDesejada);
+			}
+		}
+		
+		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
 		if(Controlador.produtosCarrinho.isEmpty())
 			GerenciadorCenas.irPara(1);
@@ -76,5 +85,14 @@ public class ItemCarrinho extends HBox {
 	
 	public int getQtd() {
 		return qtdDesejada;
+	}
+	
+	public int getCodigo() {
+		return codigo;
+	}
+	
+	public void setQtd(int valor) {
+		qtdDesejada += valor;
+		qtdText.setText(Integer.toString(qtdDesejada));
 	}
 }

@@ -1,8 +1,9 @@
 package sistema_loja.classes.produtos;
 
 import javafx.scene.image.Image;
+import sistema_loja.interfaces.Produto;
 
-public class Livro extends ProdutoGenerico
+public class Livro extends ProdutoGenerico implements Produto
 {
 	private String categoria;
 	

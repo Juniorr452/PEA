@@ -49,27 +49,46 @@ public class ControladorProduto extends Controlador implements Initializable
 		{	
 			int qtdLabel = Integer.parseInt(qtd.getText());
 			int qtdDesejada = verificarQuantidadeDesejada();
+			boolean contem = false;
+			ItemCarrinho p = null;
 			
 			//Verificamos se a quantidade desejada esta disponivel para compra
 			if(qtdDesejada <= qtdLabel) 
 			{
+				
 				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
+				for (ItemCarrinho itemCarrinho : produtosCarrinho) {
+					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) {
+						p = itemCarrinho;
+						contem = true;
+						break;
+					}
+				}
+				
+				if(contem) {
+					p.setQtd(qtdDesejada);
+				} else {
 					ItemCarrinho item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
 					Controlador.produtosCarrinho.add(item);
-					Janelas.mensagem("ÃŠxito", "Produto adicionado ao carrinho com sucesso", 
-																				AlertType.INFORMATION);
+					
 					decrementarQtdLabel(qtdDesejada);
 					produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
+				}
+				
+				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
+				Janelas.mensagem("Exito", "Produto adicionado ao carrinho com sucesso", 
+						AlertType.INFORMATION);
 			}	
 			else
 				Janelas.mensagem("Erro", "A quantidade desejada nÃ£o estÃ¡ disponÃ­vel para compra.", AlertType.ERROR);
 		}
 		catch (NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Digite um valor vï¿½lido.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Digite um valor valido.", AlertType.ERROR);
 		}
 		catch (Exception f)
 		{
+			f.printStackTrace();
 			System.out.println("ALGUM ERRO DIFERENTE");
 		}
 	}
@@ -93,11 +112,11 @@ public class ControladorProduto extends Controlador implements Initializable
 				GerenciadorCenas.irPara(4);
 			} 
 			else 
-				Janelas.mensagem("Erro", "A quantidade desejada nÃ£o estÃ¡ disponÃ­vel", AlertType.ERROR);
+				Janelas.mensagem("Erro", "A quantidade desejada não está disponível.", AlertType.ERROR);
 		}
 		catch(NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Digite um valor vï¿½lido.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
 		}	
 	}
 	
