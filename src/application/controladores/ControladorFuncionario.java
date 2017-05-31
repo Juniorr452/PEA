@@ -35,6 +35,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML private TextField campoACD;
 	@FXML private TextField preco;
 	@FXML private TextField quantidade;
+	@FXML private TextField descricao;
 	
 	@FXML private Button cadastrar;
 	
@@ -129,38 +130,43 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	{
 		Produto p;
 		
-		String codigo;
+		int    codigo;
 		String nome;
 		String autor;
 		String campoACD;
 		double preco;
 		int    quantidade;
 		Image  imagem;
+		String descricao;
 
 		try
 		{
 			verificarCampos();
-			
-			codigo = this.codigo.getText();
+      
+			codigo = Integer.parseInt(this.codigo.getText());
 			nome = this.nome.getText();
 			autor = this.autor.getText();
 			campoACD = this.campoACD.getText();
 			preco = Double.parseDouble(this.preco.getText());
 			quantidade = Integer.parseInt(this.quantidade.getText());
 			imagem = this.imagem.getImage();
+			descricao = this.descricao.getText();
+			
+			if (descricao.equals(""))
+				descricao = null;
 			
 			switch(tipoProduto.getValue())
 			{
 			case "Livro":
-				p = new Livro(nome, autor, campoACD, preco, imagem, quantidade);
+				p = new Livro(codigo, nome, autor, campoACD, preco, imagem, quantidade, descricao);
 				break;
 				
 			case "DVD":
-				p = new Dvd(nome, autor, campoACD, preco, imagem, quantidade);
+				p = new Dvd(codigo, nome, autor, campoACD, preco, imagem, quantidade, descricao);
 				break;
 				
 			case "CD":
-				p = new Cd(nome, autor, campoACD, preco, imagem, quantidade);
+				p = new Cd(codigo, nome, autor, campoACD, preco, imagem, quantidade, descricao);
 				break;
 				
 			default:
@@ -201,6 +207,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		campoACD.clear();
 		preco.clear();
 		quantidade.clear();
+		descricao.clear();
 	}
 	
 	/**
@@ -216,7 +223,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			preco.getText().equals("")      ||
 			quantidade.getText().equals("") ||
 			imagem.getImage()      == null  ||
-		    tipoProduto.getValue() == null)
+		  tipoProduto.getValue() == null)
 		{
 			throw new NoSuchFieldException("Preencha todos os campos antes de continuar");
 		}	

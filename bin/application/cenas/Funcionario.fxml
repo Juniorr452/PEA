@@ -121,7 +121,7 @@
                            </children>
                         </HBox>
                         <TextField fx:id="autor" alignment="CENTER" prefHeight="49.0" prefWidth="90.0" promptText="Autor" />
-                        <TextField alignment="CENTER" prefHeight="177.0" prefWidth="486.0" promptText="Descrição (Opcional)" />
+                        <TextField fx:id="descricao" alignment="CENTER" prefHeight="177.0" prefWidth="486.0" promptText="Descrição (Opcional)" />
                         <HBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="49.0" prefWidth="200.0" spacing="20.0">
                            <children>
                               <Button cancelButton="true" mnemonicParsing="false" onAction="#cancelar" prefHeight="38.0" prefWidth="125.0" text="Cancelar" />

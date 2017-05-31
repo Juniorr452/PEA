@@ -17,27 +17,30 @@ public class Cadastro
 		this.produtos = produtos;
 	}
 	
-	public void cadastrarLivro(String titulo, String autor, String categoria, String preco, Image imagem, String quantidade)
+	public void cadastrarLivro(String codigo, String titulo, String autor, String categoria, String preco, Image imagem, String quantidade)
 	{
-		Produto p = new Livro(titulo, autor, categoria, 
+		Produto p = new Livro(Integer.parseInt(codigo),
+				titulo, autor, categoria, 
 				Double.parseDouble(preco), imagem, 
-				Integer.parseInt(quantidade));
+				Integer.parseInt(quantidade), null);
 		produtos.add(p);
 	}
 	
-	public void cadastrarDVD(String titulo, String autor, String duracao, String preco, Image imagem, String quantidade)
+	public void cadastrarDVD(String codigo, String titulo, String autor, String duracao, String preco, Image imagem, String quantidade)
 	{
-		Produto p = new Dvd(titulo, autor, duracao, 
+		Produto p = new Dvd(Integer.parseInt(codigo),
+							titulo, autor, duracao, 
 							Double.parseDouble(preco), imagem, 
-							Integer.parseInt(quantidade));
+							Integer.parseInt(quantidade), null);
 		produtos.add(p);
 	}
 	
-	public void cadastrarCD(String titulo, String autor, String ano, String preco, Image imagem, String quantidade)
+	public void cadastrarCD(String codigo, String titulo, String autor, String ano, String preco, Image imagem, String quantidade)
 	{
-		Produto p = new Cd(titulo, autor, ano, 
+		Produto p = new Cd(Integer.parseInt(codigo),
+				titulo, autor, ano, 
 				Double.parseDouble(preco), imagem, 
-				Integer.parseInt(quantidade));
+				Integer.parseInt(quantidade), null);
 		produtos.add(p);
 	}
 }
