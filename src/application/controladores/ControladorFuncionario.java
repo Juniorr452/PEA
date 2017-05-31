@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import sistema_loja.classes.produtos.Cd;
 import sistema_loja.classes.produtos.Dvd;
 import sistema_loja.classes.produtos.Livro;
+import sistema_loja.exceptions.CodigoJaExistenteException;
 import sistema_loja.interfaces.Produto;
 
 public class ControladorFuncionario extends Controlador implements Initializable
@@ -155,6 +156,11 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			if (descricao.equals(""))
 				descricao = null;
 			
+			// Verificar se o código já existe.
+			for(Produto produto : produtos)
+				if (codigo == produto.getCodigo())
+					throw new CodigoJaExistenteException();
+			
 			switch(tipoProduto.getValue())
 			{
 			case "Livro":
@@ -186,6 +192,10 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		catch (NumberFormatException e)
 		{
 			Janelas.mensagem("Erro", "Número digitado inválido. Verifique os campos e tente novamente.", AlertType.ERROR);
+		}
+		catch (CodigoJaExistenteException e)
+		{
+			Janelas.mensagem("Aviso", e.getMessage(), AlertType.WARNING);
 		}
 	}
 
@@ -223,7 +233,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			preco.getText().equals("")      ||
 			quantidade.getText().equals("") ||
 			imagem.getImage()      == null  ||
-		  tipoProduto.getValue() == null)
+		    tipoProduto.getValue() == null)
 		{
 			throw new NoSuchFieldException("Preencha todos os campos antes de continuar");
 		}	

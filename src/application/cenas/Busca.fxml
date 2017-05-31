@@ -19,7 +19,7 @@
             </Text>
             <ScrollPane hbarPolicy="NEVER" prefHeight="530.0" prefWidth="1120.0">
                <content>
-                  <FlowPane fx:id="secaoResultados" hgap="25.0" prefHeight="500.0" prefWidth="1120.0" prefWrapLength="1200.0" vgap="10.0">
+                  <FlowPane fx:id="secaoResultados" hgap="25.0" prefHeight="500.0" prefWidth="1120.0" prefWrapLength="1200.0" style="-fx-background-color: ffffff;" vgap="25.0">
                      <padding>
                         <Insets left="7.0" />
                      </padding></FlowPane>

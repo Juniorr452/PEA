@@ -17,13 +17,10 @@ public class Carrinho
 		produtosCarrinho = new ArrayList<Produto>();
 	}
 
-	public void addCarrinho(Produto elementoCarrinho){
-		
+	public void addCarrinho(Produto elementoCarrinho)
+	{
 		double aux = elementoCarrinho.getPreco();
 		valorTotal = aux + valorTotal;
 		produtosCarrinho.add(elementoCarrinho);
-		
 	}
-
-
 }
