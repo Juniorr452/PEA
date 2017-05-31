@@ -90,10 +90,11 @@
      * set -fx-color to -fx-pressed-base.
      */
     -fx-color: -fx-base;
-
+    
     /* The opacity level to use for the "disabled" pseudoclass.
      */
     -fx-disabled-opacity: 0.4;
+
 
     /***************************************************************************
      *                                                                         *
@@ -117,13 +118,13 @@
      * TODO: should this be renamed to -fx-armed-base?
      */
     -fx-pressed-base: derive(-fx-base,-20%);
-
+    
     /* Used to specify the body color for focused objects.  By default, it's
      * the same as -fx-base (i.e., the body color doesn't change when a control
      * gets focus).
      */
     -fx-focused-base: -fx-base;
-
+    
     /* The color to use for -fx-text-fill when text is to be painted on top of
      * a background filled with the -fx-background color.
      */
@@ -306,7 +307,7 @@
         -fx-light-text-color 50%,
         -fx-mid-text-color   51%
     );
-
+    
     /* The default border color for a tab.
      *
      * TODO: should this be -fx-box-border or derived from some other color?
@@ -1993,12 +1994,11 @@
  * ProgressIndicator                                                           *
  *                                                                             *
  ******************************************************************************/
-
 .progress-indicator {
     -fx-indeterminate-segment-count: 8;
     -fx-spin-enabled: true;
 }
-
+ 
 .progress-indicator > .determinate-indicator > .indicator {
     -fx-background-color:
         -fx-box-border,
@@ -2080,7 +2080,7 @@
     /* There is some oddness if padding is in em values rather than pixels,
        in particular, the left border of the control doesn't show. */
     -fx-padding: 1; /* 0.083333em; */
-
+    
     /* Constants used throughout the tableview.
      * TODO: Should these be derived from the palette in .scene?
      */
@@ -3028,11 +3028,10 @@
 .default-color5.chart-bubble { -fx-bubble-fill: #860061aa; }
 .default-color6.chart-bubble { -fx-bubble-fill: #c62b00aa; }
 .default-color7.chart-bubble { -fx-bubble-fill: #ff5700aa; }
-
 /* ====== BAR CHART =========================================================== */
 /* TODO flip gradient vertical for negative bars */
 .chart-bar {
-    -fx-bar-fill: #22bad9;
+	-fx-bar-fill: #22bad9;
     -fx-background-color: linear-gradient(derive(-fx-bar-fill,-30%), derive(-fx-bar-fill,-40%)),
                           linear-gradient(derive(-fx-bar-fill,80%), derive(-fx-bar-fill, 0%)),
                           linear-gradient(derive(-fx-bar-fill,30%), derive(-fx-bar-fill,-10%));
@@ -3103,7 +3102,6 @@
 }
 
 /* -------------- CODE  FOR THE NON-EDITABLE COMBO-BOX -------------- */
-
 /* ------- MAIN BUTTON ------- */
 .combo-box-base  {
 	-fx-background-color: transparent;
@@ -3237,7 +3235,6 @@ Only the properties with values that are different from the TextBox are specifie
 }
 
 /* -------------------------- STYLES FOR THE COLOR-PICKER CONTROL ----- */
-
 .color-picker {
     -fx-color-rect-width: 0.916667em; /* 11px */
     -fx-color-rect-height: 0.916667em; /* 11px */
@@ -3322,7 +3319,6 @@ Only the properties with values that are different from the TextBox are specifie
     -fx-background-color: transparent;
     -fx-background-insets: -1, 0;   
     -fx-padding: 0.5;
-    -fx-border: black;
 }
 
 /* the color over which the user is hovering */
@@ -3827,13 +3823,6 @@ Only the properties with values that are different from the TextBox are specifie
     /* There is some oddness if padding is in em values rather than pixels,
        in particular, the left border of the control doesn't show. */
     -fx-padding: 1; /* 0.083333em; */
-
-    /* Constants used throughout the tableview.
-     * TODO: Should these be derived from the palette in .scene?
-     */
-    -fx-table-header-border-color: #959595;
-/*    -fx-table-header-background-color: linear (0%,0%) to (0%,100%) stops (80%, #bbbbbb) (10%, #f6f6f6);*/
-    -fx-table-cell-border-color: #bbbbbb;
 }
 
 .tree-table-row-cell {
@@ -3955,15 +3944,12 @@ Only the properties with values that are different from the TextBox are specifie
 
 .html-editor-foreground, .html-editor-background {
     -fx-color-label-visible: false;
-    -fx-color-rect-x: 0;
-    -fx-color-rect-y: 10;
-    -fx-color-rect-width: 16;
-    -fx-color-rect-height: 5;
     -fx-padding: 0;
 }
 .html-editor-foreground > .color-picker-label,
 .html-editor-background > .color-picker-label {
     -fx-padding: 0 0 -0.083333em 0;
+    
 }
 /* Note: The Separator is constructed of a 1-pixel shape
 whose borders are styled.  Only the right border is specified
@@ -4018,7 +4004,6 @@ to the top and bottom -fx-padding values of the parent toolbar. */
     -fx-background-radius: 3;
     -fx-padding: 0.25em;  /* 3 */
     -fx-alignment: CENTER;
-    -fx-graphic-vpos: CENTER;
 }
 
 .html-editor > * > .top-toolbar > .toggle-button:hover {

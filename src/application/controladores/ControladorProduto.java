@@ -49,32 +49,29 @@ public class ControladorProduto extends Controlador implements Initializable
 		{	
 			int qtdLabel = Integer.parseInt(qtd.getText());
 			int qtdDesejada = verificarQuantidadeDesejada();
-			boolean contem = false;
-			ItemCarrinho p = null;
+			ItemCarrinho item = null;
 			
 			//Verificamos se a quantidade desejada esta disponivel para compra
 			if(qtdDesejada <= qtdLabel) 
 			{
-				
 				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
-				for (ItemCarrinho itemCarrinho : produtosCarrinho) {
-					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) {
-						p = itemCarrinho;
-						contem = true;
+				for (ItemCarrinho itemCarrinho : produtosCarrinho) 
+					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) 
+					{
+						item = itemCarrinho;
 						break;
 					}
-				}
-				
-				if(contem) {
-					p.setQtd(qtdDesejada);
-				} else {
-					ItemCarrinho item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
+						
+				// Se ele encontrou um produto na nossa lista de itens do carrinho
+				if(item != null) 
+					item.setQtd(qtdDesejada);				
+				else 
+				{
+					item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
 					Controlador.produtosCarrinho.add(item);
-					
-					decrementarQtdLabel(qtdDesejada);
-					produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
 				}
 				
+				decrementarQtdLabel(qtdDesejada);
 				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
 				Janelas.mensagem("Exito", "Produto adicionado ao carrinho com sucesso", 
 						AlertType.INFORMATION);
