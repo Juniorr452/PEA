@@ -2,6 +2,9 @@ package application.controladores;
 
 import java.util.List;
 
+
+import sistema_loja.classes.vendas.Venda;
+
 import sistema_loja.interfaces.Produto;
 
 public abstract class Controlador 
@@ -15,6 +18,7 @@ public abstract class Controlador
 	protected static List<Produto> produtos;
 	protected static List<ItemCarrinho> produtosCarrinho;
 	protected static Produto produtoSelecionado;
+	protected static List<Venda> produtosVendidos;
 	
 	// Vamos armazenar o texto digitado na barra
 	// de busca nesse atributo.

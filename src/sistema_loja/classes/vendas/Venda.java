@@ -1,13 +1,46 @@
 package sistema_loja.classes.vendas;
 
+import java.util.List;
 
-public class Venda {
+import sistema_loja.interfaces.Produto;
+
+
+public class Venda{
 	
-	 private static String nomeCliente;
-	 private static String cpf;
-	 private static double valorTotal;
+	 private  String nomeCliente;
+	 private  String cpf;
+	 private  double valorTotal;
+	 List<Produto> produtosComprados;
  
-	 Venda(double valor){
-		valorTotal = valor;
-	 }	
+	 Venda(List<Produto> produtosComprados , double valorTotal , String nomeCliente , String cpf){
+		 this.produtosComprados = produtosComprados;
+		 this.valorTotal = valorTotal;
+		 this.nomeCliente = nomeCliente;
+		 this.cpf = cpf; 
+	 }
+
+	public String getNomeCliente() {
+		return nomeCliente;
+	}
+
+	public void setNomeCliente(String nomeCliente) {
+		this.nomeCliente = nomeCliente;
+	}
+
+	public String getCpf() {
+		return cpf;
+	}
+
+	public void setCpf(String cpf) {
+		this.cpf = cpf;
+	}
+
+	public double getValorTotal() {
+		return valorTotal;
+	}
+
+	public void setValorTotal(double valorTotal) {
+		this.valorTotal = valorTotal;
+	}
+	 
 }

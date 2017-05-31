@@ -22,6 +22,8 @@ public class Carrinho
 		double aux = elementoCarrinho.getPreco();
 		valorTotal = aux + valorTotal;
 		produtosCarrinho.add(elementoCarrinho);
+		
 	}
+
 
 }
