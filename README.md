@@ -21,10 +21,10 @@ finalizar	a	compra.
 
 Portanto,	o	sistema	deve	possuir	as	seguintes	funcionalidades:
 1. [x] (1,0)	Cadastrar produto	(acesso	restrito	com senha: 123)
-2. [ ] (1,0)	Listar produtos
-3. [ ] (2,0)	Adicionar	produto	ao	carrinho	com	sua	quantidade
+2. [x] (1,0)	Listar produtos
+3. [x] (2,0)	Adicionar	produto	ao	carrinho	com	sua	quantidade
 4. [x] (0,5)	Visualizar o	carrinho
-5. [ ] (1,5)	Excluir	produto	do	carrinho
+5. [x] (1,5)	Excluir	produto	do	carrinho
 6. [ ] (2,0)	Finalizar	a	compra
 7. [ ] (2,0) Listar	compras	realizadas (acesso	restrito	com senha: 123)
 8. [ ] (1,0)	Controlar	estoque (opcional) (acesso	restrito	com senha: 123)
