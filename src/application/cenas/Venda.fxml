@@ -21,7 +21,7 @@
             </VBox>
             <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="1280.0" spacing="10.0">
                <children>
-                  <Label text="Nome Completo">
+                  <Label prefHeight="27.0" prefWidth="138.0" text="Nome Completo">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -43,7 +43,7 @@
                      </font>
                   </Label>
                   <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: 01234276148" />
-                  <Label style="-fx-font-style: Italic;" text="(sem pontos ou traços)" textFill="RED" />
+                  <Label style="-fx-font-style: Italic; -fx-text-fill: #ff0000;" text="(sem pontos ou traços)" textFill="RED" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -57,7 +57,7 @@
                      </font>
                   </Label>
                   <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: 61-91234-5678" />
-                  <Label style="-fx-font-style: Italic;" text="(com ddd)" textFill="RED" />
+                  <Label style="-fx-font-style: Italic; -fx-text-fill: ff0000;" text="(com ddd)" textFill="RED" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -84,7 +84,7 @@
                      </font>
                   </Label>
                   <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: QNA 01, LOTE 50, CASA 01, TAGUATINGA " />
-                  <Label style="-fx-font-style: Italic;" text="(separar por vírgulas)" textFill="RED" />
+                  <Label style="-fx-font-style: Italic; -fx-text-fill: ff0000;" text="(separar por vírgulas)" textFill="RED" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -95,7 +95,7 @@
                   <Insets left="20.0" />
                </padding>
                <children>
-                  <Label text="Forma de pagamento">
+                  <Label prefWidth="137.0" text="Pagamento">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -105,8 +105,8 @@
             </HBox>
             <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0">
                <children>
-                  <Button defaultButton="true" mnemonicParsing="false" prefHeight="55.0" prefWidth="142.0" text="Concluir" />
-                  <Button mnemonicParsing="false" prefHeight="55.0" prefWidth="142.0" text="Cancelar" />
+                  <Button defaultButton="true" mnemonicParsing="false" onAction="#concluir" prefHeight="55.0" prefWidth="142.0" text="Concluir" />
+                  <Button mnemonicParsing="false" onAction="#cancelar" prefHeight="55.0" prefWidth="142.0" text="Cancelar" />
                </children>
             </HBox>
          </children>
