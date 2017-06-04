@@ -44,14 +44,15 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
 	{		
 		Item item;
 		
-		// Vai adicionar cada produto da nossa lista
-		// em sua respectiva se��o.
-		for (Produto p : produtos)
+		// Vai adicionar os 24 primeiros produtos da nossa
+		// lista em suas respectivas seções
+		for (int i = 0; i < 24; i++)
 		{
+			Produto p = produtos.get(i);
 			item = new Item(p);
 			
-			// Descobrir a inst�ncia da vari�vel para
-			// saber a se��o em que botar.
+			// Descobrir a instância da variável para
+			// saber a seção em que botar.
 			if (p instanceof Livro)
 				secaoLivros.getChildren().add(item);
 			else if (p instanceof Dvd)
@@ -78,9 +79,8 @@ public class ControladorTelaPrincipal extends Controlador implements Initializab
     {
     	String senha = campoSenhaFuncionario.getText();
     	if (event.getCode() == KeyCode.ENTER && senha.equals("123"))
-    	{
     		GerenciadorCenas.irPara(FUNCIONARIO);
-    	}	
+    	
     }
     
     @FXML

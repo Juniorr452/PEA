@@ -11,6 +11,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.HBox;
+import javafx.scene.paint.Color;
 import sistema_loja.interfaces.Produto;
 
 public class ItemCarrinho extends HBox {
@@ -71,7 +72,7 @@ public class ItemCarrinho extends HBox {
 			}
 		}
 		
-		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
+		Janelas.mensagem("ÃŠxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
 		if(Controlador.produtosCarrinho.isEmpty())
 			GerenciadorCenas.irPara(1);
