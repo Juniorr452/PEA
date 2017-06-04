@@ -76,7 +76,7 @@ public class ControladorBusca extends Controlador implements Initializable
 	{
 		if (resultados.isEmpty())
 		{
-			textoResultados.setText("Ops! Não encontramos nada D=");
+			textoResultados.setText("Ops! Não encontramos nada.");
 		}
 		else
 		{

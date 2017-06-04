@@ -1,5 +1,6 @@
 package application.controladores;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,8 +33,9 @@ public abstract class Controlador
 		produtos = p;
 	}
 	
-	public static void setListaCarrinho(List<ItemCarrinho> p)
+	public static void InicializarCarrinho()
 	{
-		produtosCarrinho = p;
+		produtosCarrinho = new ArrayList<ItemCarrinho>();
+		//produtosCarrinho = p;
 	}
 }
