@@ -14,6 +14,7 @@ public abstract class Controlador
 	protected final int PRODUTO     = 3;
 	protected final int CARRINHO    = 4;
 	protected final int BUSCA       = 5;
+	protected final int VENDA       = 6;
 	
 	protected static List<Produto> produtos;
 	protected static List<ItemCarrinho> produtosCarrinho;
