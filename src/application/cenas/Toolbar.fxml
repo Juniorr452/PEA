@@ -15,7 +15,7 @@
          <items>
             <HBox alignment="CENTER" prefHeight="44.0" prefWidth="1250.0">
                <children>
-                  <Button fx:id="voltar" disable="true" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="9.0" text="&lt;" />
+                  <Button fx:id="voltar" disable="true" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#voltar" prefHeight="34.0" prefWidth="42.0" text="&lt;" />
                   <Button fx:id="atualizar" graphicTextGap="1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#atualizar" prefHeight="34.0" prefWidth="42.0" style="-fx-background-image: url('http://icons.iconarchive.com/icons/icons8/ios7/128/Very-Basic-Reload-icon.png'); -fx-background-size: 30; -fx-background-repeat: no-repeat; -fx-background-position: center;">
                      <HBox.margin>
                         <Insets left="10.0" />

@@ -38,7 +38,7 @@ public class ControladorToolbar extends Controlador
 	void carrinho() throws IOException
 	{	
 		//Se o carrinho estiver vazio, ele nao deixa entrar no carrinho.
-		if(Controlador.produtosCarrinho.isEmpty()) {
+		if(Controlador.carrinho.getProdutos().isEmpty()) {
 			Janelas.mensagem("Atenção", "O carrinho está vazio.", AlertType.INFORMATION);
 		} else {
 			GerenciadorCenas.irPara(CARRINHO);
