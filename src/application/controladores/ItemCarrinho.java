@@ -11,10 +11,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.HBox;
-import javafx.scene.paint.Color;
 import sistema_loja.interfaces.Produto;
 
-public class ItemCarrinho extends HBox {
+public class ItemCarrinho extends HBox 
+{
 	
 	@FXML private Label tituloLabel;
 	@FXML private TextField qtdText;
@@ -63,18 +63,17 @@ public class ItemCarrinho extends HBox {
 	@FXML
 	void remover() throws IOException 
 	{
-		//Ao clicarmos em remover, ele pegara este objeto, e ira retirar da lista do carrinho
-		Controlador.produtosCarrinho.remove(this);
+		// Ao clicarmos em remover, ele pegara este objeto, e ira retirar da lista do carrinho
+		Controlador.carrinho.removerItem(this);
 		
-		for (Produto p : Controlador.produtos) {
-			if(codigo == p.getCodigo()) {
+		// Adicionar a quantidade de volta ao produto removido.
+		for (Produto p : Controlador.produtos) 
+			if(codigo == p.getCodigo()) 
 				p.setQuantidade(p.getQuantidade() + qtdDesejada);
-			}
-		}
 		
 		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
-		if(Controlador.produtosCarrinho.isEmpty())
+		if(Controlador.carrinho.getProdutos().isEmpty())
 			GerenciadorCenas.irPara(1);
 		else
 			GerenciadorCenas.irPara(4);

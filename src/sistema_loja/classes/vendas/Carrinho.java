@@ -1,26 +1,47 @@
 package sistema_loja.classes.vendas;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import java.util.ArrayList;
+import application.controladores.ItemCarrinho;
 
 import sistema_loja.interfaces.Produto;
 
 public class Carrinho
 {
-	List<Produto> produtosCarrinho;
-	double valorTotal;
+	private List<ItemCarrinho> produtosCarrinho;
 	
 	public Carrinho()
 	{
-		valorTotal = 0;
-		produtosCarrinho = new ArrayList<Produto>();
+		produtosCarrinho = new ArrayList<ItemCarrinho>();
 	}
 
-	public void addCarrinho(Produto elementoCarrinho)
+	public void adicionarItem(ItemCarrinho i)
 	{
-		double aux = elementoCarrinho.getPreco();
-		valorTotal = aux + valorTotal;
-		produtosCarrinho.add(elementoCarrinho);
+		produtosCarrinho.add(i);
+	}
+	
+	public void removerItem(ItemCarrinho i)
+	{
+		produtosCarrinho.remove(i);
+	}
+	
+	public double calcularValorTotal()
+	{
+		double total = 0;
+			
+		// Percorre a lista do carrinho, pegando item por item
+		// e calculando o total do valor do carrinho
+		for (ItemCarrinho p : produtosCarrinho) 
+			total += p.getPreco() * p.getQtd();
+		
+		// Somando alguns precos, a parte decimal estava ficando gigante
+		// portando usamos esse retorno para truncarmos em 2 casas decimais.
+		return Math.floor(total * 100) / 100;
+	}
+	
+	public List<ItemCarrinho> getProdutos()
+	{
+		return this.produtosCarrinho;
 	}
 }

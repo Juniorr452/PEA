@@ -78,12 +78,12 @@
             </HBox>
             <VBox alignment="CENTER" prefHeight="171.0" prefWidth="303.0">
                <children>
-                  <Button fx:id="continuarComprando" alignment="CENTER" mnemonicParsing="false" onAction="#comprar" prefHeight="47.0" prefWidth="305.0" style="-fx-background-color: B22222;" text="Continuar Comprando" textFill="WHITE">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#continuarComprando" prefHeight="47.0" prefWidth="305.0" style="-fx-background-color: B22222;" text="Continuar Comprando" textFill="WHITE">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button alignment="CENTER" mnemonicParsing="false" prefHeight="47.0" prefWidth="316.0" style="-fx-background-color: #2E8B57;" text="Finalizar Compra" textFill="WHITE">
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#comprar" prefHeight="47.0" prefWidth="316.0" style="-fx-background-color: #2E8B57;" text="Finalizar Compra" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="10.0" top="15.0" />
                      </VBox.margin>

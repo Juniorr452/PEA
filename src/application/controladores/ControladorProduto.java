@@ -55,7 +55,7 @@ public class ControladorProduto extends Controlador implements Initializable
 			if(qtdDesejada <= qtdLabel) 
 			{
 				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
-				for (ItemCarrinho itemCarrinho : produtosCarrinho) 
+				for (ItemCarrinho itemCarrinho : carrinho.getProdutos()) 
 					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) 
 					{
 						item = itemCarrinho;
@@ -68,7 +68,7 @@ public class ControladorProduto extends Controlador implements Initializable
 				else 
 				{
 					item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
-					Controlador.produtosCarrinho.add(item);
+					Controlador.carrinho.adicionarItem(item);
 				}
 				
 				decrementarQtdLabel(qtdDesejada);
@@ -103,17 +103,17 @@ public class ControladorProduto extends Controlador implements Initializable
 			{	
 				//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade.
 				ItemCarrinho item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
-				Controlador.produtosCarrinho.add(item);
+				Controlador.carrinho.adicionarItem(item);
 				
 				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
 				GerenciadorCenas.irPara(4);
 			} 
 			else 
-				Janelas.mensagem("Erro", "A quantidade desejada não está disponível.", AlertType.ERROR);
+				Janelas.mensagem("Erro", "A quantidade desejada nï¿½o estï¿½ disponï¿½vel.", AlertType.ERROR);
 		}
 		catch(NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Digite um valor vï¿½lido.", AlertType.ERROR);
 		}	
 	}
 	

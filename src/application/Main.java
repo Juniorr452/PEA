@@ -25,14 +25,9 @@ public class Main extends Application
 		FXMLLoader telaCarrinhoLoader;
 		FXMLLoader telaBuscaLoader;
 		
-		List<ItemCarrinho> carrinho = new ArrayList<ItemCarrinho>();
-		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
-		Controlador.setListaProdutos(carregarProdutos());
-		
-		//Para inicializar a lista do carrinho, mesmo ela estando vazia.
-		Controlador.setListaCarrinho(carrinho);
+		Controlador.inicializar(carregarProdutos());
 		
 		try 
 		{
