@@ -71,7 +71,7 @@ public class ItemCarrinho extends HBox {
 			}
 		}
 		
-		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
+		Janelas.mensagem("Exito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
 		if(Controlador.produtosCarrinho.isEmpty())
 			GerenciadorCenas.irPara(1);

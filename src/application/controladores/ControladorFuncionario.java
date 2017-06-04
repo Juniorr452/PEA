@@ -107,7 +107,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			break;
 			
 		case "DVD":
-			campoACD.setPromptText("Dura��o");
+			campoACD.setPromptText("Duracao");
 			break;
 			
 		case "CD":
