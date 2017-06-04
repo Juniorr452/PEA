@@ -86,7 +86,6 @@ public class ControladorProduto extends Controlador implements Initializable
 		catch (Exception f)
 		{
 			f.printStackTrace();
-			System.out.println("ALGUM ERRO DIFERENTE");
 		}
 	}
 	
@@ -97,24 +96,37 @@ public class ControladorProduto extends Controlador implements Initializable
 		{
 			int qtdLabel = Integer.parseInt(qtd.getText());
 			int qtdDesejada = verificarQuantidadeDesejada();
+			ItemCarrinho item = null;
 			
 			//Verificamos se a quantidade desejada esta disponivel para compra
 			if(qtdDesejada <= qtdLabel) 
 			{	
-				//Iremos adicionar o produto a lista do carrinho e diminuir a sua quantidade.
-				ItemCarrinho item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
-				Controlador.carrinho.adicionarItem(item);
+				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
+				for (ItemCarrinho itemCarrinho : carrinho.getProdutos()) 
+					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) 
+					{
+						item = itemCarrinho;
+						break;
+					}
+				
+				if(item != null) 
+					item.setQtd(qtdDesejada);				
+				else 
+				{
+					item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
+					Controlador.carrinho.adicionarItem(item);
+				}
 				
 				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
-				GerenciadorCenas.irPara(4);
+				GerenciadorCenas.irPara(CARRINHO);
 			} 
 			else 
-				Janelas.mensagem("Erro", "A quantidade desejada n�o est� dispon�vel.", AlertType.ERROR);
+				Janelas.mensagem("Erro", "A quantidade desejada não está disponível.", AlertType.ERROR);
 		}
 		catch(NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Digite um valor v�lido.", AlertType.ERROR);
-		}	
+			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
+		}
 	}
 	
 	/**

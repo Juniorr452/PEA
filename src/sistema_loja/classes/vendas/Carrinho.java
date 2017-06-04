@@ -44,4 +44,9 @@ public class Carrinho
 	{
 		return this.produtosCarrinho;
 	}
+	
+	public void esvaziar()
+	{
+		produtosCarrinho.clear();
+	}
 }

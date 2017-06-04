@@ -15,6 +15,7 @@ public abstract class Controlador
 	protected final int PRODUTO     = 3;
 	protected final int CARRINHO    = 4;
 	protected final int BUSCA       = 5;
+	protected final int VENDA       = 6;
 	
 	protected static Carrinho carrinho;
 	protected static Produto produtoSelecionado;
@@ -36,6 +37,6 @@ public abstract class Controlador
 	
 	protected void resetarCarrinho()
 	{
-		carrinho = new Carrinho();
+		carrinho.getProdutos().clear();
 	}
 }

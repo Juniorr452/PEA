@@ -2,6 +2,7 @@ package application.controladores;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import application.GerenciadorCenas;
@@ -23,8 +24,6 @@ public class ControladorCarrinho extends Controlador implements Initializable
 	{
 		totalPreco.setText(Double.toString(carrinho.calcularValorTotal()));
 		
-		ItemCarrinho item;
-		
 		// Vai adicionar cada produto da nossa lista
 		// em sua respectiva se��o.
 		for (ItemCarrinho p : carrinho.getProdutos())	
@@ -32,14 +31,12 @@ public class ControladorCarrinho extends Controlador implements Initializable
 	}
 	
 	@FXML
-	private void continuarComprando() throws IOException
-	{
-		GerenciadorCenas.irPara(1);
+	private void continuarComprando() throws IOException {
+		GerenciadorCenas.irPara(PRINCIPAL);
 	}
 	
 	@FXML
-	private void comprar() throws IOException 
-	{
-		System.out.println("Comprar");
+	void comprar() throws IOException {
+		GerenciadorCenas.irPara(VENDA);
 	}
 }

@@ -70,7 +70,7 @@ public class ItemCarrinho extends HBox
 		for (Produto p : Controlador.produtos) 
 			if(codigo == p.getCodigo()) 
 				p.setQuantidade(p.getQuantidade() + qtdDesejada);
-		
+
 		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
 		if(Controlador.carrinho.getProdutos().isEmpty())

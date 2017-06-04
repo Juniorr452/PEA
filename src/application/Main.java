@@ -24,6 +24,7 @@ public class Main extends Application
 		FXMLLoader telaProdutoLoader;
 		FXMLLoader telaCarrinhoLoader;
 		FXMLLoader telaBuscaLoader;
+		FXMLLoader telaVendaLoader;
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
@@ -41,11 +42,12 @@ public class Main extends Application
 			telaProdutoLoader     = new FXMLLoader(getClass().getResource("cenas/Produto.fxml"));
 			telaCarrinhoLoader    = new FXMLLoader(getClass().getResource("cenas/Carrinho.fxml"));
 			telaBuscaLoader       = new FXMLLoader(getClass().getResource("cenas/Busca.fxml"));
+			telaVendaLoader       = new FXMLLoader(getClass().getResource("cenas/Venda.fxml"));
 			
 			// Mandar pra classe gerenciadora fazer o resto.
 			GerenciadorCenas.inicializar(janela, 
 					toolbar, telaPrincipalLoader, telaFuncionarioLoader, 
-					telaProdutoLoader, telaCarrinhoLoader, telaBuscaLoader);
+					telaProdutoLoader, telaCarrinhoLoader, telaBuscaLoader, telaVendaLoader);
 		} 
 		catch(Exception e) 
 		{
