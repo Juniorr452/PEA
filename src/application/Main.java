@@ -28,10 +28,7 @@ public class Main extends Application
 		
 		// Vamos mandar a lista de produtos para a classe Controlador
 		// antes mesmo de carregar os arquivos .fxml.
-		Controlador.setListaProdutos(carregarProdutos());
-		
-		//Para inicializar a lista do carrinho, mesmo ela estando vazia.
-		Controlador.InicializarCarrinho();
+		Controlador.inicializar(carregarProdutos());
 		
 		try 
 		{

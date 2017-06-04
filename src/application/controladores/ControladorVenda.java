@@ -22,8 +22,8 @@ public class ControladorVenda extends Controlador implements Initializable
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
-		this.produtosCarrinho = Controlador.produtosCarrinho;
-		total = ControladorCarrinho.calcularTotal();
+		this.produtosCarrinho = Controlador.carrinho.getProdutos();
+		total = ControladorCarrinho.carrinho.calcularValorTotal();
 		ObservableList<String> items = FXCollections.observableArrayList();
 
 		items.addAll("Boleto Bancário... R$" + Double.toString(total),
@@ -41,6 +41,7 @@ public class ControladorVenda extends Controlador implements Initializable
 			// Verificar campos
 			// Adicionar a venda na lista
 			// Resetar o carrinho e ir pra tela principal
+			carrinho.esvaziar();
 			GerenciadorCenas.irPara(PRINCIPAL);
 		}
 		catch(Exception e)
