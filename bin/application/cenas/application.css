@@ -4264,3 +4264,9 @@ to the top and bottom -fx-padding values of the parent toolbar. */
 	-fx-border-radius: 5px;
 	-fx-padding: 20px;
 }
+
+.table-column
+{
+	-fx-alignment : CENTER;
+}
+}

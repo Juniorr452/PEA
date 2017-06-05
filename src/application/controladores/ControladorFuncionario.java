@@ -36,7 +36,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	
 	// Listar compras
 	@FXML private TableView<Venda> tabelaVendas;
-	@FXML private TableColumn<Venda, Integer> colunaNumeroPedido;
+	@FXML private TableColumn<Venda, String> colunaNumeroPedido;
 	@FXML private TableColumn<Venda, String>  colunaNome;
 	@FXML private TableColumn<Venda, String>  colunaCpf;
 	@FXML private TableColumn<Venda, String>  colunaCidade;
@@ -179,7 +179,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			if (descricao.equals(""))
 				descricao = null;
 			
-			// Verificar se o cÃ³digo jÃ¡ existe.
+			// Verificar se o código já¡ existe.
 			for(Produto produto : produtos)
 				if (codigo == produto.getCodigo())
 					throw new CodigoJaExistenteException();
@@ -214,7 +214,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		}
 		catch (NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "NÃºmero digitado invÃ¡lido. Verifique os campos e tente novamente.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Número digitado inválido. Verifique os campos e tente novamente.", AlertType.ERROR);
 		}
 		catch (CodigoJaExistenteException e)
 		{
@@ -276,11 +276,11 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		// dizer para cada coluna da tabela conter o valor de
 		// determinado atributo de Venda.
 		
-		//colunaNumeroPedido.setCellValueFactory(new PropertyValueFactory<>("numeroPedido"));
+		colunaNumeroPedido.setCellValueFactory(new PropertyValueFactory<>("numeroPedido"));
 		colunaNome.setCellValueFactory(new PropertyValueFactory<>("nomeCliente"));
 		colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
-		//colunaCidade.setCellValueFactory(new PropertyValueFactory<>("cidade"));
-		//colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+		colunaCidade.setCellValueFactory(new PropertyValueFactory<>("estadoCidade"));
+		colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
 		colunaValorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
 	}
 }

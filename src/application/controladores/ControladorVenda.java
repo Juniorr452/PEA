@@ -11,14 +11,21 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import sistema_loja.classes.vendas.Venda;
 
 public class ControladorVenda extends Controlador implements Initializable 
 {
 	private List<ItemCarrinho> produtosCarrinho;
 	private double total;
+	private static int contador = 0;
 	
 	@FXML private ComboBox<String> formaPagamento;
+	@FXML private TextField campoNome;
+	@FXML private TextField campoCpf;
+	@FXML private TextField campoTelefone;
+	@FXML private TextField campoEstado;
+	@FXML private TextField campoEndereco;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
@@ -42,11 +49,13 @@ public class ControladorVenda extends Controlador implements Initializable
 			// Verificar campos
 			// Adicionar a venda na lista
 			// Resetar o carrinho e ir pra tela principal
-			Venda v = new Venda();
-			v.setProdutosComprados(getProdutosCarrinho());
-			v.setValorTotal(getTotal());
-			v.setNomeCliente("mdfas");
-			v.setCpf("jfasfa");
+			contador++;
+			Venda v = new Venda(getProdutosCarrinho(),getTotal() , contador);
+			v.setNomeCliente(campoNome.getText());
+			v.setCpf(campoCpf.getText());
+			v.setTelefone(campoTelefone.getText());
+			v.setEstadoCidade(campoEstado.getText());
+			v.setEndereço(campoEndereco.getText());
 			vendas.add(v);
 	
 			carrinho.esvaziar();
