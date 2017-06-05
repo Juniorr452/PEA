@@ -16,16 +16,16 @@ import javafx.scene.text.Text;
 
 public class ControladorProduto extends Controlador implements Initializable
 {
-	@FXML private Button adicionarCarrinho;
-	@FXML private Button comprar;
-	@FXML private Label tituloItem;
+	@FXML private Button 	adicionarCarrinho;
+	@FXML private Button 	comprar;
+	@FXML private Label 	tituloItem;
 	@FXML private ImageView capaItem;
-	@FXML private Label autorItem;
-	@FXML private Label precoItem;
-	@FXML private Label msgCarrinho;
-	@FXML private Label qtd;
-	@FXML private TextArea qtdArea;
-	@FXML private Text descricaoItem;
+	@FXML private Label 	autorItem;
+	@FXML private Label 	precoItem;
+	@FXML private Label 	msgCarrinho;
+	@FXML private Label 	qtd;
+	@FXML private TextArea 	qtdArea;
+	@FXML private Text 		descricaoItem;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources)
@@ -47,8 +47,8 @@ public class ControladorProduto extends Controlador implements Initializable
 	{	
 		try
 		{	
-			int qtdLabel = Integer.parseInt(qtd.getText());
-			int qtdDesejada = verificarQuantidadeDesejada();
+			int qtdLabel 	  = Integer.parseInt(qtd.getText());
+			int qtdDesejada   = verificarQuantidadeDesejada();
 			ItemCarrinho item = null;
 			
 			//Verificamos se a quantidade desejada esta disponivel para compra

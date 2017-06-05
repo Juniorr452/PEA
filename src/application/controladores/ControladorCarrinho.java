@@ -16,8 +16,8 @@ public class ControladorCarrinho extends Controlador implements Initializable
 {
 	@FXML private Button continuarComprando;
 	@FXML private Button finalizarCompra;
-	@FXML private Label totalPreco;
-	@FXML private VBox secao;
+	@FXML private Label  totalPreco;
+	@FXML private VBox   secao;
 	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 

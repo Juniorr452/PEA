@@ -17,9 +17,9 @@ public abstract class Controlador
 	protected final int BUSCA       = 5;
 	protected final int VENDA       = 6;
 	
-	protected static Carrinho carrinho;
-	protected static Produto produtoSelecionado;
-	protected static List<Venda> produtosVendidos;
+	protected static Carrinho      carrinho;
+	protected static Produto 	   produtoSelecionado;
+	protected static List<Venda>   produtosVendidos;
 	protected static List<Produto> produtos;
 	
 	// Vamos armazenar o texto digitado na barra
