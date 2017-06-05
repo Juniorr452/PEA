@@ -47,17 +47,14 @@ public class ControladorVenda extends Controlador implements Initializable
 			v.setValorTotal(getTotal());
 			v.setNomeCliente("mdfas");
 			v.setCpf("jfasfa");
-			produtosVendidos.add(v);
-			//Apenas pra saber se a list ta sendo populada
-			for (int i = 0; i < produtosVendidos.size(); i++) {
-				System.out.println(produtosVendidos.get(i));
-			}
+			vendas.add(v);
+	
 			carrinho.esvaziar();
 			GerenciadorCenas.irPara(PRINCIPAL);
 		}
 		catch(Exception e)
 		{
-			
+			e.printStackTrace();
 		}
 	}
 	
@@ -82,5 +79,4 @@ public class ControladorVenda extends Controlador implements Initializable
 	public void setTotal(double total) {
 		this.total = total;
 	}	
-	
 }
