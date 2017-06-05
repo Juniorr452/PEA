@@ -11,6 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
+import sistema_loja.classes.vendas.Venda;
 
 public class ControladorVenda extends Controlador implements Initializable 
 {
@@ -41,6 +42,16 @@ public class ControladorVenda extends Controlador implements Initializable
 			// Verificar campos
 			// Adicionar a venda na lista
 			// Resetar o carrinho e ir pra tela principal
+			Venda v = new Venda();
+			v.setProdutosComprados(getProdutosCarrinho());
+			v.setValorTotal(getTotal());
+			v.setNomeCliente("mdfas");
+			v.setCpf("jfasfa");
+			produtosVendidos.add(v);
+			//Apenas pra saber se a list ta sendo populada
+			for (int i = 0; i < produtosVendidos.size(); i++) {
+				System.out.println(produtosVendidos.get(i));
+			}
 			carrinho.esvaziar();
 			GerenciadorCenas.irPara(PRINCIPAL);
 		}
@@ -55,4 +66,21 @@ public class ControladorVenda extends Controlador implements Initializable
 	{
 		GerenciadorCenas.irPara(PRINCIPAL);
 	}
+
+	public List<ItemCarrinho> getProdutosCarrinho() {
+		return produtosCarrinho;
+	}
+
+	public void setProdutosCarrinho(List<ItemCarrinho> produtosCarrinho) {
+		this.produtosCarrinho = produtosCarrinho;
+	}
+
+	public double getTotal() {
+		return total;
+	}
+
+	public void setTotal(double total) {
+		this.total = total;
+	}	
+	
 }

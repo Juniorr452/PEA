@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 
+
 public class ControladorCarrinho extends Controlador implements Initializable
 {
 	@FXML private Button continuarComprando;

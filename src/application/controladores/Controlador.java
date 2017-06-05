@@ -39,4 +39,5 @@ public abstract class Controlador
 	{
 		carrinho.getProdutos().clear();
 	}
+	
 }
