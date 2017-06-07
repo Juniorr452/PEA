@@ -55,7 +55,7 @@ public class ControladorVenda extends Controlador implements Initializable
 			v.setCpf(campoCpf.getText());
 			v.setTelefone(campoTelefone.getText());
 			v.setEstadoCidade(campoEstado.getText());
-			v.setEndereço(campoEndereco.getText());
+			v.setEndereco(campoEndereco.getText());
 			vendas.add(v);
 	
 			carrinho.esvaziar();

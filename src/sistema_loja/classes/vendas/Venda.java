@@ -10,7 +10,7 @@ public class Venda
 	private double valorTotal;
 	private String telefone;
 	private String estadoCidade;
-	private String endereço;
+	private String endereco;
 	private String numeroPedido;
 	
 	List<ItemCarrinho> produtosComprados;
@@ -69,12 +69,12 @@ public class Venda
 		this.estadoCidade = estadoCidade;
 	}
 
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public List<ItemCarrinho> getProdutosComprados() {
