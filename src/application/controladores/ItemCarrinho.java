@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import application.GerenciadorCenas;
 import application.Janelas;
+import application.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -31,8 +32,7 @@ public class ItemCarrinho extends HBox
 	{
 		// Preparar o FxmlLoader para carregar
 		// o arquivo posteriormente.
-		FXMLLoader fxmlLoader = new FXMLLoader(
-	                getClass().getResource("../cenas/ItemCarrinho.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../cenas/ItemCarrinho.fxml"));
 
 		// Setar a raiz e controlador do .fxml a ser carregado
 		// como essa inst�ncia.

@@ -14,7 +14,7 @@ import javafx.scene.control.TextField;
 /**
  * Classe controladora da barra de cima
  * 
- * @author �nio Jos�
+ * @author Ênio José
  */
 public class ControladorToolbar extends Controlador
 {

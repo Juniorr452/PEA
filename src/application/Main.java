@@ -1,6 +1,8 @@
 package application;
 
 import java.io.File;
+import java.io.InputStream;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,7 +44,6 @@ public class Main extends Application
 			telaCarrinhoLoader    = new FXMLLoader(getClass().getResource("cenas/Carrinho.fxml"));
 			telaBuscaLoader       = new FXMLLoader(getClass().getResource("cenas/Busca.fxml"));
 			telaVendaLoader       = new FXMLLoader(getClass().getResource("cenas/Venda.fxml"));
-			
 			// Mandar pra classe gerenciadora fazer o resto.
 			GerenciadorCenas.inicializar(janela, 
 					toolbar, telaPrincipalLoader, telaFuncionarioLoader, 
@@ -50,8 +51,8 @@ public class Main extends Application
 		} 
 		catch(Exception e) 
 		{
-			Janelas.mensagem("Erro", "Um erro inesperado aconteceu. Notifique algum funcionário "
-					+ "para verificar o problema.", AlertType.ERROR);
+			//Janelas.mensagem("Erro", "Um erro inesperado aconteceu. Notifique algum funcionário "
+			//		+ "para verificar o problema.", AlertType.ERROR);
 			
 			e.printStackTrace();
 		}
@@ -67,6 +68,7 @@ public class Main extends Application
 	 * produtos e as informações no nome do mesmo (Preço, autor...)
 	 * 
 	 * @return Um mapa com os produtos carregados
+	 * @throws URISyntaxException 
 	 */
 	public List<Produto> carregarProdutos()
 	{
@@ -80,8 +82,10 @@ public class Main extends Application
 		String[] informacoes;
 		Image capa;
 		
-		// Ir� pegar o diret�rio local da classe
-		diretorioLocal = getClass().getResource("imagens").getPath();	
+		// Irá pegar o diretório local da classe com o System.getProperty
+		// e irá substituir os caracteres \ com / para funcionar o carregamento
+		// dos arquivos com a função converterDiretorio.
+		diretorioLocal = converterDiretorio(System.getProperty("user.dir") + "/imagens");
 		
 		// Instanciar a lista, criar objetos contendo
 		// o diret�rio das pastas de cada tipo de produto.
@@ -145,5 +149,25 @@ public class Main extends Application
 		}
 		
 		return produtos;
+	}
+	
+	/**
+	 * Pega os caracteres "\" de uma string e as
+	 * substitui por "/". Tentei usar o replaceAll
+	 * para isso, mas não consegui e criei essa função.
+	 * @param diretorio
+	 * @return A string com o diretório contendo /
+	 */
+	private String converterDiretorio(String diretorio)
+	{
+		String novoDiretorio = "";
+	
+		for (char c : diretorio.toCharArray())
+			if (c == '\\')
+				novoDiretorio += '/';
+			else
+				novoDiretorio += c;
+		
+		return novoDiretorio;
 	}
 }
