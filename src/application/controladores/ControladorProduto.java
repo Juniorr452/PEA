@@ -83,9 +83,9 @@ public class ControladorProduto extends Controlador implements Initializable
 		{
 			Janelas.mensagem("Erro", "Digite um valor valido.", AlertType.ERROR);
 		}
-		catch (Exception f)
+		catch (Exception e)
 		{
-			f.printStackTrace();
+			e.printStackTrace();
 		}
 	}
 	
@@ -130,8 +130,8 @@ public class ControladorProduto extends Controlador implements Initializable
 	}
 	
 	/**
-	 * Criei essa fun��o para verificar o valor da quantidade
-	 * desejada nas fun��es comprar e cadastrar o carrinho.
+	 * Criei essa função para verificar o valor da quantidade
+	 * desejada nas funções comprar e cadastrar o carrinho.
 	 * <p>
 	 * Evita que um valor inv�lido seja pegado pelo sistema e
 	 * colocado no carrinho (Tais como 0, -1, ""...)

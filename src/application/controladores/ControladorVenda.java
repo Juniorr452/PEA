@@ -6,10 +6,12 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 import application.GerenciadorCenas;
+import application.Janelas;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 
 public class ControladorVenda extends Controlador implements Initializable 
@@ -42,7 +44,9 @@ public class ControladorVenda extends Controlador implements Initializable
 			// Adicionar a venda na lista
 			// Resetar o carrinho e ir pra tela principal
 			carrinho.esvaziar();
+			GerenciadorCenas.limparHistorico();
 			GerenciadorCenas.irPara(PRINCIPAL);
+			Janelas.mensagem("Sucesso", "Compra realizada com sucesso.", AlertType.CONFIRMATION);
 		}
 		catch(Exception e)
 		{

@@ -26,8 +26,6 @@ public abstract class Controlador
 	// de busca nesse atributo.
 	protected static String textoBusca;
 	
-	protected static double total = 0;
-	
 	public static void inicializar(List<Produto> p)
 	{
 		produtos = p;

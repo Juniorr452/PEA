@@ -38,11 +38,10 @@ public class ControladorToolbar extends Controlador
 	void carrinho() throws IOException
 	{	
 		//Se o carrinho estiver vazio, ele nao deixa entrar no carrinho.
-		if(Controlador.carrinho.getProdutos().isEmpty()) {
+		if(Controlador.carrinho.getProdutos().isEmpty()) 
 			Janelas.mensagem("Atenção", "O carrinho está vazio.", AlertType.INFORMATION);
-		} else {
+		else 
 			GerenciadorCenas.irPara(CARRINHO);
-		}
 	}
 	
 	@FXML
@@ -89,5 +88,18 @@ public class ControladorToolbar extends Controlador
 		
 		if (!textoBusca.equals(""))
 			GerenciadorCenas.irPara(BUSCA);
+	}
+	
+	/**
+	 * Tira todas as cenas da nossa lista para
+	 * que o usuário não possa voltar mais.
+	 * Ex: Quando outro usuário já fez uma compra,
+	 * quando o funcionário clica em "sair".
+	 */
+	public void limparHistorico()
+	{
+		voltar.setDisable(true);
+		cenas.clear();
+		codigoCena.clear();
 	}
 }

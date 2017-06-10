@@ -11,6 +11,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import sistema_loja.classes.vendas.Cadastro;
 import sistema_loja.interfaces.Produto;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 
 public class Main extends Application 
@@ -32,8 +33,6 @@ public class Main extends Application
 		
 		try 
 		{
-			// Vamos carregar a toolbar e criar as inst�ncias dos loaders.
-			
 			// Esses loaders v�o servir para carregar as cenas dentro
 			// da GerenciadorCenas mais tarde.
 			toolbar               = new FXMLLoader(getClass().getResource("cenas/Toolbar.fxml"));
@@ -51,6 +50,9 @@ public class Main extends Application
 		} 
 		catch(Exception e) 
 		{
+			Janelas.mensagem("Erro", "Um erro inesperado aconteceu. Notifique algum funcionário "
+					+ "para verificar o problema.", AlertType.ERROR);
+			
 			e.printStackTrace();
 		}
 	}
