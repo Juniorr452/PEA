@@ -13,6 +13,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import sistema_loja.exceptions.QuantidadeIndisponivelException;
 
 public class ControladorProduto extends Controlador implements Initializable
 {
@@ -47,41 +48,22 @@ public class ControladorProduto extends Controlador implements Initializable
 	{	
 		try
 		{	
-			int qtdLabel = Integer.parseInt(qtd.getText());
 			int qtdDesejada = verificarQuantidadeDesejada();
-			ItemCarrinho item = null;
 			
-			//Verificamos se a quantidade desejada esta disponivel para compra
-			if(qtdDesejada <= qtdLabel) 
-			{
-				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
-				for (ItemCarrinho itemCarrinho : carrinho.getProdutos()) 
-					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) 
-					{
-						item = itemCarrinho;
-						break;
-					}
-						
-				// Se ele encontrou um produto na nossa lista de itens do carrinho
-				if(item != null) 
-					item.setQtd(qtdDesejada);				
-				else 
-				{
-					item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
-					Controlador.carrinho.adicionarItem(item);
-				}
-				
-				decrementarQtdLabel(qtdDesejada);
-				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
-				Janelas.mensagem("Exito", "Produto adicionado ao carrinho com sucesso", 
-						AlertType.INFORMATION);
-			}	
-			else
-				Janelas.mensagem("Erro", "A quantidade desejada não está disponível para compra.", AlertType.ERROR);
+			carrinho.adicionarItem(produtoSelecionado, qtdDesejada);
+			
+			decrementarQtdLabel(qtdDesejada);
+			
+			Janelas.mensagem("Exito", "Produto adicionado ao carrinho com sucesso", 
+					AlertType.INFORMATION);
 		}
 		catch (NumberFormatException e)
 		{
 			Janelas.mensagem("Erro", "Digite um valor valido.", AlertType.ERROR);
+		}
+		catch (QuantidadeIndisponivelException e)
+		{
+			Janelas.mensagem("Erro", e.getMessage(), AlertType.ERROR);
 		}
 		catch (Exception e)
 		{
@@ -94,38 +76,23 @@ public class ControladorProduto extends Controlador implements Initializable
 	{
 		try
 		{
-			int qtdLabel = Integer.parseInt(qtd.getText());
 			int qtdDesejada = verificarQuantidadeDesejada();
-			ItemCarrinho item = null;
 			
-			//Verificamos se a quantidade desejada esta disponivel para compra
-			if(qtdDesejada <= qtdLabel) 
-			{	
-				//Iremos adicionar a lista do carrinho e diminuir a sua quantidade
-				for (ItemCarrinho itemCarrinho : carrinho.getProdutos()) 
-					if(produtoSelecionado.getCodigo() == itemCarrinho.getCodigo()) 
-					{
-						item = itemCarrinho;
-						break;
-					}
-				
-				if(item != null) 
-					item.setQtd(qtdDesejada);				
-				else 
-				{
-					item = new ItemCarrinho(produtoSelecionado,qtdDesejada);
-					Controlador.carrinho.adicionarItem(item);
-				}
-				
-				produtoSelecionado.setQuantidade(qtdLabel - qtdDesejada);
-				GerenciadorCenas.irPara(CARRINHO);
-			} 
-			else 
-				Janelas.mensagem("Erro", "A quantidade desejada não está disponível.", AlertType.ERROR);
+			carrinho.adicionarItem(produtoSelecionado, qtdDesejada);
+			
+			GerenciadorCenas.irPara(CARRINHO);
 		}
 		catch(NumberFormatException e)
 		{
 			Janelas.mensagem("Erro", "Digite um valor válido.", AlertType.ERROR);
+		}
+		catch (QuantidadeIndisponivelException e)
+		{
+			Janelas.mensagem("Erro", e.getMessage(), AlertType.ERROR);
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
 		}
 	}
 	
@@ -156,8 +123,8 @@ public class ControladorProduto extends Controlador implements Initializable
 	
 	private void decrementarQtdLabel(int qtd_desejada) 
 	{
-		if((produtoSelecionado.getQuantidade() - qtd_desejada) > 0) 
-			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade() - qtd_desejada));
+		if((produtoSelecionado.getQuantidade()) > 0) 
+			qtd.setText(Integer.toString(produtoSelecionado.getQuantidade()));
 		else 
 			setIndisponivel();
 	}

@@ -16,7 +16,6 @@ import sistema_loja.interfaces.Produto;
 
 public class ItemCarrinho extends HBox 
 {
-	
 	@FXML private Label tituloLabel;
 	@FXML private TextField qtdText;
 	@FXML private Label precoLabel;
@@ -32,7 +31,7 @@ public class ItemCarrinho extends HBox
 	{
 		// Preparar o FxmlLoader para carregar
 		// o arquivo posteriormente.
-		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("../cenas/ItemCarrinho.fxml"));
+		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("cenas/ItemCarrinho.fxml"));
 
 		// Setar a raiz e controlador do .fxml a ser carregado
 		// como essa inst�ncia.
@@ -74,9 +73,9 @@ public class ItemCarrinho extends HBox
 		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
 		if(Controlador.carrinho.getProdutos().isEmpty())
-			GerenciadorCenas.irPara(1);
+			GerenciadorCenas.irPara(Controlador.PRINCIPAL);
 		else
-			GerenciadorCenas.irPara(4);
+			GerenciadorCenas.irPara(Controlador.CARRINHO);
 	}
 	
 	public double getPreco() {

@@ -37,7 +37,6 @@ public class Item extends VBox
 	{
 		// Preparar o FxmlLoader para carregar
 		// o arquivo posteriormente.
-		//System.out.println(new File().getAbsolutePath());
 		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("cenas/Item.fxml"));
 		
 		// Setar a raiz e controlador do .fxml a ser carregado
