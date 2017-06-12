@@ -6,27 +6,44 @@ import java.util.ResourceBundle;
 
 import application.GerenciadorCenas;
 import application.Janelas;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 import sistema_loja.classes.produtos.Cd;
 import sistema_loja.classes.produtos.Dvd;
 import sistema_loja.classes.produtos.Livro;
+import sistema_loja.classes.vendas.Venda;
 import sistema_loja.exceptions.CodigoJaExistenteException;
 import sistema_loja.interfaces.Produto;
 
 public class ControladorFuncionario extends Controlador implements Initializable
 {
+	// Menu funcion√°rio
     @FXML private VBox menuFuncionario;
 	@FXML private VBox menuListaCompras;
 	@FXML private VBox menuCadastrar;
 	
+	// Listar compras
+	@FXML private TableView<Venda> tabelaVendas;
+	@FXML private TableColumn<Venda, String> colunaNumeroPedido;
+	@FXML private TableColumn<Venda, String>  colunaNome;
+	@FXML private TableColumn<Venda, String>  colunaCpf;
+	@FXML private TableColumn<Venda, String>  colunaCidade;
+	@FXML private TableColumn<Venda, String>  colunaTelefone;
+	@FXML private TableColumn<Venda, Double>  colunaValorTotal;
+	
+	// Cadastrar produto
 	@FXML private ComboBox<String> tipoProduto;
 	@FXML private ImageView imagem;
 	@FXML private TextField codigo;
@@ -37,7 +54,6 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML private TextField preco;
 	@FXML private TextField quantidade;
 	@FXML private TextField descricao;
-	
 	@FXML private Button cadastrar;
 	
 	private Image imagemProdutoPadrao;
@@ -45,6 +61,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@Override
 	public void initialize(URL location, ResourceBundle resources) 
 	{
+		carregarTabelaVendas();
 		imagemProdutoPadrao = imagem.getImage();
 	}
 	
@@ -74,7 +91,13 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML 
 	private void listarCompras()
 	{
-		System.out.println("Listar compras");
+		mudarTela(menuFuncionario, menuListaCompras);
+	}
+	
+	@FXML
+	private void retornar()
+	{
+		mudarTela(menuListaCompras, menuFuncionario);
 	}
 	
 	@FXML
@@ -157,7 +180,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			if (descricao.equals(""))
 				descricao = null;
 			
-			// Verificar se o c√≥digo j√° existe.
+			// Verificar se o cÛdigo j·° existe.
 			for(Produto produto : produtos)
 				if (codigo == produto.getCodigo())
 					throw new CodigoJaExistenteException();
@@ -192,7 +215,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		}
 		catch (NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "N√∫mero digitado inv√°lido. Verifique os campos e tente novamente.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "N˙mero digitado inv·lido. Verifique os campos e tente novamente.", AlertType.ERROR);
 		}
 		catch (CodigoJaExistenteException e)
 		{
@@ -238,5 +261,27 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		{
 			throw new NoSuchFieldException("Preencha todos os campos antes de continuar");
 		}	
+	}
+	
+	private void carregarTabelaVendas()
+	{
+		// ObservableList √© o tipo de lista que
+		// usamos para setar no TableView. 
+		ObservableList<Venda> observableListVendas;
+		
+		// Vamos fazer uma observableList a partir da lista de vendas.
+		observableListVendas = FXCollections.observableArrayList(vendas);
+		tabelaVendas.setItems(observableListVendas);
+		
+		// Agora que temos a observableList de vendas, podemos 
+		// dizer para cada coluna da tabela conter o valor de
+		// determinado atributo de Venda.
+		
+		colunaNumeroPedido.setCellValueFactory(new PropertyValueFactory<>("numeroPedido"));
+		colunaNome.setCellValueFactory(new PropertyValueFactory<>("nomeCliente"));
+		colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
+		colunaCidade.setCellValueFactory(new PropertyValueFactory<>("estadoCidade"));
+		colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
+		colunaValorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
 	}
 }
