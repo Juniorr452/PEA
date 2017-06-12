@@ -5,8 +5,6 @@ import java.util.List;
 
 import application.controladores.ItemCarrinho;
 
-import sistema_loja.interfaces.Produto;
-
 public class Carrinho
 {
 	private List<ItemCarrinho> produtosCarrinho;

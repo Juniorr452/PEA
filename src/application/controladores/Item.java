@@ -16,12 +16,12 @@ import sistema_loja.interfaces.Produto;
  * Dentro dela, temos um ImageView e
  * duas Labels. Ao criar uma inst�ncia
  * dessa classe em qualquer outro lugar,
- * � poss�vel coloc�-la dentro de um outro .fxml.
+ * é possível colocá-la dentro de um outro .fxml.
  * 
  * Mais informa��es sobre criar elementos customizados em:
  * http://docs.oracle.com/javafx/2/fxml_get_started/custom_control.htm
  * 
- * @author �nio Jos�
+ * @author Ênio José
  */
 public class Item extends VBox
 {

@@ -79,6 +79,11 @@ public class ItemCarrinho extends HBox
 			GerenciadorCenas.irPara(4);
 	}
 	
+	public String getNome()
+	{
+		return this.produto.getTitulo();
+	}
+	
 	public double getPreco() {
 		return preco;
 	}

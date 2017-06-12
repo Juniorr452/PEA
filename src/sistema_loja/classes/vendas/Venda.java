@@ -1,23 +1,33 @@
 package sistema_loja.classes.vendas;
 
 import java.util.List;
+import application.controladores.ItemCarrinho;
 
-import sistema_loja.interfaces.Produto;
-
-
-public class Venda{
+public class Venda
+{
+	private String nomeCliente;
+	private String cpf;
+	private double valorTotal;
+	private String telefone;
+	private String estadoCidade;
+	private String endereco;
+	private String numeroPedido;
 	
-	 private  String nomeCliente;
-	 private  String cpf;
-	 private  double valorTotal;
-	 List<Produto> produtosComprados;
- 
-	 Venda(List<Produto> produtosComprados , double valorTotal , String nomeCliente , String cpf){
-		 this.produtosComprados = produtosComprados;
-		 this.valorTotal = valorTotal;
-		 this.nomeCliente = nomeCliente;
-		 this.cpf = cpf; 
-	 }
+	List<ItemCarrinho> produtosComprados;
+	
+	public Venda(List<ItemCarrinho> produtosComprados , double valorTotal , int contador){
+		this.produtosComprados = produtosComprados;
+		this.valorTotal = valorTotal;
+		this.numeroPedido = Integer.toString(contador);
+	}
+
+	public String getNumeroPedido() {
+		return numeroPedido;
+	}
+
+	public void setNumeroPedido(String numeroPedido) {
+		this.numeroPedido = numeroPedido;
+	}
 
 	public String getNomeCliente() {
 		return nomeCliente;
@@ -42,5 +52,37 @@ public class Venda{
 	public void setValorTotal(double valorTotal) {
 		this.valorTotal = valorTotal;
 	}
-	 
+
+	public String getTelefone() {
+		return telefone;
+	}
+
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+
+	public String getEstadoCidade() {
+		return estadoCidade;
+	}
+
+	public void setEstadoCidade(String estadoCidade) {
+		this.estadoCidade = estadoCidade;
+	}
+
+	public String getEndereco() {
+		return endereco;
+	}
+
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
+	}
+
+	public List<ItemCarrinho> getProdutosComprados() {
+		return produtosComprados;
+	}
+
+	public void setProdutosComprados(List<ItemCarrinho> produtosComprados) {
+		this.produtosComprados = produtosComprados;
+	}
+
 }

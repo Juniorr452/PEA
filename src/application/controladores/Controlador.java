@@ -19,7 +19,7 @@ public abstract class Controlador
 	
 	protected static Carrinho carrinho;
 	protected static Produto produtoSelecionado;
-	protected static List<Venda> produtosVendidos;
+	protected static List<Venda> vendas;
 	protected static List<Produto> produtos;
 	
 	// Vamos armazenar o texto digitado na barra
@@ -32,7 +32,7 @@ public abstract class Controlador
 	{
 		produtos = p;
 		carrinho = new Carrinho();
-		produtosVendidos = new ArrayList<Venda>();
+		vendas   = new ArrayList<Venda>();
 	}
 	
 	protected void resetarCarrinho()
