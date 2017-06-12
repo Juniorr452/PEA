@@ -26,7 +26,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: Xuxa Meneghel" />
+                  <TextField fx:id="campoNome" prefHeight="33.0" prefWidth="717.0" promptText="Ex: Xuxa Meneghel" />
                </children>
                <VBox.margin>
                   <Insets />
@@ -42,7 +42,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: 01234276148" />
+                  <TextField fx:id="campoCpf" prefHeight="33.0" prefWidth="717.0" promptText="Ex: 01234276148" />
                   <Label style="-fx-font-style: Italic; -fx-text-fill: #ff0000;" text="(sem pontos ou traços)" textFill="RED" />
                </children>
                <padding>
@@ -56,7 +56,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: 61-91234-5678" />
+                  <TextField fx:id="campoTelefone" prefHeight="33.0" prefWidth="717.0" promptText="Ex: 61-91234-5678" />
                   <Label style="-fx-font-style: Italic; -fx-text-fill: ff0000;" text="(com ddd)" textFill="RED" />
                </children>
                <padding>
@@ -65,12 +65,12 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="207.0" prefHeight="33.0" prefWidth="1280.0" spacing="10.0">
                <children>
-                  <Label prefHeight="23.0" prefWidth="138.0" text="Cidade">
+                  <Label prefHeight="23.0" prefWidth="138.0" text="Cidade/Estado">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: Brasília" />
+                  <TextField fx:id="campoEstado" prefHeight="33.0" prefWidth="717.0" promptText="Ex: Brasília" />
                </children>
                <padding>
                   <Insets left="20.0" />
@@ -83,7 +83,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <TextField prefHeight="33.0" prefWidth="717.0" promptText="Ex: QNA 01, LOTE 50, CASA 01, TAGUATINGA " />
+                  <TextField fx:id="campoEndereco" prefHeight="33.0" prefWidth="717.0" promptText="Ex: QNA 01, LOTE 50, CASA 01, TAGUATINGA " />
                   <Label style="-fx-font-style: Italic; -fx-text-fill: ff0000;" text="(separar por vírgulas)" textFill="RED" />
                </children>
                <padding>

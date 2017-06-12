@@ -25,8 +25,8 @@ Portanto,	o	sistema	deve	possuir	as	seguintes	funcionalidades:
 3. [x] (2,0)	Adicionar	produto	ao	carrinho	com	sua	quantidade
 4. [x] (0,5)	Visualizar o	carrinho
 5. [x] (1,5)	Excluir	produto	do	carrinho
-6. [ ] (2,0)	Finalizar	a	compra
-7. [ ] (2,0) Listar	compras	realizadas (acesso	restrito	com senha: 123)
+6. [x] (2,0)	Finalizar	a	compra
+7. [x] (2,0) Listar	compras	realizadas (acesso	restrito	com senha: 123)
 8. [ ] (1,0)	Controlar	estoque (opcional) (acesso	restrito	com senha: 123)
 
 Para	 a	 implementação	 do	 sistema,	 utilizar	 as	 seguintes	 regras (implementar	 a	
@@ -39,7 +39,7 @@ realizadas;
 
 • Utilizar	exceções	nos	seguintes	casos:
 
-o [ ] Ao	cadastrar	um	produto	com	o	código	já	existente;
+o [x] Ao	cadastrar	um	produto	com	o	código	já	existente;
 
 o [ ] Ao	 finalizar	 a	 compra	 e	 houver	 um	 produto	 acima	 do	 limite	 máximo	
 permitido	(10);
@@ -58,7 +58,7 @@ o Efetuar	a	compra	de	um	produto	que	não	tem	em	estoque	(opcional)
 
     • [x] Classe CD (titulo, cantor,	usado, ...)
   
-    • [ ] Classe Carrinho (produtos, valorTotal, ...)
+    • [x] Classe Carrinho (produtos, valorTotal, ...)
 
     • [ ] Classe Venda (cpf, nomeCliente, valorTotal,	...)
 

@@ -7,7 +7,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import application.controladores.Controlador;
-import application.controladores.ItemCarrinho;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
