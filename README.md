@@ -27,7 +27,6 @@ Portanto,	o	sistema	deve	possuir	as	seguintes	funcionalidades:
 5. [x] (1,5)	Excluir	produto	do	carrinho
 6. [x] (2,0)	Finalizar	a	compra
 7. [x] (2,0) Listar	compras	realizadas (acesso	restrito	com senha: 123)
-8. [ ] (1,0)	Controlar	estoque (opcional) (acesso	restrito	com senha: 123)
 
 Para	 a	 implementação	 do	 sistema,	 utilizar	 as	 seguintes	 regras (implementar	 a	
 funcionalidade	sem	suas	respectivas	regras	implica	na	perda	de	50%	da	sua	pontuação):
