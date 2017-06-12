@@ -12,15 +12,16 @@ import javafx.stage.Stage;
 
 /**
  * Cada controlador de cena/arquivo .fxml 
- * diferente deverá herdar dessa classe.
+ * diferente deverï¿½ herdar dessa classe.
  * 
- * @author Ênio José
+ * @author ÃŠnio JosÃ©
  */
 public abstract class GerenciadorCenas
 {
 	private static AnchorPane root;
-	// Precisaremos da instância da classe controladora
-	// de toolbar para acessar seus métodos.
+	
+	// Precisaremos da instÃ¢ncia da classe controladora
+	// de toolbar para acessar seus mÃ©todos.
 	private static ControladorToolbar controladorToolbar;
 	private static FXMLLoader[] loaders;
 
@@ -30,8 +31,6 @@ public abstract class GerenciadorCenas
 		root    = loaders[0].load();
 		controladorToolbar = loaders[0].getController();
 		
-		// vamos carregar a tela principal pelo loader na
-		// posição zero.
 		ScrollPane telaPrincipal = loaders[1].load();
 		
 		// Vamos adicionar a tela principal em baixo do toolbar.
@@ -39,7 +38,7 @@ public abstract class GerenciadorCenas
 		controladorToolbar.adicionarCena(telaPrincipal, 1);
 		
 		// Vamos colocar isso como a nossa cena, fazer
-		// algumas configurações e mostrar a janela.
+		// algumas configuraÃ§Ãµes e mostrar a janela.
 		janela.setScene(new Scene(root));
 		janela.setTitle("PEA");
 		janela.sizeToScene();
@@ -49,7 +48,7 @@ public abstract class GerenciadorCenas
 
 	/**
 	 * Remove o elemento abaixo da toolbar
-	 * e adiciona outro (A tela que você quer ir).
+	 * e adiciona outro (A tela que vocï¿½ quer ir).
 	 */
 	public static void irPara(int indice) throws IOException
 	{
@@ -57,13 +56,11 @@ public abstract class GerenciadorCenas
 		Parent cenaAtual;
 		
 		// Setar o root e controlador null para poder carregar denovo
-		// Isso não é recomendado na verdade. Precisariamos de uma
-		// outra instância dos loaders fxml, mas isso ia dar mais trabalho kk.
 		loaders[indice].setRoot(null);
 		loaders[indice].setController(null);
 		
-		// Pegar a referência da cena atual e carregar
-		// a que o usuário solicitou para ir.
+		// Pegar a referÃªncia da cena atual e carregar
+		// a que o usuÃ¡rio solicitou para ir.
 		cenaAtual = (Parent) root.getChildren().get(1);
 		cenaNova  = loaders[indice].load();
 		
@@ -84,13 +81,18 @@ public abstract class GerenciadorCenas
 	}
 	
 	/**
-	 * Método utilizado pelo ControladorToolbar
-	 * para setar a cena que o usuário está voltando.
+	 * MÃ©todo utilizado pelo ControladorToolbar
+	 * para setar a cena que o usuÃ¡rio estÃ¡ voltando.
 	 * @param p
 	 */
 	public static void irPara(Parent p)
 	{
 		root.getChildren().remove(1);
 		root.getChildren().add(p);
+	}
+	
+	public static void limparHistorico()
+	{
+		controladorToolbar.limparHistorico();
 	}
 }

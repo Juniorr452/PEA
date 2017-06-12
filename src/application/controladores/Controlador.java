@@ -10,12 +10,12 @@ import sistema_loja.interfaces.Produto;
 
 public abstract class Controlador 
 {
-	protected final int PRINCIPAL   = 1;
-	protected final int FUNCIONARIO = 2;
-	protected final int PRODUTO     = 3;
-	protected final int CARRINHO    = 4;
-	protected final int BUSCA       = 5;
-	protected final int VENDA       = 6;
+	public static final int PRINCIPAL   = 1;
+	public static final int FUNCIONARIO = 2;
+	public static final int PRODUTO     = 3;
+	public static final int CARRINHO    = 4;
+	public static final int BUSCA       = 5;
+	public static final int VENDA       = 6;
 	
 	protected static Carrinho carrinho;
 	protected static Produto produtoSelecionado;
@@ -25,8 +25,6 @@ public abstract class Controlador
 	// Vamos armazenar o texto digitado na barra
 	// de busca nesse atributo.
 	protected static String textoBusca;
-	
-	protected static double total = 0;
 	
 	public static void inicializar(List<Produto> p)
 	{

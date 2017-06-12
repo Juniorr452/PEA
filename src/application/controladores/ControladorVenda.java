@@ -11,6 +11,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -64,7 +65,9 @@ public class ControladorVenda extends Controlador implements Initializable
 			vendas.add(v);
 	
 			carrinho.esvaziar();
+			GerenciadorCenas.limparHistorico();
 			GerenciadorCenas.irPara(PRINCIPAL);
+			Janelas.mensagem("Sucesso", "Compra realizada com sucesso.", AlertType.CONFIRMATION);
 		}
 		catch(NoSuchFieldException e)
 		{

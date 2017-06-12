@@ -103,6 +103,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML
 	private void sair() throws IOException
 	{
+		GerenciadorCenas.limparHistorico();
 		GerenciadorCenas.irPara(PRINCIPAL);
 	}
 	

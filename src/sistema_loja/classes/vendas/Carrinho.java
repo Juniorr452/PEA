@@ -3,7 +3,10 @@ package sistema_loja.classes.vendas;
 import java.util.ArrayList;
 import java.util.List;
 
+import application.controladores.Controlador;
 import application.controladores.ItemCarrinho;
+import sistema_loja.exceptions.QuantidadeIndisponivelException;
+import sistema_loja.interfaces.Produto;
 
 public class Carrinho
 {
@@ -14,9 +17,36 @@ public class Carrinho
 		produtosCarrinho = new ArrayList<ItemCarrinho>();
 	}
 
-	public void adicionarItem(ItemCarrinho i)
+	public void adicionarItem(Produto p, int qtdDesejada) throws QuantidadeIndisponivelException
 	{
-		produtosCarrinho.add(i);
+		int qtdProduto = p.getQuantidade();
+		ItemCarrinho i = null;
+		
+		// Verificamos se a quantidade desejada esta disponivel para compra
+		if (qtdDesejada <= qtdProduto)
+		{
+			// Vamos procurar na lista do carrinho se o produto já foi
+			// adicionado.
+			for (ItemCarrinho itemCarrinho : produtosCarrinho) 
+				if(p.getCodigo() == itemCarrinho.getCodigo()) 
+				{
+					i = itemCarrinho;
+					break;
+				}
+			
+			
+			if(i != null) // Se o usuário já tinha adicionado o produto...
+				i.setQtd(qtdDesejada);		
+			else          // Se não, cria um novo item no carrinho.
+			{
+				i = new ItemCarrinho(p, qtdDesejada);
+				produtosCarrinho.add(i);
+			}
+			// Diminui a quantidade do produto
+			p.setQuantidade(qtdProduto - qtdDesejada);
+		}
+		else
+			throw new QuantidadeIndisponivelException();
 	}
 	
 	public void removerItem(ItemCarrinho i)

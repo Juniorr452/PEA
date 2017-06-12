@@ -1,8 +1,10 @@
 package application.controladores;
 
+import java.io.File;
 import java.io.IOException;
 
 import application.GerenciadorCenas;
+import application.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -35,11 +37,10 @@ public class Item extends VBox
 	{
 		// Preparar o FxmlLoader para carregar
 		// o arquivo posteriormente.
-		FXMLLoader fxmlLoader = new FXMLLoader(
-	                getClass().getResource("../cenas/Item.fxml"));
-
+		FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("cenas/Item.fxml"));
+		
 		// Setar a raiz e controlador do .fxml a ser carregado
-		// como essa inst�ncia.
+		// como essa instância.
 	    fxmlLoader.setRoot(this);
 	    fxmlLoader.setController(this);
 
