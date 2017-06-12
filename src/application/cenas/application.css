@@ -4256,6 +4256,7 @@ to the top and bottom -fx-padding values of the parent toolbar. */
     -fx-graphic: url("dialog-warning.png");
 }
 
+
 .secao
 {
 	-fx-background-color: #ffffff;

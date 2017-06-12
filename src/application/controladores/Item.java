@@ -1,6 +1,5 @@
 package application.controladores;
 
-import java.io.File;
 import java.io.IOException;
 
 import application.GerenciadorCenas;
@@ -31,7 +30,6 @@ public class Item extends VBox
 	@FXML private Label titulo;
 	@FXML private Label autor;
 	private Produto produto;
-	private double preco;
 	
 	public Item(Produto p)
 	{
@@ -58,7 +56,6 @@ public class Item extends VBox
 		this.titulo.setText(p.getTitulo());
 		this.autor.setText(p.getAutor());
 		capa.setImage(p.getImage());
-		this.preco = p.getPreco();
 	}
 	
 	@FXML 

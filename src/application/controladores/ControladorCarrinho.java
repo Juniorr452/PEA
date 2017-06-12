@@ -5,11 +5,14 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import application.GerenciadorCenas;
+import application.Janelas;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.layout.VBox;
+import sistema_loja.exceptions.QuantidadeMaximaException;
 
 
 public class ControladorCarrinho extends Controlador implements Initializable
@@ -36,7 +39,16 @@ public class ControladorCarrinho extends Controlador implements Initializable
 	}
 	
 	@FXML
-	void comprar() throws IOException {
-		GerenciadorCenas.irPara(VENDA);
+	void finalizarCompra() throws IOException 
+	{
+		try
+		{
+			carrinho.verificarQuantidadeProdutos();
+			GerenciadorCenas.irPara(VENDA);
+		}
+		catch (QuantidadeMaximaException e)
+		{
+			Janelas.mensagem("Aviso", e.getMessage(), AlertType.WARNING);
+		}
 	}
 }

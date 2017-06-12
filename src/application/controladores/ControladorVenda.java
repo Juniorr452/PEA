@@ -14,7 +14,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert.AlertType;
 import sistema_loja.classes.vendas.Venda;
 import sistema_loja.exceptions.StringClienteException;
 
@@ -38,9 +37,9 @@ public class ControladorVenda extends Controlador implements Initializable
 		total = ControladorCarrinho.carrinho.calcularValorTotal();
 		ObservableList<String> items = FXCollections.observableArrayList();
 
-		items.addAll("Boleto Banc·rio... R$" + Double.toString(total),
-					"Cart„o de CrÈdito... 1 x R$" + Double.toString(total),
-					"Cart„o de CrÈdito... 2 x R$" + Double.toString(Math.floor(total/2 * 100) / 100),
+		items.addAll("Boleto Banc√°rio... R$" + Double.toString(total),
+					"Cart√£o de Cr√©dito... 1 x R$" + Double.toString(total),
+					"Cart√£o de Cr√©dito... 2 x R$" + Double.toString(Math.floor(total/2 * 100) / 100),
 					"Paypal... R$" + Double.toString(total));
 		formaPagamento.setItems(items);
 	}
@@ -136,7 +135,7 @@ public class ControladorVenda extends Controlador implements Initializable
 	    char[] c = s.toCharArray();
 	    boolean d = true;
 	    for ( int i = 0; i < c.length; i++ ){
-	        // verifica se o char n„o È um dÌgito
+	        // verifica se o char nÔøΩo ÔøΩ um dÔøΩgito
 	        if ( !Character.isDigit( c[ i ] ) ) {
 	            d = false;
 	            break;

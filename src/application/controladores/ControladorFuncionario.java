@@ -36,10 +36,11 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	
 	// Listar compras
 	@FXML private TableView<Venda> tabelaVendas;
-	@FXML private TableColumn<Venda, String> colunaNumeroPedido;
+	@FXML private TableColumn<Venda, String>  colunaNumeroPedido;
 	@FXML private TableColumn<Venda, String>  colunaNome;
 	@FXML private TableColumn<Venda, String>  colunaCpf;
 	@FXML private TableColumn<Venda, String>  colunaCidade;
+	@FXML private TableColumn<Venda, String>  colunaEndereco;
 	@FXML private TableColumn<Venda, String>  colunaTelefone;
 	@FXML private TableColumn<Venda, Double>  colunaValorTotal;
 	
@@ -180,7 +181,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			if (descricao.equals(""))
 				descricao = null;
 			
-			// Verificar se o código já¡ existe.
+			// Verificar se o cï¿½digo jï¿½ existe.
 			for(Produto produto : produtos)
 				if (codigo == produto.getCodigo())
 					throw new CodigoJaExistenteException();
@@ -215,7 +216,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		}
 		catch (NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "Número digitado inválido. Verifique os campos e tente novamente.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Nï¿½mero digitado invï¿½lido. Verifique os campos e tente novamente.", AlertType.ERROR);
 		}
 		catch (CodigoJaExistenteException e)
 		{
@@ -281,6 +282,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		colunaNome.setCellValueFactory(new PropertyValueFactory<>("nomeCliente"));
 		colunaCpf.setCellValueFactory(new PropertyValueFactory<>("cpf"));
 		colunaCidade.setCellValueFactory(new PropertyValueFactory<>("estadoCidade"));
+		colunaEndereco.setCellValueFactory(new PropertyValueFactory<>("endereco"));
 		colunaTelefone.setCellValueFactory(new PropertyValueFactory<>("telefone"));
 		colunaValorTotal.setCellValueFactory(new PropertyValueFactory<>("valorTotal"));
 	}

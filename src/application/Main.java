@@ -1,7 +1,6 @@
 package application;
 
 import java.io.File;
-import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import sistema_loja.classes.vendas.Cadastro;
 import sistema_loja.interfaces.Produto;
-import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 
 public class Main extends Application 

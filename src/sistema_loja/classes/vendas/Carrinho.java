@@ -3,9 +3,9 @@ package sistema_loja.classes.vendas;
 import java.util.ArrayList;
 import java.util.List;
 
-import application.controladores.Controlador;
 import application.controladores.ItemCarrinho;
 import sistema_loja.exceptions.QuantidadeIndisponivelException;
+import sistema_loja.exceptions.QuantidadeMaximaException;
 import sistema_loja.interfaces.Produto;
 
 public class Carrinho
@@ -76,5 +76,12 @@ public class Carrinho
 	public void esvaziar()
 	{
 		produtosCarrinho.clear();
+	}
+	
+	public void verificarQuantidadeProdutos() throws QuantidadeMaximaException
+	{
+		for(ItemCarrinho i : produtosCarrinho)
+			if (i.getQtd() > 10)
+				throw new QuantidadeMaximaException();
 	}
 }

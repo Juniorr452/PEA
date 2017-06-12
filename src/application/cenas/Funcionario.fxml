@@ -10,7 +10,7 @@
 <?import javafx.scene.text.*?>
 <?import javafx.collections.FXCollections?>
 
-<Pane layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorFuncionario">
+<Pane layoutY="60.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="663.0" prefWidth="1280.0" stylesheets="@application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controladores.ControladorFuncionario">
    <children>
       <VBox fx:id="menuFuncionario" fillWidth="false" layoutY="7.0" prefHeight="650.0" prefWidth="1280.0" spacing="20.0">
          <children>
@@ -62,13 +62,14 @@
                   <Insets top="20.0" />
                </VBox.margin>
             </Text>
-            <TableView fx:id="tabelaVendas" prefHeight="440.0" prefWidth="1200.0">
+            <TableView fx:id="tabelaVendas" prefHeight="440.0" prefWidth="1200.0" stylesheets="@application.css">
               <columns>
-                <TableColumn fx:id="colunaNumeroPedido" prefWidth="126.0" text="Nº Pedido" />
-                <TableColumn fx:id="colunaNome" minWidth="0.0" prefWidth="216.0" text="Nome" />
-                  <TableColumn fx:id="colunaCpf" minWidth="0.0" prefWidth="216.0" text="CPF" />
-                  <TableColumn fx:id="colunaCidade" minWidth="0.0" prefWidth="216.0" text="Cidade" />
-                  <TableColumn fx:id="colunaTelefone" minWidth="0.0" prefWidth="216.0" text="Telefone" />
+                <TableColumn fx:id="colunaNumeroPedido" prefWidth="101.0" text="Nº Pedido" />
+                <TableColumn fx:id="colunaNome" minWidth="0.0" prefWidth="245.0" text="Nome" />
+                  <TableColumn fx:id="colunaCpf" minWidth="0.0" prefWidth="227.0" text="CPF" />
+                  <TableColumn fx:id="colunaCidade" minWidth="0.0" prefWidth="174.0" text="Cidade" />
+                  <TableColumn fx:id="colunaEndereco" minWidth="0.0" prefWidth="229.0" text="Endereço" />
+                  <TableColumn fx:id="colunaTelefone" minWidth="0.0" prefWidth="294.0" text="Telefone" />
                   <TableColumn fx:id="colunaValorTotal" minWidth="0.0" prefWidth="216.0" text="Valor Total" />
               </columns>
                <VBox.margin>

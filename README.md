@@ -1,6 +1,6 @@
 # PEA
 --------------------------------------------------------------------------------------------------------------------------------
- Para	 driblar	 a	 crise,	 um	 cliente	 está	 querendo	 inovar	 no	 seu	
+Para	 driblar	 a	 crise,	 um	 cliente	 está	 querendo	 inovar	 no	 seu	
 negócio de	 vendas	 de	 Livros,	 CD	 e	 DVD.	 Ele	 teve	 a	 ideia	 de	
 substituir	os	vendedores	da	loja	por	estações	de	autoatendimento.	
 A	ideia	é	que	o	cliente	possa	usá-lo	para	consultar	os	produtos	na	
@@ -41,7 +41,7 @@ realizadas;
 
 o [x] Ao	cadastrar	um	produto	com	o	código	já	existente;
 
-o [ ] Ao	 finalizar	 a	 compra	 e	 houver	 um	 produto	 acima	 do	 limite	 máximo	
+o [x] Ao	 finalizar	 a	 compra	 e	 houver	 um	 produto	 acima	 do	 limite	 máximo	
 permitido	(10);
 
 o Efetuar	a	compra	de	um	produto	que	não	tem	em	estoque	(opcional)
@@ -60,12 +60,6 @@ o Efetuar	a	compra	de	um	produto	que	não	tem	em	estoque	(opcional)
   
     • [x] Classe Carrinho (produtos, valorTotal, ...)
 
-    • [ ] Classe Venda (cpf, nomeCliente, valorTotal,	...)
+    • [x] Classe Venda (cpf, nomeCliente, valorTotal,	...)
 
 --------------------------------------------------------------------------------------------------------------------------------
-
-Então...
-
-Eu diria que seria bom começarmos a implementar as classes dos produtos por agora. Estou pensando de colocar 24 produtos (8 em cada categoria) ao carregar a tela principal. O usuário poderá clicar em "Ver todos" e ir para uma tela listando os produtos da categoria selecionada. Outra forma de acessar a lista de produtos seria utilizar a busca na barra superior direita.
-
-Talvez essa parte de busca seria melhor colocarmos mais quando tivermos todas as funções básicas que o professor quer no nosso sistema. Podemos começar fazendo as classes dos produtos, criando a tela de listar todos os produtos da loja e a tela do carrinho de compras. Qualquer dúvida a respeito do código perguntem no grupo.
