@@ -64,18 +64,13 @@ public class ItemCarrinho extends HBox
 	{
 		// Ao clicarmos em remover, ele pegara este objeto, e ira retirar da lista do carrinho
 		Controlador.carrinho.removerItem(this);
-		
-		// Adicionar a quantidade de volta ao produto removido.
-		for (Produto p : Controlador.produtos) 
-			if(codigo == p.getCodigo()) 
-				p.setQuantidade(p.getQuantidade() + qtdDesejada);
 
 		Janelas.mensagem("Êxito", "Produto removido com sucesso do carrinho.", AlertType.INFORMATION);
 		
 		if(Controlador.carrinho.getProdutos().isEmpty())
 			GerenciadorCenas.irPara(Controlador.PRINCIPAL);
 		else
-			GerenciadorCenas.irPara(Controlador.CARRINHO);
+			GerenciadorCenas.atualizar(Controlador.CARRINHO);
 	}
 	
 	public String getNome()

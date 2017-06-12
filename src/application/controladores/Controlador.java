@@ -37,4 +37,9 @@ public abstract class Controlador
 	{
 		carrinho.getProdutos().clear();
 	}
+	
+	public static List<Produto> getProdutos()
+	{
+		return produtos;
+	}
 }

@@ -9,7 +9,11 @@ import application.controladores.Controlador;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import sistema_loja.classes.produtos.Cd;
+import sistema_loja.classes.produtos.Dvd;
+import sistema_loja.classes.produtos.Livro;
 import sistema_loja.classes.vendas.Cadastro;
+import sistema_loja.exceptions.CodigoJaExistenteException;
 import sistema_loja.interfaces.Produto;
 import javafx.scene.image.Image;
 
@@ -26,12 +30,12 @@ public class Main extends Application
 		FXMLLoader telaBuscaLoader;
 		FXMLLoader telaVendaLoader;
 		
-		// Vamos mandar a lista de produtos para a classe Controlador
-		// antes mesmo de carregar os arquivos .fxml.
-		Controlador.inicializar(carregarProdutos());
-		
 		try 
 		{
+			// Vamos mandar a lista de produtos para a classe Controlador
+			// antes mesmo de carregar os arquivos .fxml.
+			Controlador.inicializar(carregarProdutos());
+			
 			// Esses loaders v�o servir para carregar as cenas dentro
 			// da GerenciadorCenas mais tarde.
 			toolbar               = new FXMLLoader(getClass().getResource("cenas/Toolbar.fxml"));
@@ -67,7 +71,7 @@ public class Main extends Application
 	 * @return Um mapa com os produtos carregados
 	 * @throws URISyntaxException 
 	 */
-	public List<Produto> carregarProdutos()
+	public List<Produto> carregarProdutos() throws CodigoJaExistenteException
 	{
 		List<Produto> produtos;
 		Cadastro cadastro;
@@ -91,7 +95,7 @@ public class Main extends Application
 		pastaDVDs   = new File(diretorioLocal + "/dvds/");
 		pastaCDs    = new File(diretorioLocal + "/cds/");
 		
-		// Criar uma inst�ncia da classe cadastro
+		// Criar uma instância da classe cadastro
 		// para cadastrar os produtos.
 		cadastro = new Cadastro(produtos);
 		
@@ -105,14 +109,14 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 			
-			cadastro.cadastrarLivro(
-					informacoes[0],  // Código
-					informacoes[1],  // Título
-					informacoes[2],  // Autor
-					informacoes[3],  // Categoria
-					informacoes[4],  // Preço
-					capa,            // Imagem da capa
-					informacoes[5]); // Quantidade
+			Produto p = new Livro(
+			Integer.parseInt(informacoes[0]),         // Código
+			informacoes[1], informacoes[2],           // Título e autor
+			informacoes[3],                           // Categoria
+			Double.parseDouble(informacoes[4]), capa, // Preço e imagem da capa
+			Integer.parseInt(informacoes[5]), null);  // Quantidade e descrição
+			
+			cadastro.cadastrarProduto(p); 
 		}
 		
 		for(File arquivo : pastaDVDs.listFiles())
@@ -120,14 +124,14 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 			
-			cadastro.cadastrarDVD(
-					informacoes[0],  // Código
-					informacoes[1],  // Título
-					informacoes[2],  // Autor
-					informacoes[3],  // Duração
-					informacoes[4],  // Preço
-					capa,            // Imagem da capa
-					informacoes[5]); // Quantidade
+			Produto p = new Dvd(
+			Integer.parseInt(informacoes[0]),         // Código
+			informacoes[1], informacoes[2],           // Título e autor
+			informacoes[3],                           // Categoria
+			Double.parseDouble(informacoes[4]), capa, // Preço e imagem da capa
+			Integer.parseInt(informacoes[5]), null);  // Quantidade e descrição
+			
+			cadastro.cadastrarProduto(p); 
 		}
 		
 		for(File arquivo : pastaCDs.listFiles())
@@ -135,14 +139,14 @@ public class Main extends Application
 			informacoes = arquivo.getName().split("-");
 			capa = new Image(arquivo.toPath().toUri().toString());
 
-			cadastro.cadastrarCD(
-					informacoes[0],  // Código
-					informacoes[1],  // Título
-					informacoes[2],  // Autor
-					informacoes[3],  // Ano
-					informacoes[4],  // Preço
-					capa,            // Imagem da capa
-					informacoes[5]); // Quantidade
+			Produto p = new Cd(
+			Integer.parseInt(informacoes[0]),         // Código
+			informacoes[1], informacoes[2],           // Título e autor
+			informacoes[3],                           // Categoria
+			Double.parseDouble(informacoes[4]), capa, // Preço e imagem da capa
+			Integer.parseInt(informacoes[5]), null);  // Quantidade e descrição
+			
+			cadastro.cadastrarProduto(p); 
 		}
 		
 		return produtos;

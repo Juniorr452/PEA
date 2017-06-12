@@ -23,6 +23,7 @@ import javafx.scene.layout.VBox;
 import sistema_loja.classes.produtos.Cd;
 import sistema_loja.classes.produtos.Dvd;
 import sistema_loja.classes.produtos.Livro;
+import sistema_loja.classes.vendas.Cadastro;
 import sistema_loja.classes.vendas.Venda;
 import sistema_loja.exceptions.CodigoJaExistenteException;
 import sistema_loja.interfaces.Produto;
@@ -115,7 +116,12 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML
 	private void escolherImagem()
 	{
-		imagem.setImage(Janelas.escolherImagem());
+		Image i = Janelas.escolherImagem();
+		
+		if (i != null)
+			imagem.setImage(i);
+		else
+			imagem.setImage(imagemProdutoPadrao);
 	}
 	
 	/**
@@ -154,7 +160,8 @@ public class ControladorFuncionario extends Controlador implements Initializable
 	@FXML
 	private void cadastrar()
 	{
-		Produto p;
+		Produto  p;
+		Cadastro cadastro;
 		
 		int    codigo;
 		String nome;
@@ -181,11 +188,6 @@ public class ControladorFuncionario extends Controlador implements Initializable
 			if (descricao.equals(""))
 				descricao = null;
 			
-			// Verificar se o c�digo j� existe.
-			for(Produto produto : produtos)
-				if (codigo == produto.getCodigo())
-					throw new CodigoJaExistenteException();
-			
 			switch(tipoProduto.getValue())
 			{
 			case "Livro":
@@ -205,7 +207,9 @@ public class ControladorFuncionario extends Controlador implements Initializable
 				break;
 			}
 			
-			produtos.add(p);
+			cadastro = new Cadastro();
+			
+			cadastro.cadastrarProduto(p);
 			Janelas.mensagem("Sucesso", "Produto cadastrado com sucesso", AlertType.CONFIRMATION);
 			mudarTela(menuCadastrar, menuFuncionario);
 			resetarCampos();
@@ -216,7 +220,7 @@ public class ControladorFuncionario extends Controlador implements Initializable
 		}
 		catch (NumberFormatException e)
 		{
-			Janelas.mensagem("Erro", "N�mero digitado inv�lido. Verifique os campos e tente novamente.", AlertType.ERROR);
+			Janelas.mensagem("Erro", "Número digitado inválido. Verifique os campos e tente novamente.", AlertType.ERROR);
 		}
 		catch (CodigoJaExistenteException e)
 		{

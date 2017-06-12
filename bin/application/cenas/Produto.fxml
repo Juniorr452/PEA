@@ -17,11 +17,20 @@
          <children>
             <VBox prefHeight="599.0" prefWidth="849.0" translateX="335.0" translateY="20.0">
                <children>
-                  <Label fx:id="tituloItem" text="Título">
-                     <font>
-                        <Font name="Myriad Apple Bold" size="24.0" />
-                     </font>
-                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="0.0" prefWidth="849.0" spacing="10.0">
+                     <children>
+                        <Label fx:id="tituloItem" text="Título">
+                           <font>
+                              <Font name="Myriad Apple Bold" size="24.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="codigoItem" text="Código">
+                           <font>
+                              <Font name="Arial Italic" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                   <Label fx:id="autorItem" text="autor" textFill="#949494" />
                   <Label text="Descrição">
                      <VBox.margin>

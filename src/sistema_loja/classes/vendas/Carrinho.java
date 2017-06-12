@@ -3,6 +3,7 @@ package sistema_loja.classes.vendas;
 import java.util.ArrayList;
 import java.util.List;
 
+import application.controladores.Controlador;
 import application.controladores.ItemCarrinho;
 import sistema_loja.exceptions.QuantidadeIndisponivelException;
 import sistema_loja.exceptions.QuantidadeMaximaException;
@@ -34,7 +35,6 @@ public class Carrinho
 					break;
 				}
 			
-			
 			if(i != null) // Se o usuário já tinha adicionado o produto...
 				i.setQtd(qtdDesejada);		
 			else          // Se não, cria um novo item no carrinho.
@@ -51,6 +51,11 @@ public class Carrinho
 	
 	public void removerItem(ItemCarrinho i)
 	{
+		// Adicionar a quantidade de volta ao produto removido.
+		for (Produto p : Controlador.getProdutos()) 
+			if(i.getCodigo() == p.getCodigo()) 
+				p.setQuantidade(p.getQuantidade() + i.getQtd());
+		
 		produtosCarrinho.remove(i);
 	}
 	

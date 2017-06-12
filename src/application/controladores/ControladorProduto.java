@@ -20,6 +20,7 @@ public class ControladorProduto extends Controlador implements Initializable
 	@FXML private Button adicionarCarrinho;
 	@FXML private Button comprar;
 	@FXML private Label tituloItem;
+	@FXML private Label codigoItem;
 	@FXML private ImageView capaItem;
 	@FXML private Label autorItem;
 	@FXML private Label precoItem;
@@ -32,6 +33,7 @@ public class ControladorProduto extends Controlador implements Initializable
 	public void initialize(URL location, ResourceBundle resources)
 	{
 		tituloItem.setText(produtoSelecionado.getTitulo());
+		codigoItem.setText("(Cód: " + Integer.toString(produtoSelecionado.getCodigo()) + ")");
 		capaItem.setImage(produtoSelecionado.getImage());
 		autorItem.setText(produtoSelecionado.getAutor());
 		precoItem.setText(Double.toString(produtoSelecionado.getPreco()));

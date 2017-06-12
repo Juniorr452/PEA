@@ -6,41 +6,30 @@ import javafx.scene.image.Image;
 import sistema_loja.classes.produtos.Cd;
 import sistema_loja.classes.produtos.Dvd;
 import sistema_loja.classes.produtos.Livro;
+import sistema_loja.exceptions.CodigoJaExistenteException;
 import sistema_loja.interfaces.Produto;
 
 public class Cadastro 
 {
-	private List<Produto> produtos;
+	private static List<Produto> produtos;
+	
+	public Cadastro() {}
 	
 	public Cadastro(List<Produto> produtos)
 	{
 		this.produtos = produtos;
 	}
 	
-	public void cadastrarLivro(String codigo, String titulo, String autor, String categoria, String preco, Image imagem, String quantidade)
+	public void cadastrarProduto(Produto p) throws CodigoJaExistenteException, NumberFormatException
 	{
-		Produto p = new Livro(Integer.parseInt(codigo),
-				titulo, autor, categoria, 
-				Double.parseDouble(preco), imagem, 
-				Integer.parseInt(quantidade), null);
-		produtos.add(p);
-	}
-	
-	public void cadastrarDVD(String codigo, String titulo, String autor, String duracao, String preco, Image imagem, String quantidade)
-	{
-		Produto p = new Dvd(Integer.parseInt(codigo),
-							titulo, autor, duracao, 
-							Double.parseDouble(preco), imagem, 
-							Integer.parseInt(quantidade), null);
-		produtos.add(p);
-	}
-	
-	public void cadastrarCD(String codigo, String titulo, String autor, String ano, String preco, Image imagem, String quantidade)
-	{
-		Produto p = new Cd(Integer.parseInt(codigo),
-				titulo, autor, ano, 
-				Double.parseDouble(preco), imagem, 
-				Integer.parseInt(quantidade), null);
+		// Verificar se o código já existe e os números digitados.
+		for(Produto produto : produtos)
+			if (p.getCodigo() == produto.getCodigo())
+					throw new CodigoJaExistenteException();
+			else if(p.getCodigo() < 0 || p.getPreco() <= 0 || p.getQuantidade() <= 0)
+				throw new NumberFormatException();
+		
+		// Adicionar na lista.
 		produtos.add(p);
 	}
 }

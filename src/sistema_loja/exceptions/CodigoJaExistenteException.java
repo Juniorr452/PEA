@@ -4,6 +4,6 @@ public class CodigoJaExistenteException extends Exception
 {
 	public CodigoJaExistenteException()
 	{
-		super("CÛdigo j·! cadastrado. Insira um novo valor e tente novamente.");
+		super("C√≥digo j√° cadastrado. Insira um novo valor e tente novamente.");
 	}
 }

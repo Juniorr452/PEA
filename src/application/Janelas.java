@@ -59,9 +59,8 @@ public class Janelas
     	// e retornar o arquivo selecionado pelo funcion�rio.
     	File arquivoSelecionado = fc.showOpenDialog(novaJanela);
     	
-    	// Vamos carregar a imagem com o caminho do arquivo.
-    	if (arquivoSelecionado.exists())
-    		i = new Image(arquivoSelecionado.toPath().toUri().toString());
+    	if (arquivoSelecionado != null)
+    		i = new Image(arquivoSelecionado.toPath().toUri().toString()); 
     	else 
     		i = null;
     	
