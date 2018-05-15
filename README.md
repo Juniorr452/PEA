@@ -1,5 +1,9 @@
 # PEA
+
+Trabalho da disciplina de Orientação a Objetos do IESB
+
 --------------------------------------------------------------------------------------------------------------------------------
+
 Para	 driblar	 a	 crise,	 um	 cliente	 está	 querendo	 inovar	 no	 seu	
 negócio de	 vendas	 de	 Livros,	 CD	 e	 DVD.	 Ele	 teve	 a	 ideia	 de	
 substituir	os	vendedores	da	loja	por	estações	de	autoatendimento.	
